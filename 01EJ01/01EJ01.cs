@@ -2,33 +2,33 @@ using System;
 
 public class Persona
 {
-    public string nombre;
-    public string apellido;
+    public string _nombre;
+    public string _apellido;
 
-    public Persona(string nombre, string apellido)
+    public Persona(string _nombre, string _apellido)
     {
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this._nombre = _nombre;
+        this._apellido = _apellido;
     }
 
     public string GetNombre()
     {
-        return this.nombre;
+        return this._nombre;
     }
 
     public void SetNombre(string nombre)
     {
-        this.nombre = nombre;
+        this._nombre = nombre;
     }
 
     public string GetApellido()
     {
-        return this.apellido;
+        return this._apellido;
     }
 
     public void SetApellido(string apellido)
     {
-        this.apellido = apellido;
+        this._apellido = apellido;
     }
 }
 
@@ -38,7 +38,7 @@ public class Program
     {
         Persona myVariable = new Persona("Gastón", "Javier");
 
-        Console.WriteLine($"Nombre: {myVariable.nombre}");
-        Console.WriteLine($"Apellido: {myVariable.apellido}");
+        Console.WriteLine($"Nombre: {myVariable._nombre}");
+        Console.WriteLine($"Apellido: {myVariable._apellido}");
     }
 }
