@@ -1,0 +1,8 @@
+{
+    "code-runner.executorMap": {
+        "csharp": "dotnet run --file \"$fullFileName\""
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.ignoreSelection": true
+}
