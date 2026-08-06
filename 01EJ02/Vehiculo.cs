@@ -1,15 +1,4 @@
-/* 
-2. Crear una clase `Vehiculo` que tenga los atributos:
-públicos:
-    +`marca`,
-    +`modelo` 
-y un atributo privado:
-    + `patente`.
-- Crear una instancia y asignarle valores;
-notar que el atributo privado no está disponible para la asignación de valores.
-- Mostrar por pantalla los valores asignados.
-*/
-
+// Vehiculo.cs
 using System;
 
 public class Vehiculo
@@ -42,6 +31,9 @@ public class Vehiculo
     {
         this.modelo = modelo;
     }
-
-
+    // Patente no tiene setters porque no queremos modificarlo desde afuera
+    public string GetPatente()
+    {
+        return this._patente;
+    }
 }
