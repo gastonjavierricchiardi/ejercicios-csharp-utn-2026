@@ -1,0 +1,12 @@
+# .NET - archivos generados por compilación
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Archivos temporales del sistema
+Thumbs.db
+.DS_Store
