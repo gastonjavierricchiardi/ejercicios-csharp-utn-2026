@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Guia01\EJ01\Program.cs
+using System;
 
 public class Persona
 {

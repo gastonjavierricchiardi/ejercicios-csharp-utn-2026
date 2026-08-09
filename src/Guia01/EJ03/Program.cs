@@ -1,4 +1,4 @@
-﻿/** /Program.cs
+﻿/** Guia01\EJ03\Program.cs/
 3. Crear una clase `Articulo` que tenga los atributos **privados:** `marca` y `modelo`.
     - Crear métodos públicos para la asignación de valores.
     - Crear una instancia y asignarle valores.

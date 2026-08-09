@@ -1,4 +1,4 @@
-﻿/* /program.cs 
+﻿/* Guia01\EJ02\Program.cs 
 2. Crear una clase `Vehiculo` que tenga los atributos:
 públicos:
     +`marca`,

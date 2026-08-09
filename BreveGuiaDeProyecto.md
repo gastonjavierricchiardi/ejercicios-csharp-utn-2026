@@ -284,9 +284,9 @@ Los tres pasos son:
 Para `EJ0X`:
 
 ```powershell
-dotnet new console --name 01EJ04 --output .\src\Guia01\EJ04 --framework net10.0 --force
-dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ04\01EJ04.csproj
-dotnet run --project ".\src\Guia01\EJ04\01EJ04.csproj"
+dotnet new console --name 01EJ06 --output .\src\Guia01\EJ06 --framework net10.0 --force
+dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ06\01EJ06.csproj
+dotnet run --project ".\src\Guia01\EJ06\01EJ06.csproj"
 ```
 
 Para `EJ05`, se cambia `04` por `05`, y así sucesivamente.
@@ -304,3 +304,13 @@ Para `EJ05`, se cambia `04` por `05`, y así sucesivamente.
 > Para cada ejercicio nuevo:
 >
 > `dotnet new console` → `dotnet sln add` → `dotnet run --project`
+
+---
+
+# Algunos comando útiles:
+
+```powershell
+dotnet sln .\EjerciciosCSharpUtn2026.slnx list
+dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ06\01EJ06.csproj
+dotnet sln .\EjerciciosCSharpUtn2026.slnx list
+```
