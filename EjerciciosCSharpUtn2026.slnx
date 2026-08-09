@@ -16,4 +16,7 @@
   <Folder Name="/src/Guia01/EJ06/">
     <Project Path="src/Guia01/EJ06/01EJ06.csproj" />
   </Folder>
+  <Folder Name="/src/Guia01/EJ07/">
+    <Project Path="src/Guia01/EJ07/01EJ07.csproj" />
+  </Folder>
 </Solution>
