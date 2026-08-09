@@ -270,7 +270,7 @@ C:\vcs\ejercicios-csharp-utn-2026
 Ejecutar:
 
 ```powershell
-dotnet new console --name 01EJ03 --output .\src\Guia01\EJ03 --framework net10.0
+dotnet new console --name 01EJ03 --output .\src\Guia01\EJ03 --framework net10.0 --force
 dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ03\01EJ03.csproj
 dotnet run --project ".\src\Guia01\EJ03\01EJ03.csproj"
 ```
@@ -281,10 +281,10 @@ Los tres pasos son:
 2. `dotnet sln ... add` → agrega el proyecto a la solución `.slnx`.
 3. `dotnet run --project` → compila y ejecuta el ejercicio completo.
 
-Para `EJ04`:
+Para `EJ0X`:
 
 ```powershell
-dotnet new console --name 01EJ04 --output .\src\Guia01\EJ04 --framework net10.0
+dotnet new console --name 01EJ04 --output .\src\Guia01\EJ04 --framework net10.0 --force
 dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ04\01EJ04.csproj
 dotnet run --project ".\src\Guia01\EJ04\01EJ04.csproj"
 ```

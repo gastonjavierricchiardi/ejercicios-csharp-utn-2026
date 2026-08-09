@@ -4,4 +4,13 @@
   <Folder Name="/src/Guia01/EJ01/">
     <Project Path="src/Guia01/EJ01/01EJ01.csproj" />
   </Folder>
+  <Folder Name="/src/Guia01/EJ02/">
+    <Project Path="src/Guia01/EJ02/01EJ02.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ03/">
+    <Project Path="src/Guia01/EJ03/01EJ03.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ04/">
+    <Project Path="src/Guia01/EJ04/01EJ04.csproj" />
+  </Folder>
 </Solution>
