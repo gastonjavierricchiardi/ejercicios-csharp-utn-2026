@@ -19,4 +19,13 @@
   <Folder Name="/src/Guia01/EJ07/">
     <Project Path="src/Guia01/EJ07/01EJ07.csproj" />
   </Folder>
+  <Folder Name="/src/Guia01/EJ08/">
+    <Project Path="src/Guia01/EJ08/01EJ08.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ09/">
+    <Project Path="src/Guia01/EJ09/01EJ09.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ10/">
+    <Project Path="src/Guia01/EJ10/01EJ10.csproj" />
+  </Folder>
 </Solution>
