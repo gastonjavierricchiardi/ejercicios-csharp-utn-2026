@@ -28,4 +28,10 @@
   <Folder Name="/src/Guia01/EJ10/">
     <Project Path="src/Guia01/EJ10/01EJ10.csproj" />
   </Folder>
+  <Folder Name="/src/Guia01/EJ11/">
+    <Project Path="src/Guia01/EJ11/01EJ11.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ12/">
+    <Project Path="src/Guia01/EJ12/01EJ12.csproj" />
+  </Folder>
 </Solution>

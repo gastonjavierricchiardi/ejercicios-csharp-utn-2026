@@ -394,12 +394,18 @@ No utilizar `dotnet run --file Program.cs` cuando `Program.cs` depende de clases
 
 # 12. Secuencia operativa completa — Windows
 
+## Esto es lo que hay que ejecutar
+
 Ejemplo para crear `EJ08`:
 
 ```powershell
-dotnet new console --name 01EJ08 --output .\src\Guia01\EJ08 --framework net10.0
-dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ08\01EJ08.csproj
-dotnet run --project ".\src\Guia01\EJ08\01EJ08.csproj"
+
+dotnet new console --name 01EJ12 --output .\src\Guia01\EJ12 --framework net10.0
+
+dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ12\01EJ12.csproj
+
+dotnet run --project ".\src\Guia01\EJ12\01EJ12.csproj"
+
 ```
 
 Los tres pasos son:
