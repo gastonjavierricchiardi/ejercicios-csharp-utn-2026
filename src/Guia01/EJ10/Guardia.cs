@@ -10,4 +10,9 @@ public class Guardia : Persona
     {
         return $"Hola, mi nombre es {this.GetNombre()} {this.GetApellido()} y soy el guardia";
     }
+
+    public string ControlarDocumento(int dni)
+    {
+        return $"Adelante persona con dni {dni}";
+    }
 }

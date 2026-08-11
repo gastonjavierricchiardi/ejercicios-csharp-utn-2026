@@ -9,7 +9,6 @@ public class Program
 {
     public static void Main()
     {
-
         Persona persona1 = new Persona();
         persona1.SetNombre("Gastón");
         persona1.SetApellido("Ricchiardi");
@@ -17,18 +16,26 @@ public class Program
         Visitante visitante1 = new Visitante();
         visitante1.SetNombre("Desirée");
         visitante1.SetApellido("Candelaria");
+        visitante1.SetDni(12345678);
 
         Guardia guardia1 = new Guardia();
         guardia1.SetNombre("Carlos");
         guardia1.SetApellido("Gómez");
 
-        /*
-        Console.WriteLine($"Persona: {persona1.GetNombre()} {persona1.GetApellido()}");
-        Console.WriteLine($"Visitante: {visitante1.GetNombre()} {visitante1.GetApellido()}");
-        Console.WriteLine($"Guardia: {guardia1.GetNombre()} {guardia1.GetApellido()}");
-        */
         Console.WriteLine(persona1.Presentarse());
-        Console.WriteLine(visitante1.Presentarse());
+        Console.WriteLine($"{visitante1.Presentarse()} - DNI: {visitante1.GetDni()}");
         Console.WriteLine(guardia1.Presentarse());
+
+        Console.WriteLine();
+
+        Console.WriteLine(guardia1.ControlarDocumento(visitante1.GetDni()));
     }
 }
+
+
+
+/*
+Console.WriteLine($"Persona: {persona1.GetNombre()} {persona1.GetApellido()}");
+Console.WriteLine($"Visitante: {visitante1.GetNombre()} {visitante1.GetApellido()}");
+Console.WriteLine($"Guardia: {guardia1.GetNombre()} {guardia1.GetApellido()}");
+*/

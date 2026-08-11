@@ -18,6 +18,6 @@ public class Persona
     // 4. MÉTODOS (Comportamiento)
     public virtual string Presentarse()
     {
-        return $"{this.GetNombre()} {this.GetApellido}";
+        return $"{this.GetNombre()} {this.GetApellido()}";
     }
 }

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="rpbAV3nMSuuNAb45dkSR" name="Página-1">
-        <mxGraphModel dx="689" dy="467" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="500" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -23,25 +23,28 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="&lt;b&gt;Visitante&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="90" y="300" width="140" height="36" as="geometry"/>
+                    <mxGeometry x="90" y="300" width="140" height="56" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="- dni: int" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="10">
+                    <mxGeometry y="28" width="140" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="10" vertex="1">
-                    <mxGeometry y="28" width="140" height="8" as="geometry"/>
+                    <mxGeometry y="48" width="140" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="&lt;b&gt;Guardia&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="240" y="300" width="140" height="56" as="geometry"/>
+                    <mxGeometry x="240" y="300" width="200" height="76" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="28" width="140" height="8" as="geometry"/>
+                    <mxGeometry y="28" width="200" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="+ presentarse(): string" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="18" vertex="1">
-                    <mxGeometry y="36" width="140" height="20" as="geometry"/>
+                    <mxGeometry y="36" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="+ ControlarDocumento(int dni): string" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="18">
+                    <mxGeometry y="56" width="200" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" style="edgeStyle=none;html=1;entryX=0.459;entryY=1.05;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;" parent="1" source="18" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="30" value="&lt;div style=&quot;color: rgb(41, 41, 41); background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;color: rgb(15, 74, 133);&quot;&gt;public&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(94, 44, 188);&quot;&gt;presentarse&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(24, 94, 115);&quot;&gt;string&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt; {&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style=&quot;color: rgb(181, 32, 13);&quot;&gt;return&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(15, 74, 133);&quot;&gt;`Hola, mi nombre es &lt;/span&gt;&lt;span style=&quot;color: rgb(15, 74, 133);&quot;&gt;${super&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: rgb(94, 44, 188);&quot;&gt;presentarse&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;()&lt;/span&gt;&lt;span style=&quot;color: rgb(15, 74, 133);&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color: rgb(15, 74, 133);&quot;&gt; y soy el guardia.`&lt;/span&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;color: rgb(41, 41, 41);&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp; &amp;nbsp; }&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="414" y="300" width="490" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
