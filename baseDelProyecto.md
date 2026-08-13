@@ -97,11 +97,11 @@ $salida = "dump_EJ11.txt"
   for /f "delims=" %I in ('powershell -NoProfile -Command "Get-Date -Format o"') do echo Fecha: %I
   echo(
   echo ARCHIVOS INCLUIDOS:
-  for /r %f in (*.ts) do echo - %f
+  for /r %f in (*.cs) do echo - %f
   echo(
   echo ========================================
   echo(
-  for /r %f in (*.ts) do (
+  for /r %f in (*.cs) do (
     echo ===== %f =====
     findstr /n "^" "%f"
     echo(
@@ -138,19 +138,19 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
   printf "Fecha: %s\n\n" "$(date -Is)"
 
   printf "ARCHIVOS INCLUIDOS:\n"
-  find . -type f -name '*.ts' -print0 \
+  find . -type f -name '*.cs' -print0 \
     | sort -z \
     | xargs -0 -I{} printf " - %s\n" "{}"
 
   printf "\n========================================\n\n"
 
-  find . -type f -name '*.ts' -print0 \
+  find . -type f -name '*.cs' -print0 \
     | sort -z \
     | while IFS= read -r -d '' f; do
         printf "===== %s =====\n" "$f"
         nl -ba "$f"
         printf "\n"
       done
-) > dump_20EJ01_GPS.txt
+) > dump_herencia01.txt
 
 ```

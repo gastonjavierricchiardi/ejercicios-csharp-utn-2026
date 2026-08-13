@@ -34,4 +34,7 @@
   <Folder Name="/src/Guia01/EJ12/">
     <Project Path="src/Guia01/EJ12/01EJ12.csproj" />
   </Folder>
+  <Folder Name="/src/Herencia/">
+    <Project Path="src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj" />
+  </Folder>
 </Solution>

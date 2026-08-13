@@ -421,9 +421,15 @@ Los tres pasos son:
 Ejemplo validado para crear `EJ08`:
 
 ```bash
-dotnet new console --name 01EJ08 --output ./src/Guia01/EJ08 --framework net10.0
-dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Guia01/EJ08/01EJ08.csproj
-dotnet run --project ./src/Guia01/EJ08/01EJ08.csproj
+
+dotnet new console --name Herencia01_figurasGeometricas --output ./src/Herencia/Herencia01_figurasGeometricas --framework net10.0
+
+dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj
+
+
+dotnet run --project ./src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj
+
+
 ```
 
 Los tres pasos son exactamente los mismos conceptualmente:

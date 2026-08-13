@@ -1,8 +1,22 @@
 // /Persona.cs
 public class Persona
 {
-    private string name;
-    private string LastName;
+    // CONSTRUCTOR
+    // public Persona() { } // Vacio sin parámetros.
+    public Persona()
+    {
+        name = "Juan";
+        lastName = "Perez";
+    }
+    // OTRO CONSTRUCTOR PERO QUE RECIBE PARAMETROS
+    // tipeamos ctor
+    public Persona(string nombre, string apellido)
+    {
+        name = nombre;
+        lastName = apellido;
+    }
+    private string name = "";
+    private string lastName = "";
     /*
     Si lo accedes así directo: unaPersona.name = "Gastón     _Javier";
     con = y el public, lo pisas, lo tenes que usar private
