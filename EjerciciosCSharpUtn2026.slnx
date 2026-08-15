@@ -36,5 +36,6 @@
   </Folder>
   <Folder Name="/src/Herencia/">
     <Project Path="src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj" />
+    <Project Path="src/Herencia/Herencia02_sueldos/Herencia02_sueldos.csproj" />
   </Folder>
 </Solution>

@@ -422,12 +422,11 @@ Ejemplo validado para crear `EJ08`:
 
 ```bash
 
-dotnet new console --name Herencia01_figurasGeometricas --output ./src/Herencia/Herencia01_figurasGeometricas --framework net10.0
+dotnet new console --name Herencia02_sueldos --output ./src/Herencia/Herencia02_sueldos --framework net10.0
 
-dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj
+dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Herencia/Herencia02_sueldos/Herencia02_sueldos.csproj
 
-
-dotnet run --project ./src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj
+dotnet run --project ./src/Herencia/Herencia02_sueldos/Herencia02_sueldos.csproj
 
 
 ```
@@ -548,10 +547,12 @@ Por lo tanto, no existe como proyecto independiente salvo que esta decisión cam
 ## Windows / PowerShell
 
 ```powershell
+
 dotnet new console --name 01EJ08 --output .\src\Guia01\EJ08 --framework net10.0
 dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ08\01EJ08.csproj
 dotnet run --project ".\src\Guia01\EJ08\01EJ08.csproj"
 dotnet sln .\EjerciciosCSharpUtn2026.slnx list
+
 ```
 
 ## Zorin OS / Bash
