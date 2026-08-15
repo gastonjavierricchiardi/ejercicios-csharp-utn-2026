@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/" />
-  <Folder Name="/src/Clase03/">
-    <Project Path="src/Clase03/clase03.csproj" />
+  <Folder Name="/src/ClasesDictadas/" />
+  <Folder Name="/src/ClasesDictadas/Clase03-20260811/">
+    <Project Path="src/ClasesDictadas/Clase03-20260811/clase03.csproj" />
   </Folder>
 </Solution>

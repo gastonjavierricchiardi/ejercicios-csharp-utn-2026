@@ -2,8 +2,7 @@
 
 public abstract class FiguraGeometrica
 {
-    // 1. ATRIBUTOS
-    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // ATRIBUTOS / PROPIEDADES / GETTERS Y SETTERS
     public string Nombre { get; set; }
     public string Color { get; set; }
 
@@ -24,7 +23,7 @@ public abstract class FiguraGeometrica
 
     // 4. MÉTODOS (Comportamiento) Concreto
 
-    public string ObteberInformacion()
+    public string ObtenerInformacion()
     {
         return $"Nombre: {Nombre} - Color: {Color} - " + $"Perímetro: {CalcularPerimetro()} - Área: {CalcularArea()}";
     }
