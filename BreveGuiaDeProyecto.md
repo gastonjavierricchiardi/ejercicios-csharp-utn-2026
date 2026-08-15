@@ -599,13 +599,12 @@ dotnet run --project ./src/Guia01/EJ10/01EJ10.csproj
 Para clases de codeo:
 
 ```
-dotnet new console --name clase03 --output ./src/Clase03 --framework net10.0
 
-dotnet new sln --name ClasesCSharpUtn2026
+dotnet new console --name clase04 --output ./src/ClasesDictadas/Clase04-20260814 --framework net10.0
 
-dotnet sln ./ClasesCSharpUtn2026.slnx add ./src/Clase03/clase03.csproj
+dotnet sln .\ClasesCSharpUtn2026.slnx add .\src\ClasesDictadas\Clase04-20260814\clase03.csproj
 
-dotnet run --project ./src/Clase03/clase03.csproj
+dotnet run --project .\src\ClasesDictadas\Clase04-20260814\clase03.csproj
 
 ```
 

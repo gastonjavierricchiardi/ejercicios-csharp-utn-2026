@@ -4,4 +4,7 @@
   <Folder Name="/src/ClasesDictadas/Clase03-20260811/">
     <Project Path="src/ClasesDictadas/Clase03-20260811/clase03.csproj" />
   </Folder>
+  <Folder Name="/src/ClasesDictadas/Clase04-20260814/">
+    <Project Path="src/ClasesDictadas/Clase04-20260814/clase04.csproj" />
+  </Folder>
 </Solution>
