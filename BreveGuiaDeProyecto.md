@@ -732,3 +732,47 @@ Hello, World!
 ```
 
 Por lo tanto, el mismo repositorio y la misma solución pueden utilizarse desde ambos sistemas respetando la sintaxis de rutas correspondiente a cada shell.
+
+---
+
+# Según el Profesor Andrés, se debe trabajar así
+
+Esta es la transcripción exacta y literal de la explicación dada por el profesor Andrés:
+
+La forma correcta es seguir los pasos que están indicados en la guía “Configuración Solución y aplicación de Consola .Net en VS Code”:
+
+Para los primeros ejercicios, podés crear una solución y una aplicación de consola de la siguiente manera.
+Abrí una terminal y copiá y pegá los siguientes comandos:
+
+```bash
+# Crear la carpeta de trabajo
+mkdir ConsoleSolution
+cd ConsoleSolution
+
+# Crear la solución
+dotnet new sln --name ConsoleSolution
+
+# Crear el proyecto de consola
+dotnet new console --name ConsoleApp --output src/ConsoleApp --framework net10.0
+
+# Agregar el proyecto a la solución
+dotnet sln add src/ConsoleApp/ConsoleApp.csproj
+
+```
+
+Esto te va a generar una estructura similar a:
+
+```text
+ConsoleSolution
+│
+├── ConsoleSolution.slnx
+│
+└── src
+    └── ConsoleApp
+        ├── ConsoleApp.csproj
+        └── Program.cs
+
+```
+
+La idea es que cada ejercicio tenga su propio proyecto, para mantenerlos separados y evitar mezclar archivos y configuraciones de distintos ejercicios.
+Si al crear una nueva carpeta Visual Studio Code te indica que no encuentra algún archivo, probablemente el problema esté en cómo se está creando o abriendo la nueva solución/proyecto. En ese caso, seguí los pasos de la guía y, si continúa el problema, comentame qué mensaje te aparece.
