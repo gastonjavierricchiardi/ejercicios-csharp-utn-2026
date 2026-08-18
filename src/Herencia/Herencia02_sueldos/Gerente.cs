@@ -1,0 +1,1 @@
+// src\Herencia\Herencia02_sueldos\Gerente.cs
