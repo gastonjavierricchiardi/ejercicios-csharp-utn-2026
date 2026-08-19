@@ -775,4 +775,55 @@ ConsoleSolution
 ```
 
 La idea es que cada ejercicio tenga su propio proyecto, para mantenerlos separados y evitar mezclar archivos y configuraciones de distintos ejercicios.
-Si al crear una nueva carpeta Visual Studio Code te indica que no encuentra algún archivo, probablemente el problema esté en cómo se está creando o abriendo la nueva solución/proyecto. En ese caso, seguí los pasos de la guía y, si continúa el problema, comentame qué mensaje te aparece.
+
+---
+
+# AutoEvaluaciones
+
+## Creación en Zorin OS
+
+Perfecto. Con el `tree` queda **VALIDADO** que:
+
+- La carpeta `src/AutoEvaluaciones/01-AE/` ya existe.
+- En la raíz todavía **no existe** `AECsharp.slnx`.
+- La nueva solución va a convivir con `ClasesCSharpUtn2026.slnx` y `EjerciciosCSharpUtn2026.slnx`.
+
+### Paso 1 — Crear únicamente la solución
+
+Parado en:
+
+`~/vcs/ejercicios-csharp-utn-2026`
+
+ejecutá:
+
+```bash
+dotnet new sln --name AECsharp
+```
+
+Esperamos que aparezca:
+
+`AECsharp.slnx`
+
+Perfecto. ✅ **`AECsharp.slnx` queda VALIDADA como creada.**
+
+### Paso 2 — Crear el proyecto de la Autoevaluación 01
+
+Desde la raíz del repo ejecutá:
+
+```bash
+dotnet new console --name 01-AE --output ./src/AutoEvaluaciones/01-AE --framework net10.0
+```
+
+Esto debería crear principalmente `01-AE.csproj` y `Program.cs` dentro de esa carpeta.
+
+Perfecto. ✅ **Proyecto `01-AE` creado y restaurado correctamente.**
+
+### Paso 3 — Agregarlo a `AECsharp.slnx`
+
+Ejecutá:
+
+```bash
+dotnet sln ./AECsharp.slnx add ./src/AutoEvaluaciones/01-AE/01-AE.csproj
+```
+
+---

@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/AutoEvaluaciones/">
+    <Project Path="src/AutoEvaluaciones/01-AE/01-AE.csproj" />
+  </Folder>
+</Solution>
