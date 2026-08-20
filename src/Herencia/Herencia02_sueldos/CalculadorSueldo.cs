@@ -1,14 +1,47 @@
 // src\Herencia\Herencia02_sueldos\CalculadorSueldo.cs
 
-// 1. CAMPOS / ATRIBUTOS
-// Estado interno del objeto.
-// Normalmente private.
+public class CalculadorSueldo
+{
+    // 1. CAMPOS / ATRIBUTOS
+    // 2. CONSTRUCTOR
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // 4. MÉTODOS
+    public double CalcularBonoPresentismoA(Empleado empleado)
+    {
+        if (empleado.GetFaltas() == 0)
+        {
+            return 1000;
+        }
 
-// 2. CONSTRUCTOR
-// Recibe los datos necesarios al crear el objeto.
+        if (empleado.GetFaltas() == 1)
+        {
+            return 450;
+        }
+        return 0;
+    }
 
-// 3. PROPIEDADES / GETTERS Y SETTERS
-// Formas de exponer o modificar el estado.
+    public double CalcularBonoPresentismoB() { return 500; } // Veremos si se agrega mas lógica
 
-// 4. MÉTODOS
-// Comportamiento del objeto.
+    public double CalcularBonoResultado(Empleado empleado, double objetivo)
+    {
+        if (objetivo == 100)
+        {
+            return empleado.CalcularSueldoNeto() * 0.10;
+        }
+
+        if (objetivo == 80)
+        {
+            return 800;
+        }
+        return 0;
+    }
+
+    public double CalcularSueldo(Empleado empleado, double objetivo)
+    {
+        double sueldoNeto = empleado.CalcularSueldoNeto();
+        double bonoPresentismo = CalcularBonoPresentismoA(empleado) + CalcularBonoPresentismoB();
+        double bonoResultado = CalcularBonoResultado(empleado, objetivo);
+
+        return sueldoNeto + bonoPresentismo + bonoResultado;
+    }
+}

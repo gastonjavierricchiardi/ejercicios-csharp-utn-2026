@@ -40,7 +40,51 @@ public class Program
         Console.WriteLine($"Faltas: {gerente1.GetFaltas()}");
         Console.WriteLine($"Sueldo neto: {gerente1.CalcularSueldoNeto()}");
 
+        Administrativo administrativo1 = new Administrativo(2, 1);
 
+        Console.WriteLine($"ID: {administrativo1.GetIdEmpleado()}");
+        Console.WriteLine($"Faltas: {administrativo1.GetFaltas()}");
+        Console.WriteLine($"Sueldo neto: {administrativo1.CalcularSueldoNeto()}");
 
+        Operador operador1 = new Operador(3, 2);
+
+        Console.WriteLine($"ID: {operador1.GetIdEmpleado()}");
+        Console.WriteLine($"Faltas: {operador1.GetFaltas()}");
+        Console.WriteLine($"Sueldo neto: {operador1.CalcularSueldoNeto()}");
+
+        Cadete cadete1 = new Cadete(4, 0);
+
+        Console.WriteLine($"ID: {cadete1.GetIdEmpleado()}");
+        Console.WriteLine($"Faltas: {cadete1.GetFaltas()}");
+        Console.WriteLine($"Sueldo neto: {cadete1.CalcularSueldoNeto()}");
+
+        // ---
+        CalculadorSueldo calculador = new CalculadorSueldo();
+        Console.WriteLine();
+
+        Console.WriteLine("BONO PRESENTISMO A");
+        Console.WriteLine($"Gerente: {calculador.CalcularBonoPresentismoA(gerente1)}");
+        Console.WriteLine($"Administrativo: {calculador.CalcularBonoPresentismoA(administrativo1)}");
+        Console.WriteLine($"Operador: {calculador.CalcularBonoPresentismoA(operador1)}");
+        Console.WriteLine($"Cadete: {calculador.CalcularBonoPresentismoA(cadete1)}");
+
+        Console.WriteLine();
+        Console.WriteLine("BONO PRESENTISMO B");
+        Console.WriteLine($"Bono presentismo B: {calculador.CalcularBonoPresentismoB()}");
+
+        Console.WriteLine();
+        Console.WriteLine("BONO RESULTADO");
+        Console.WriteLine($"Gerente objetivo 100%: {calculador.CalcularBonoResultado(gerente1, 100)}");
+        Console.WriteLine($"Administrativo objetivo 80%: {calculador.CalcularBonoResultado(administrativo1, 80)}");
+        Console.WriteLine($"Operador objetivo 50%: {calculador.CalcularBonoResultado(operador1, 50)}");
+        Console.WriteLine($"Cadete objetivo 100%: {calculador.CalcularBonoResultado(cadete1, 100)}");
+
+        Console.WriteLine();
+        Console.WriteLine("SUELDO FINAL:");
+
+        Console.WriteLine($"Gerente: {calculador.CalcularSueldo(gerente1, 100)}");
+        Console.WriteLine($"Administrativo: {calculador.CalcularSueldo(administrativo1, 80)}");
+        Console.WriteLine($"Operador: {calculador.CalcularSueldo(operador1, 50)}");
+        Console.WriteLine($"Cadete: {calculador.CalcularSueldo(cadete1, 100)}");
     }
 }

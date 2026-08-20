@@ -1,14 +1,18 @@
 // src\Herencia\Herencia02_sueldos\Operador.cs
 
-// 1. CAMPOS / ATRIBUTOS
-// Estado interno del objeto.
-// Normalmente private.
+public class Operador : Empleado
+{
+    // 1. CAMPOS / ATRIBUTOS
+    // 2. CONSTRUCTOR
+    public Operador(int idEmpleado, int faltas)
+        : base(idEmpleado, faltas) { }
 
-// 2. CONSTRUCTOR
-// Recibe los datos necesarios al crear el objeto.
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // Formas de exponer o modificar el estado.
 
-// 3. PROPIEDADES / GETTERS Y SETTERS
-// Formas de exponer o modificar el estado.
-
-// 4. MÉTODOS
-// Comportamiento del objeto.
+    // 4. MÉTODOS
+    public override double CalcularSueldoNeto()
+    {
+        return 10500;
+    }
+}

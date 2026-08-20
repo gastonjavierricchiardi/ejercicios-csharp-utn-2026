@@ -1,14 +1,17 @@
 // src\Herencia\Herencia02_sueldos\Cadete.cs
 
-// 1. CAMPOS / ATRIBUTOS
-// Estado interno del objeto.
-// Normalmente private.
+public class Cadete : Empleado
+{
+    // 1. CAMPOS / ATRIBUTOS
+    // 2. CONSTRUCTOR
+    public Cadete(int idEmpleado, int faltas)
+        : base(idEmpleado, faltas) { }
 
-// 2. CONSTRUCTOR
-// Recibe los datos necesarios al crear el objeto.
+    // 3. PROPIEDADES / GETTERS Y SETTERS
 
-// 3. PROPIEDADES / GETTERS Y SETTERS
-// Formas de exponer o modificar el estado.
-
-// 4. MÉTODOS
-// Comportamiento del objeto.
+    // 4. MÉTODOS
+    public override double CalcularSueldoNeto()
+    {
+        return 1000;
+    }
+}
