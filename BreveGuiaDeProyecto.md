@@ -720,9 +720,9 @@ gaston@gaston-Latitude-3410:~/vcs/ejercicios-csharp-utn-2026$
 La secuencia validada para `EJ08` fue:
 
 ```bash
-dotnet new console --name 01EJ08 --output ./src/Guia01/EJ08 --framework net10.0
-dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Guia01/EJ08/01EJ08.csproj
-dotnet run --project ./src/Guia01/EJ08/01EJ08.csproj
+dotnet new console --name Herencia03_sueldos --output ./src/Herencia/Herencia03_celulares --framework net10.0
+dotnet sln ./EjerciciosCSharpUtn2026.slnx add ./src/Herencia/Herencia03_celulares/Herencia03_sueldos.csproj
+dotnet run --project ./src/Herencia/Herencia03_celulares/Herencia03_sueldos.csproj
 ```
 
 Resultado final:
