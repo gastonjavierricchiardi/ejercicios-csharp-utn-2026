@@ -1,4 +1,5 @@
-﻿/* Guia01\EJ02\Program.cs 
+﻿/* Guia01\EJ02\Program.cs
+// Gastón Ricchiardi (gastonj@hotmail.com) 
 2. Crear una clase `Vehiculo` que tenga los atributos:
 públicos:
     +`marca`,

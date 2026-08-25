@@ -1,6 +1,5 @@
-﻿// src/Guia01/EJ10/Guardia.cs
+﻿// src/Guia01/EJ12/Guardia.cs
 // Gastón Ricchiardi (gastonj@hotmail.com)
-
 public class Guardia : Persona
 {
     // 1. ATRIBUTOS
@@ -12,8 +11,8 @@ public class Guardia : Persona
         return $"Hola, mi nombre es {this.GetNombre()} {this.GetApellido()} y soy el guardia";
     }
 
-    public string ControlarDocumento(int dni)
+    public string ControlarDocumento(Visitante visitante)
     {
-        return $"Adelante persona con dni {dni}";
+        return $"Adelante {visitante.Presentarse()} con dni {visitante.GetDni()}";
     }
 }

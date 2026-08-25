@@ -1,4 +1,6 @@
 ﻿/* Guia01\EJ06\Program.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
+
 6. Crear una clase `Fruta` con variables privadas `color`, `peso`, `esEstacional`.
     - Crear setters y getters.
     - Escribir una función llamada `EsComestible()` que devuelva verdadero cuando la fruta pesa menos de 200 gr y es de estación, y falso en cualquier otro caso.

@@ -1,4 +1,5 @@
-// Cine.ts
+// Guia01\EJ04\Cine.ts
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Cine
 {
     // 1. ATRIBUTOS

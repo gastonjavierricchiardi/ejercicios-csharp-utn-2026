@@ -192,28 +192,42 @@ Ese sí lo podemos tomar como base C# para seguir.
 
 ## POWERSHELL
 
+### Mejorado sin basura CS
+
 ```
 
-$salida = "dump_EJSueldos.txt"
+$salida = "dump_EJ12.txt"
+
+# Solo archivos .cs reales del proyecto.
+# Excluye carpetas generadas por .NET: bin y obj.
+$archivos = Get-ChildItem -Path . -Recurse -File -Filter *.cs |
+    Where-Object {
+        $_.FullName -notmatch '\\(bin|obj)\\'
+    } |
+    Sort-Object FullName
 
 @(
-  "PWD: $((Get-Location).Path)"
-  "Fecha: $(Get-Date -Format o)"
-  ""
-  "ARCHIVOS INCLUIDOS:"
-  (Get-ChildItem -Recurse -Filter *.cs | ForEach-Object { " - $($_.FullName)" })
-  ""
-  "========================================"
-  ""
-  (Get-ChildItem -Recurse -Filter *.cs | ForEach-Object {
-    "===== $($_.FullName) ====="
-    $n = 0
-    Get-Content $_.FullName -Encoding UTF8 | ForEach-Object {
-      $n++
-      "{0}: {1}" -f $n, $_
-    }
+    "PWD: $((Get-Location).Path)"
+    "Fecha: $(Get-Date -Format o)"
     ""
-  })
+    "ARCHIVOS INCLUIDOS:"
+    ($archivos | ForEach-Object {
+        " - $($_.FullName)"
+    })
+    ""
+    "========================================"
+    ""
+    ($archivos | ForEach-Object {
+        "===== $($_.FullName) ====="
+
+        $n = 0
+        Get-Content $_.FullName -Encoding UTF8 | ForEach-Object {
+            $n++
+            "{0}: {1}" -f $n, $_
+        }
+
+        ""
+    })
 ) | Set-Content -Path $salida -Encoding UTF8
 
 
@@ -221,7 +235,9 @@ $salida = "dump_EJSueldos.txt"
 
 ###############################
 
-### CMD
+## CMD
+
+### Mejorado sin Basura CS
 
 **cd c:\Users\gasto\OneDrive\DropBox\vcs\proyecto-ts\src\00EJercicios**
 **cd c:\Users\gasto\Dropbox\vcs\proyecto-ts\src\00EJERCICIOS\00EJ02**
@@ -233,11 +249,11 @@ $salida = "dump_EJSueldos.txt"
   for /f "delims=" %I in ('powershell -NoProfile -Command "Get-Date -Format o"') do echo Fecha: %I
   echo(
   echo ARCHIVOS INCLUIDOS:
-  for /r %f in (*.cs) do echo - %f
+  for /f "delims=" %f in ('dir /s /b *.cs ^| findstr /i /v /c:"\obj\" /c:"\bin\"') do echo - %f
   echo(
   echo ========================================
   echo(
-  for /r %f in (*.cs) do (
+  for /f "delims=" %f in ('dir /s /b *.cs ^| findstr /i /v /c:"\obj\" /c:"\bin\"') do (
     echo ===== %f =====
     findstr /n "^" "%f"
     echo(
@@ -255,6 +271,8 @@ $salida = "dump_EJSueldos.txt"
 =====-----=====
 
 ## Movimiento entre carpetas
+
+### Mejorado sin basura CS
 
 cd "Dropbox/vcs/proyecto-ts/src/18EJXX/18EJ02"
 cd "proyecto-ts/src/01EJXX/01EJ17"
@@ -274,13 +292,19 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
   printf "Fecha: %s\n\n" "$(date -Is)"
 
   printf "ARCHIVOS INCLUIDOS:\n"
-  find . -type f -name '*.cs' -print0 \
+  find . -type f -name '*.cs' \
+    ! -path '*/bin/*' \
+    ! -path '*/obj/*' \
+    -print0 \
     | sort -z \
     | xargs -0 -I{} printf " - %s\n" "{}"
 
   printf "\n========================================\n\n"
 
-  find . -type f -name '*.cs' -print0 \
+  find . -type f -name '*.cs' \
+    ! -path '*/bin/*' \
+    ! -path '*/obj/*' \
+    -print0 \
     | sort -z \
     | while IFS= read -r -d '' f; do
         printf "===== %s =====\n" "$f"

@@ -1,4 +1,5 @@
 // Guia01\EJ07\Program.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 
 public class Ninja
 {

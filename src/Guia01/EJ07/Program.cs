@@ -1,4 +1,6 @@
 ﻿/* Guia01\EJ07\Program.cs
+Gastón Ricchiardi (gastonj@hotmail.com)
+
 7. Crear una clase `Ninja` con las variables privadas `arteMarcial`, `arma`, `fuerza` (entero) y `salto` (entero).
     - Crear setters y getters manualmente.
     - Crear una función `Saltar()` que reciba un parámetro `multiplicador` (entero); imprimir por consola `salto` x parámetro.

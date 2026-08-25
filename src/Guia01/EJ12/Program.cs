@@ -1,23 +1,43 @@
 ﻿/* src\Guia01\EJ12\Program.cs
-12. El laboratorio Kokumo Technologies está desarrollando el prototipo de un robot explorador cuyo sistema de tracción puede ser personalizado para que se adapte mejor al terreno.
-    El robot, llamado **KT-2020**, tiene las siguientes características:
-    - **Número de serie:** KT-2020-P
-    - **Potencia de tracción base (PTB):** 10 hp
-    - **Tracción:** cualquiera de las dos opciones desarrolladas.
+Gaston Ricchiardi (gastonj@hotmail.com)
 
-    Los sistemas de tracción disponibles son:
-    - **Rueda de caucho:** ideal para entornos urbanos, su uso le resta 1 hp al PTB y permite el rodado de hasta 100 km; cuando se gasta, debe reemplazarse.
-    - **Oruga:** para todo tipo de terreno, le permite avanzar hasta 400 km antes de requerir reemplazo y resta 3 hp al PTB. Incorpora sensores Meke-MO que le permiten conocer la temperatura.
+12. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
+    - Modificar la clase `Guardia` para que el método público `ControlarDocumento()` devuelva el mensaje `"Adelante <nombre completo del visitante> con dni <dni>"` reemplazando respectivamente con el nombre completo del visitante y su dni.
+    - Crear una instancia de cada una de las clases y asignarle valores.
+    - Mostrar por pantalla los valores.
+    - Analizar si es posible pasar un único parámetro al método `ControlarDocumento()` y estudiar las ventajas y desventajas que tendría asociado.
 
-    Analizar, diseñar, diagramar las relaciones e implementar el código.
-    Crear instancias de cada una de las clases y asignarle al robot los distintos sistemas de tracción, procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones:
-    Número de serie, potencia de tracción final, tipo de tracción, cuánto puede avanzar y datos sobre cualquier característica adicional que posea.
+
 */
 
 public class Program
 {
     public static void Main()
     {
-        // Crear objetos y probar el ejercicio
+        Persona persona1 = new Persona();
+        persona1.SetNombre("Gastón");
+        persona1.SetApellido("Ricchiardi");
+
+        Visitante visitante1 = new Visitante();
+        visitante1.SetNombre("Desirée");
+        visitante1.SetApellido("Candelaria");
+        visitante1.SetDni(12345678);
+
+        Guardia guardia1 = new Guardia();
+        guardia1.SetNombre("Carlos");
+        guardia1.SetApellido("Gómez");
+
+        Console.WriteLine(persona1.Presentarse());
+        Console.WriteLine($"{visitante1.Presentarse()} - DNI: {visitante1.GetDni()}");
+        Console.WriteLine(guardia1.Presentarse());
+
+        Console.WriteLine();
+
+        // del Ej10
+        // Console.WriteLine(guardia1.ControlarDocumento(visitante1.GetDni()));
+        Console.WriteLine(guardia1.ControlarDocumento(visitante1));
+
+
+
     }
 }

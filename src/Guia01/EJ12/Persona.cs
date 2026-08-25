@@ -1,7 +1,7 @@
-// /src/Guia01/EJ08/Visitante.cs
+﻿// src/Guia01/EJ12/Persona.cs
 // Gastón Ricchiardi (gastonj@hotmail.com)
 
-public class Visitante
+public class Persona
 {
     // 1. ATRIBUTOS
     private string _nombre = "";
@@ -11,10 +11,14 @@ public class Visitante
     // Nombre
     public string GetNombre() { return this._nombre; }
     public void SetNombre(string nombre) { this._nombre = nombre; }
+
     // Apellido
     public string GetApellido() { return this._apellido; }
     public void SetApellido(string apellido) { this._apellido = apellido; }
+
     // 4. MÉTODOS (Comportamiento)
+    public virtual string Presentarse()
+    {
+        return $"{this.GetNombre()} {this.GetApellido()}";
+    }
 }
-
-

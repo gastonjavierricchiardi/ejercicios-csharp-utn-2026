@@ -1,9 +1,11 @@
 ﻿/* /src/Guia01/EJ11/Program.cs
+Gastón Ricchiardi (gaston@hotmail.com)
 11. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
-    - Modificar la clase `Guardia` para que el método público `ControlarDocumento()` devuelva el mensaje `"Adelante <nombre completo del visitante> con dni <dni>"` reemplazando respectivamente con el nombre completo del visitante y su dni.
+    - Agregar en `Visitante` el atributo privado `dni` (numérico) con sus setters y getters correspondientes.
+    - Agregar en `Guardia` el método público `ControlarDocumento()` que reciba como parámetro el `dni` de la persona y devuelva el mensaje `"Adelante persona con dni <dni>"` donde `<dni>` es el valor recibido por parámetro.
     - Crear una instancia de cada una de las clases y asignarle valores.
     - Mostrar por pantalla los valores.
-    - Analizar si es posible pasar un único parámetro al método `ControlarDocumento()` y estudiar las ventajas y desventajas que tendría asociado.
+
 */
 public class Program
 {

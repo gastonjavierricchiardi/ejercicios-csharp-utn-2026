@@ -1,4 +1,5 @@
-// articulo.cs
+// Guia01\EJ03\articulo.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 using System;
 public class Articulo
 {

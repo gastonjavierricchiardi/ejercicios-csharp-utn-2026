@@ -1,4 +1,5 @@
 ﻿// Guia01\EJ01\Program.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 using System;
 
 public class Persona

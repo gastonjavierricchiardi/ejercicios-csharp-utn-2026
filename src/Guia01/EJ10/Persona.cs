@@ -1,4 +1,5 @@
-﻿//src/Guia01/EJ10/Persona.cs
+﻿// src/Guia01/EJ10/Persona.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 
 public class Persona
 {

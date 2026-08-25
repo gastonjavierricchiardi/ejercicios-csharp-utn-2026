@@ -1,4 +1,6 @@
-// Fruta.ts
+// Guia01\EJ06\Fruta.ts
+// Gastón Ricchiardi (gastonj@hotmail.com)
+
 public class Fruta
 {
     // ATRIBUTOS PRIVADOS

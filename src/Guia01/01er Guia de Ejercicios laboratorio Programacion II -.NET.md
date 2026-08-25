@@ -75,26 +75,32 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
    - Crear una instancia de cada una de las clases y asignarle valores.
    - Mostrar por pantalla los valores; estudiar las ventajas del uso de la herencia.
 
-9. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
-   - Agregar en `Persona` el método `Presentarse()` que devuelva nombre y apellido de la persona.
+9. Crear una clase `Persona` que tenga los atributos privados **nombre** y **apellido**, con sus setters y getters.
+   - Crear una clase llamada `Visitante` que extienda de **Persona**
+   - Crear una clase `Guardia` que extienda de **persona**
    - Crear una instancia de cada una de las clases y asignarle valores.
-   - Mostrar por pantalla los valores.
-   - Sobreescribir el método `Presentarse()` en la clase `Guardia` de modo tal que devuelva el siguiente mensaje `"Hola, mi nombre es <nombre y apellido> y soy el guardia."` donde `<nombre y apellido>` debe ser reemplazado por el nombre y apellido del guardia.
-   - Mostrar por pantalla el resultado de invocar el método `Presentarse()` y advertir que la implementación en la clase `Guardia` tiene precedencia sobre la de su padre.
+   - Mostrar por pantalla los valores; estudiar las ventajas del uso de la **herencia**
 
 10. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
+    - Agregar en `Persona` el método `Presentarse()` que devuelva nombre y apellido de la persona.
+    - Crear una instancia de cada una de las clases y asignarle valores.
+    - Mostrar por pantalla los valores.
+    - Sobreescribir el método `Presentarse()` en la clase `Guardia` de modo tal que devuelva el siguiente mensaje `"Hola, mi nombre es <nombre y apellido> y soy el guardia."` donde `<nombre y apellido>` debe ser reemplazado por el nombre y apellido del guardia.
+    - Mostrar por pantalla el resultado de invocar el método `Presentarse()` y advertir que la implementación en la clase `Guardia` tiene precedencia sobre la de su padre.
+
+11. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
     - Agregar en `Visitante` el atributo privado `dni` (numérico) con sus setters y getters correspondientes.
     - Agregar en `Guardia` el método público `ControlarDocumento()` que reciba como parámetro el `dni` de la persona y devuelva el mensaje `"Adelante persona con dni <dni>"` donde `<dni>` es el valor recibido por parámetro.
     - Crear una instancia de cada una de las clases y asignarle valores.
     - Mostrar por pantalla los valores.
 
-11. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
+12. Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
     - Modificar la clase `Guardia` para que el método público `ControlarDocumento()` devuelva el mensaje `"Adelante <nombre completo del visitante> con dni <dni>"` reemplazando respectivamente con el nombre completo del visitante y su dni.
     - Crear una instancia de cada una de las clases y asignarle valores.
     - Mostrar por pantalla los valores.
     - Analizar si es posible pasar un único parámetro al método `ControlarDocumento()` y estudiar las ventajas y desventajas que tendría asociado.
 
-12. El laboratorio Kokumo Technologies está desarrollando el prototipo de un robot explorador cuyo sistema de tracción puede ser personalizado para que se adapte mejor al terreno.
+13. El laboratorio Kokumo Technologies está desarrollando el prototipo de un robot explorador cuyo sistema de tracción puede ser personalizado para que se adapte mejor al terreno.
     El robot, llamado **KT-2020**, tiene las siguientes características:
     - **Número de serie:** KT-2020-P
     - **Potencia de tracción base (PTB):** 10 hp
@@ -108,7 +114,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Crear instancias de cada una de las clases y asignarle al robot los distintos sistemas de tracción, procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones:
     Número de serie, potencia de tracción final, tipo de tracción, cuánto puede avanzar y datos sobre cualquier característica adicional que posea.
 
-13. Una empresa de seguridad que se dedica a la vigilancia mediante el empleo de drones, ha desarrollado un sistema de montaje que permitirá que los drones puedan cargar, además de la cámara de vigilancia, una herramienta accionable a distancia.
+14. Una empresa de seguridad que se dedica a la vigilancia mediante el empleo de drones, ha desarrollado un sistema de montaje que permitirá que los drones puedan cargar, además de la cámara de vigilancia, una herramienta accionable a distancia.
     Actualmente el sistema de anclaje admite:
     - **Sensor infrarrojo:** pesa 250 gramos
     - **Taser:** pesa 300 gramos
@@ -119,7 +125,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Analizar, diseñar, diagramar las relaciones e implementar el código.
     Crear instancias de cada una de las clases y asignarle al dron las distintas herramientas, procurando mostrar por pantalla los siguientes datos entre las distintas asignaciones: velocidad, altura y tipo de herramienta que lleva.
 
-14. La Marina del reino de Caballito quiere desarrollar un sistema que le permita gestionar su flota de navíos; por el momento únicamente se requiere presentar ante las autoridades un posible diseño en el que se expongan las relaciones entre las entidades que modelarán los datos.
+15. La Marina del reino de Caballito quiere desarrollar un sistema que le permita gestionar su flota de navíos; por el momento únicamente se requiere presentar ante las autoridades un posible diseño en el que se expongan las relaciones entre las entidades que modelarán los datos.
     - De los acorazados se requiere saber la flotabilidad, la solidez, la estabilidad, blindaje y potencia de fuego, además de la velocidad crucero y el nombre con el que fue bautizado.
     - Los destructores se caracterizan por la potencia de fuego y altos índices de maniobrabilidad y estabilidad cuando alcanza su velocidad máxima, aunque también se necesita registrar la flotabilidad, solidez, la velocidad crucero y nombre.
     - Hay únicamente un barco hospital, llamada "Sibelancia", con excelente flotabilidad y una estabilidad extrema que la hace ideal para su trabajo; posee una capacidad de carga que le permite brindar servicios a setenta y cinco pacientes.
@@ -128,7 +134,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Analizar, diseñar, diagramar las relaciones e implementar el código.
     Crear instancias de los distintos barcos, asignar valores y mostrar por pantalla.
 
-15. Una empresa de logística que se encarga de realizar envíos, pone a disposición de sus clientes dos tipos de vehículos:
+16. Una empresa de logística que se encarga de realizar envíos, pone a disposición de sus clientes dos tipos de vehículos:
     - Una camioneta con capacidad para llevar cómodas, heladeras y lavarropas.
     - Un auto con espacio suficiente como para llevar televisores, bicicletas plegables y cajas pequeñas.
 
@@ -144,7 +150,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
 
     Analizar, diseñar, diagramar las relaciones e implementar el código considerando que la capacidad máxima de carga del auto es de 5 elementos, mientras que para la camioneta es de 10.
 
-16. Juancito Jaquer ha fabricado un scanner que es capaz de analizar el objeto, obtener información básica y advertir si ese objeto, a su vez, oficia como contenedor de otro objeto.
+17. Juancito Jaquer ha fabricado un scanner que es capaz de analizar el objeto, obtener información básica y advertir si ese objeto, a su vez, oficia como contenedor de otro objeto.
     La idea de Juancito Jaquer es poder vender el dispositivo a los departamentos aduaneros fronterizos ya que siempre requieren analizar el contenido de los equipajes.
     El scanner detecta las características de los objetos y los modela de la siguiente forma:
     - **Material:** metal, cuero, madera, vidrio, plástico, líquido, textil, goma, "otro".
@@ -160,7 +166,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Analizar, diseñar, diagramar las relaciones e implementar el código.
     Hacer pruebas con una Mamushka de madera de varios niveles, un portafolios vacío de cuero, un botiquín de plástico que contiene gasa y agua oxigenada, una bolsa de cuero que contenga un peine y un botiquín.
 
-17. Una inmobiliaria barrial de alcance nacional, decide informatizarse e incluir como herramienta para el trabajo diario, un sistema que le permita la gestión de los inmuebles que administra.
+18. Una inmobiliaria barrial de alcance nacional, decide informatizarse e incluir como herramienta para el trabajo diario, un sistema que le permita la gestión de los inmuebles que administra.
     Sabiendo que la solución será compleja, piensa que es oportuno iniciar por las partes del sistema que le permitan dar de alta los inmuebles.
     Se trate de un departamento o de una casa, es indispensable contar con los datos catastrales (provincia, barrio, nombre de la calle, altura y código postal), información sobre los ambientes (cantidad, tipo y dimensiones), conocer sobre el contacto (nombre, apellido, teléfono y correo electrónico), y poder incluir alguna observación.
     Otros aspectos comunes por los que los clientes preguntan giran en torno a si los inmuebles pertenecen a un barrio privado o no, si los ambientes son luminosos, si está conectado al suministro de gas, y si están emplazados en lugares con infraestructura cloacal.
@@ -170,7 +176,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Se solicita pensar la estrategia, realizar el diagrama y codificar la solución, pensando en una estrategia por capas.
     Desde el main, crear inmuebles con varias características diferentes, almacenarlas en memoria, y luego recuperarlas para mostrar por pantalla las cualidades.
 
-18. Una empresa que se dedica a la venta de muebles necesita un sistema que le permita controlar los gastos y las ventas de los distintos artículos que gestionan.
+19. Una empresa que se dedica a la venta de muebles necesita un sistema que le permita controlar los gastos y las ventas de los distintos artículos que gestionan.
     Debido a que pretenden informatizarse de a poco, por el momento se conforman con una solución que les permita dar de alta los artículos, asignarle un costo de producción y un precio de venta.
     Sin embargo, como venden al por mayor y al por menor, es fundamental que puedan manejar al menos dos listas de precio.
     De los artículos simplemente se necesita saber el nombre, el costo, aunque a veces es importante contar con la posibilidad de agregar una observación.
@@ -178,14 +184,14 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Se pide analizar el problema, modelar las entidades involucradas, realizar el diagrama, e implementar la solución.
     Crear un conjunto acotado de artículos y mostrar los detalles por pantalla; adicionalmente crear una lista de cada tipo y también mostrar por pantalla el resultado.
 
-19. Habiendo implementado con éxito la primera parte del sistema, deciden ir un paso más allá e incluir un conjunto de mejoras.
+20. Habiendo implementado con éxito la primera parte del sistema, deciden ir un paso más allá e incluir un conjunto de mejoras.
     La empresa necesita que se implemente un mecanismo de validación que controle -al momento de dar de alta un artículo- que el nombre no supere los 15 caracteres y que el costo sea mayor a cero; la observación es opcional pero, si se incluye, que no supere los 30 caracteres.
     Cuando un artículo no cumple con las especificaciones, debe mostrarse en pantalla qué concepto falló.
     También quieren que la diferencia entre el precio más alto y el más bajo no supere el 30%, de modo tal que el sistema debe aumentar el precio más bajo para respetar ese límite (aplica a todas las listas de precio).
     Se pide analizar el problema, modelar las entidades involucradas, realizar el diagrama, e implementar la solución.
     Crear un conjunto acotado de artículos, algunos con errores y mostrar el resultado por pantalla; adicionalmente crear una lista de cada tipo y también mostrar por pantalla el resultado con los ajustes.
 
-20. El banco Kokumo Bank inaugura una nueva sucursal en el reino de Caballito.
+21. El banco Kokumo Bank inaugura una nueva sucursal en el reino de Caballito.
     Como parte de la estrategia para captar clientes, decide lanzar un nuevo plan de préstamos personales.
     De las personas se necesita conocer el dni, el sueldo bruto y la antigüedad del empleo actual.
     Cuando el sistema recibe dichos datos, inmediatamente después realiza una consulta al servicio web del Ministerio del Interior para validar el dni; a los efectos se debe instanciar un objeto `PersonIdentity` e invocar a la función `getInfo()` pasándole el dni.
@@ -198,7 +204,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
 
     Asumir la existencia de la clase `PersonIdentity`; eventualmente, para permitir la compilación del código, implementarla.
 
-21. Un sistema de gestión automatizada necesita ser capaz de analizar documentos digitales de distintos organismos nacionales; su objetivo es aceptarlos o rechazarlos, según cumplan con las condiciones descritas más abajo.
+22. Un sistema de gestión automatizada necesita ser capaz de analizar documentos digitales de distintos organismos nacionales; su objetivo es aceptarlos o rechazarlos, según cumplan con las condiciones descritas más abajo.
     Cada cierto tiempo el sistema en cuestión recupera los datos mediante comunicación directa con cada uno de los subsistemas, modelando los valores en clases que presentan la estructura que los del origen.
     Desarrollar una solución que permita normalizar los objetos y analizar los siguientes datos:
     - `id` (numérico): es el número de legajo, folio o expediente, del documento a analizar.
@@ -219,7 +225,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
 
     Desarrollar una solución que permita adecuar estos documentos al formato de `Document`, incluyendo diagramas, etc.
 
-22. La empresa tecnológica Kokumo Tech Inc se lanza al mercado de la seguridad mediante la oferta de un sistema integral de vigilancia capaz de cubrir aire y tierra; la solución apunta a barrios privados, estancias y regiones de decenas de hectáreas.
+23. La empresa tecnológica Kokumo Tech Inc se lanza al mercado de la seguridad mediante la oferta de un sistema integral de vigilancia capaz de cubrir aire y tierra; la solución apunta a barrios privados, estancias y regiones de decenas de hectáreas.
     KTI necesita conciliar los datos de los distintos dispositivos para poder brindar una solución homogénea, de modo tal que se debe pensar en una pieza de software sabiendo que:
 
     a. **Gr0N3:** se trata del dispositivo volador que capta objetos clasificables en grandes, pequeños o medianos, y es capaz de reconocer si se trata de un humano o un animal.
@@ -245,32 +251,32 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     Observaciones: <los valores de kind o de gender, dependiendo el dispositivo>
     ```
 
-23. Una empresa decide monitorear el ingreso y egreso de su personal, razón por la que ha instalado molinetes en sus distintos puntos de acceso.
+24. Una empresa decide monitorear el ingreso y egreso de su personal, razón por la que ha instalado molinetes en sus distintos puntos de acceso.
     Debido a la escasez de insumos, se han comprado dos modelos distintos, obligando a los desarrolladores del sistema de monitoreo a trabajar con dos drivers distintos para obtener los datos de interés:
     - **GiraMax:** a través del método `GetInboundAccess()` y `GetOutboundAccess()` obtienen un número entero que indica la cantidad de personas que han ingresado y egresado.
     - **Molinit:** similar al anterior, excepto que las funciones son `ObtenerEntrada()` y `ObtenerSalida()`.
 
     Diseñar una solución que permita obtener los ingresos y egresos de manera homogénea, sin tener que considerar el tipo de clases a la que pertenece el objeto para poder recuperar los valores. Plantear el diagrama de clases e implementar.
 
-24. Un año más tarde, la misma empresa del punto anterior adquiere molinetes de otra empresa que, a diferencia de los anteriores, posee un driver que únicamente expone una función pública:
+25. Un año más tarde, la misma empresa del punto anterior adquiere molinetes de otra empresa que, a diferencia de los anteriores, posee un driver que únicamente expone una función pública:
     - **Rotativity:** la función `GetUsage()` devuelve un array numérico con dos elementos, siendo el primero de ellos destinado para los ingresos y, el segundo, para los egresos.
 
     Diseñar una solución que permita obtener los ingresos y egresos, adaptándose a la solución anterior; de no ser posible, plantear una nueva solución para que los tres drivers puedan tratarse homogéneamente. Plantear el diagrama de clases e implementar.
 
-25. Una empresa de correo está expandiendo sus dominios y ha decidido abrir una sucursal en el reino de Caballito.
+26. Una empresa de correo está expandiendo sus dominios y ha decidido abrir una sucursal en el reino de Caballito.
     La empresa en cuestión posee una sede central y un conjunto de dependencias que, a su vez, nuclean hasta tres sucursales cada una.
     Para mantener el balance de carga laboral, siempre que se abre una sucursal se evalúa si las dependencias existentes ya están nucleando a tres; en caso de ser así, se elige arbitrariamente a una y se le asigna la nueva sucursal; sin embargo, si existe alguna que nuclea a menos de tres, ésta recibirá la nueva sucursal bajo su control.
     Si resulta que ya existe una dependencia con cuatro sucursales, entonces ésta cuarta debe transformarse a dependencia y la nueva sucursal quedar bajo su supervisión.
     Plantear el diseño, diagrama e implementar la estructura que permita armar la estructura sabiendo que ambas tienen un id y nombre que las identifica, y que la única diferencia entre dependencia y sucursal, es que la sucursal no nuclea.
 
-26. Crear un singleton con un atributo del tipo entero, otro cadena de caracteres y un tercero que sea una colección de objetos (cualquiera).
+27. Crear un singleton con un atributo del tipo entero, otro cadena de caracteres y un tercero que sea una colección de objetos (cualquiera).
     Desde el main, asignarle valores a los atributos y, una vez cargados, recuperarlos y mostrar en pantalla los valores.
 
-27. Crear un singleton con un atributo del tipo entero, con sus correspondientes setters y getters; luego crear la clase `SingletonCaller` con el método `calling()`, sin parámetros, que haga uso del system output para mostrar en pantalla el atributo del singleton.
+28. Crear un singleton con un atributo del tipo entero, con sus correspondientes setters y getters; luego crear la clase `SingletonCaller` con el método `calling()`, sin parámetros, que haga uso del system output para mostrar en pantalla el atributo del singleton.
     Desde el main, invocar al singleton, asignarle valor al atributo, y luego crear una instancia de `SingletonCaller` para ejecutar la función `calling`.
     Concluir que el singleton siempre opera sobre la misma instancia.
 
-28. Una fábrica automotriz es famosa por sus dos modelos de automóvil, "El deportivo" y "El familiero", el primero fabricado con piezas importadas y el segundo, con piezas nacionales.
+29. Una fábrica automotriz es famosa por sus dos modelos de automóvil, "El deportivo" y "El familiero", el primero fabricado con piezas importadas y el segundo, con piezas nacionales.
     Ambos cuentan con aire acondicionado y reproductor mp3.
     El familiero cuenta con portaequipaje y un baúl espacioso, cosa que no ocurre con el otro automóvil.
     - **Aire acondicionado:** el nacional admite frío y caliente, mientras que el chino únicamente frío.
@@ -278,24 +284,24 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
 
     Modelar el problema e implementar una solución que permita generar cómodamente 10 vehículos de cada tipo.
 
-29. Un maestro repostero de ultratumba es conocido por sus tres especialidades:
+30. Un maestro repostero de ultratumba es conocido por sus tres especialidades:
     - **La torta de la muerte:** 10 huevos de lagarto, 300 gr de harina, 3 gotas de amonio.
     - **El budín diabólico:** 100 cm³ de bilis, 200 gr de harina, 10 cm³ de lavandina.
     - **El pionono gangrenoso:** recorte de goma eva, 1 ojo daltónico, 200 gr de harina.
 
     Modelar el problema e implementar una solución que permita crear cada uno de los manjares asesinos; mostrar en pantalla los ingredientes.
 
-30. El equipo de marketing de una empresa dedicada al retail, quiere implementar el uso de promociones con el fin de incentivar al público objetivo.
+31. El equipo de marketing de una empresa dedicada al retail, quiere implementar el uso de promociones con el fin de incentivar al público objetivo.
     Una lista de precios se caracteriza por un nombre, fecha de la puesta en vigencia, y la nómina de artículos con sus respectivos precios.
     Un artículo presenta nombre, código de barra y costo, mientras que las promociones -que se consideran artículos también-, no posee código de barras por estar compuesta por al menos dos artículos, pero sí tiene un nombre y la cantidad de cada uno de los artículos que componen la promoción.
     Adicionalmente, y por motivos que no vienen al caso mencionar, los artículos que forman parte de una promoción podrían presentar distinto costo con respecto al del artículo de venta directa, para lo cual se le debe aplicar un porcentaje que es informado al momento de confeccionar la promoción.
     Modelar el problema, diseñar y diagramarlo, e implementar el código que permita confeccionar una lista de precios con artículos sueltos y promociones.
     Mostrar por pantalla la lista de precios.
 
-31. Construir un árbol genealógico familiar; incluir nombre, apellido y año aproximado de nacimiento.
+32. Construir un árbol genealógico familiar; incluir nombre, apellido y año aproximado de nacimiento.
     Utilizar como id los últimos dos dígitos del año de nacimiento y las iniciales del nombre y apellido.
 
-32. Digital Horse, empresa de desarrollo de juegos, quiere incursionar en los juegos masivos multiplayer de rol, razón por la que están preparando un prototipo, decidiendo iniciar por la construcción de los personajes.
+33. Digital Horse, empresa de desarrollo de juegos, quiere incursionar en los juegos masivos multiplayer de rol, razón por la que están preparando un prototipo, decidiendo iniciar por la construcción de los personajes.
     Los personajes, que pueden ser de la clase guerrero o mago, se caracterizan por poseer nivel, puntos de experiencia, un árbol de habilidades, un arma, una armadura, inventario, unidades de desplazamiento, puntos de vitalidad y un nombre.
     Las armas poseen nombre, cantidad de daño que efectúan, y tipo de ataque (`CORTANTE`, `PERFORANTE`, `APLASTANTE`, `MÁGICO`).
     Las armaduras se caracterizan por el nombre, los puntos de defensa, la restricción que le imponen a los puntos de desplazamiento, y el tipo de ataque del que protege (`CORTANTE`, `PERFORANTE`, `APLASTANTE`, `MÁGICO`).
@@ -333,15 +339,15 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
                └─── [Enois de Karma] (Nivel 7, Puntos: 10, ATAQUE)
     ```
 
-33. Considerar un banco que posea una jerarquía constituida por tres niveles: empleado, supervisor y gerente.
+34. Considerar un banco que posea una jerarquía constituida por tres niveles: empleado, supervisor y gerente.
     Mientras el primero puede aprobar préstamos hasta $AR 10.000, el supervisor hasta $40.000 y el gerente hasta $AR 120.000; cualquier monto que exceda el máximo, no puede ser aprobado.
     Plantear una estrategia que permita ilustrar los distintos casos de aprobación.
     Como siempre, diseñar, diagramar e implementar el código.
 
-34. Un mozo con poca memoria siempre llega a la mesa con los platos que los comensales solicitaron y, en vez de entregarlos en mano y a quien corresponda, se los va pasando al primero de la mesa para que, oportunamente, cada quien tome el que le corresponde.
+35. Un mozo con poca memoria siempre llega a la mesa con los platos que los comensales solicitaron y, en vez de entregarlos en mano y a quien corresponda, se los va pasando al primero de la mesa para que, oportunamente, cada quien tome el que le corresponde.
     Diseñar, plantear el diagrama de clases e implementar la solución que satisfaga la necesidad; ejemplificar considerando cuatro platos distintos y cuatro clientes a los que les corresponde uno de ellos.
 
-35. El Reino de Caballito tiene intenciones de habilitar, el año próximo, una plataforma web para que todos sus residentes puedan buscar empleo.
+36. El Reino de Caballito tiene intenciones de habilitar, el año próximo, una plataforma web para que todos sus residentes puedan buscar empleo.
     Con el fin de acelerar la puesta en marcha, se pretende implementar una landing page que le permita a los postulantes suscribirse para recibir ofertas.
     Los visitantes deberán informar la dirección de correo electrónico y las categorías de los empleos que les resulten de interés para que, luego, el sistema les envíe notificaciones cada vez que una empresa ingrese algún puesto laboral que se ajuste a dichas categorías.
     Adicionalmente, la landing page debe permitir desuscribirse utilizando el correo del postulante como identificador.
@@ -352,7 +358,7 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
       - `"Sentimos que te desuscribas :("`
       - `"La empresa <Nombre de la empresa> busca cubrir puestos de <Rubros>: <mensaje de búsqueda>"`
 
-36. Modelar una mascota virtual, semejante a un Tamagotchi, que incluya las funciones correspondientes a las acciones comer y jugar, y funciones que permitan saber si puede jugar o no, y una que permita devolver un valor numérico comprendido entre 0 o 10 cuyo significado es el nivel de felicidad.
+37. Modelar una mascota virtual, semejante a un Tamagotchi, que incluya las funciones correspondientes a las acciones comer y jugar, y funciones que permitan saber si puede jugar o no, y una que permita devolver un valor numérico comprendido entre 0 o 10 cuyo significado es el nivel de felicidad.
     Una mascota, que puede encontrarse aburrida, hambrienta o contenta, se comporta en base a su estado de ánimo.
 
     Cuando come, esto es lo que ocurre:
@@ -373,13 +379,13 @@ En esencia, la filosofía de la programación orientada a objetos apunta a facil
     **NO SE PUEDE CONSULTAR DE NINGUNA MANERA EL ESTADO ACTUAL DE LA MASCOTA.**
     Esto quiere decir que está prohibido hacer comparaciones del tipo `estado = 'contento'` o cualquiera similar utilizando mensajes especiales.
 
-37. Una empresa de logística registra durante el día, peticiones de envío de mercadería; éstas se caracterizan por un id de pedido, código de ruta y un código alfanumérico que se emplea para identificar el artículo a enviar.
+38. Una empresa de logística registra durante el día, peticiones de envío de mercadería; éstas se caracterizan por un id de pedido, código de ruta y un código alfanumérico que se emplea para identificar el artículo a enviar.
     Por otro lado, a la tarde, los repartidores nocturnos se loguean a la plataforma de la empresa mediante su usuario y un password; el sistema emplea una biblioteca que permite usar la clase `Security` que expone el método `loginUser()` que admite user name y password, devolviendo `true` si es válido y `false` en caso contrario; excepciones podrían ocurrir aunque no se especifican cuáles.
     Cerca de las 23 hs, el sistema ejecuta una tarea que asigna a todos los repartidores logueados, hasta 5 envíos; cada repartidor está asociado a un único código de ruta y para saber cuál le corresponde, se debe invocar el método `getRoute()` de la clase `Logistic`, perteneciente a una biblioteca, que espera como parámetro el user name del repartidor.
     La asignación del envío consiste en invocar el método `SetDelivery()` de la clase `Logistic`, pasándole como parámetros el user name y la petición de envío; todo envío delegado debe marcarse como asignado a un responsable.
     Una vez ejecutada la tarea de asignación, se emite un informe con el listado de los artículos pendientes.
 
-38. Un satélite que orbita al planeta Tierra, toma imágenes de la superficie; cada vez que puede envía las fotos a la estación terrena que está sobrevolando para descargar todos los datos y poder seguir operando; el satélite puede capturar hasta 20 imágenes en FMZR (Full Mega Zarpad Resolution) ya que luego la memoria se llena.
+39. Un satélite que orbita al planeta Tierra, toma imágenes de la superficie; cada vez que puede envía las fotos a la estación terrena que está sobrevolando para descargar todos los datos y poder seguir operando; el satélite puede capturar hasta 20 imágenes en FMZR (Full Mega Zarpad Resolution) ya que luego la memoria se llena.
     Las estaciones reciben las imágenes como si fueran una cadena de texto (no menor a 24 caracteres y con un largo múltiplo de 8) y las transforman del siguiente modo:
     - Los primeros 8 elementos son el código de identificación.
     - Los siguientes 8 elementos refieren a la zona en la que fue tomada (codificada).

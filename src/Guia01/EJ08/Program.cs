@@ -1,4 +1,6 @@
-﻿/* /src/Guia01/EJ08
+﻿/* /src/Guia01/EJ08\Program.cs
+Gastón Ricchiardi (gastonj@hotmail.com)
+
 8. Crear una clase `Persona` que tenga los atributos privados `nombre` y `apellido`, con sus setters y getters.
     - Crear una clase llamada `Visitante` con los mismos atributos.
     - Crear una clase `Guardia` con los mismos atributos.

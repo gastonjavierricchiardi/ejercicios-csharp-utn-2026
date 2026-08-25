@@ -1,4 +1,5 @@
 ﻿// src/Guia01/EJ09/Guardia.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 
 public class Guardia : Persona
 {

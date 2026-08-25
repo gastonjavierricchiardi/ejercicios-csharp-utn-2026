@@ -1,4 +1,4 @@
-﻿// src/Guia01/EJ10/Visitante.cs
+﻿// src/Guia01/EJ12/Visitante.cs
 // Gastón Ricchiardi (gastonj@hotmail.com)
 
 public class Visitante : Persona
