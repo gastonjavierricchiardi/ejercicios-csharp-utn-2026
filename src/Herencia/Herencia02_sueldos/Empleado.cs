@@ -1,4 +1,5 @@
 // src\Herencia\Herencia02_sueldos\Empleado.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 
 public abstract class Empleado
 {

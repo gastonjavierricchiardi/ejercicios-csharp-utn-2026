@@ -1,4 +1,5 @@
 // src/Herencia/Herencia01_figurasGeometricas/Circulo.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Circulo : FiguraGeometrica
 {
     // PROPIEDADES

@@ -1,5 +1,5 @@
 // src/Herencia/Herencia01_figurasGeometricas/Cuadrado.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Cuadrado : FiguraGeometrica
 {
     // PROPIEDADES

@@ -1,5 +1,5 @@
 // Herencia/Herencia01_figurasGeometricas/FiguraGeometrica.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public abstract class FiguraGeometrica
 {
     // ATRIBUTOS / PROPIEDADES / GETTERS Y SETTERS

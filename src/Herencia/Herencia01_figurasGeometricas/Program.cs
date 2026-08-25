@@ -1,5 +1,5 @@
 ﻿// src/Herencia/Herencia01_figurasGeometricas/Program.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Program
 {
     public static void Main()

@@ -1,4 +1,5 @@
 // /src/Herencia/Herencia03_celulares/Program.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class iPhone : Telefono
 {
     // 1. CAMPOS / ATRIBUTOS
@@ -8,9 +9,8 @@ public class iPhone : Telefono
     // 4. MÉTODOS
     public override void Llamar(Telefono telefono, double duracion)
     {
-        // PENDIENTE:
-        // reemplazar este consumo, cuando el profesor aclare
-        // cómo calcular el 0,1% según la duración de la llamada.
-        DescontarBateria(0.25);
+        // CONSOLIDADO DEL PROFESOR.
+        double consumo = duracion * 0.1;
+        DescontarBateria(consumo);
     }
 }

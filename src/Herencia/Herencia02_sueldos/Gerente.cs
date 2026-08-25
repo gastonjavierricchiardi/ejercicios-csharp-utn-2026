@@ -1,5 +1,5 @@
 // src\Herencia\Herencia02_sueldos\Gerente.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Gerente : Empleado
 {
     // 1. CAMPOS / ATRIBUTOS

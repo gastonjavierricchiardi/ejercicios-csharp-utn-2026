@@ -1,5 +1,5 @@
 // src\Herencia\Herencia02_sueldos\Cadete.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Cadete : Empleado
 {
     // 1. CAMPOS / ATRIBUTOS

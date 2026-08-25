@@ -1,5 +1,5 @@
 // src\Herencia\Herencia02_sueldos\CalculadorSueldo.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class CalculadorSueldo
 {
     // 1. CAMPOS / ATRIBUTOS

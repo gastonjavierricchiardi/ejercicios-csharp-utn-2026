@@ -196,7 +196,7 @@ Ese sí lo podemos tomar como base C# para seguir.
 
 ```
 
-$salida = "dump_EJ12.txt"
+$salida = "dump_EJ13.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.

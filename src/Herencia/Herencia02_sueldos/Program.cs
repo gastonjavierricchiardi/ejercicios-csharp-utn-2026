@@ -1,4 +1,5 @@
 ﻿/* src\Herencia\Herencia02_sueldos\Program.cs
+Gastón Ricchiardi (gastonj@hotmail.com)
 Una empresa desea crear un programa para calcular el sueldo de sus empleados. La fórmula para calcular el sueldo de un empleado es la siguiente:
 
 `Sueldo = neto + bonopresentismo + bonoresultado`

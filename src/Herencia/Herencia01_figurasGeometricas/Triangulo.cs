@@ -1,4 +1,5 @@
 // src/Herencia/Herencia01_figurasGeometricas/Triangulo.cs
+// Gastón Ricchiardi (gastonj@hotmail.com)
 
 public class Triangulo : FiguraGeometrica
 {

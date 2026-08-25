@@ -1,5 +1,5 @@
 // src\Herencia\Herencia02_sueldos\Operador.cs
-
+// Gastón Ricchiardi (gastonj@hotmail.com)
 public class Operador : Empleado
 {
     // 1. CAMPOS / ATRIBUTOS
