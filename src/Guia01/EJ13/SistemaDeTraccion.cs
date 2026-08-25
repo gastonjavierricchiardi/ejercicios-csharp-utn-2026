@@ -21,4 +21,6 @@ public abstract class SistemaDeTraccion
     public abstract double Desgaste();
 
     public abstract string GetInfoExtra();
+
+    public abstract string GetTipoTraccion();
 }

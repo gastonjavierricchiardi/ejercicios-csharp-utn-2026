@@ -1,8 +1,6 @@
 // /src/Guia01/EJ13/Caucho.cs
 // Gastón Ricchiardi(Gastonj@hotmail.com)
 
-
-
 public class Caucho : SistemaDeTraccion
 {
     // 1. CAMPOS / ATRIBUTOS
@@ -25,5 +23,9 @@ public class Caucho : SistemaDeTraccion
     public override string GetInfoExtra()
     {
         return "Sin información extra";
+    }
+    public override string GetTipoTraccion()
+    {
+        return "Caucho";
     }
 }

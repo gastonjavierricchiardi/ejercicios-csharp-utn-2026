@@ -1,19 +1,42 @@
-// /src/Guia01/EJ13/Origa.cs
+// /src/Guia01/EJ13/Oruga.cs
 // Gastón Ricchiardi(Gastonj@hotmail.com)
 
 
-public class Oruga
+public class Oruga : SistemaDeTraccion
 {
-    // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
+    // 1. ATRIBUTOS
+    private string sensores = "";
 
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    public Oruga()
+    {
+        this.sensores = "Termometro";
+    }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
+    public string Sensores
+    {
+        get => sensores;
+        set => sensores = value;
+    }
 
-    // 4. MÉTODOS
-    // Comportamiento del objeto.
+    // 4. MÉTODOS (Comportamiento)
+    public override double AvanceMaximo()
+    {
+        return 400;
+    }
+
+    public override double Desgaste()
+    {
+        return 3;
+    }
+
+    public override string GetInfoExtra()
+    {
+        return this.Sensores;
+    }
+    public override string GetTipoTraccion()
+    {
+        return "Oruga";
+    }
 }
