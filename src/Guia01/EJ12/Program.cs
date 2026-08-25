@@ -6,8 +6,6 @@ Gaston Ricchiardi (gastonj@hotmail.com)
     - Crear una instancia de cada una de las clases y asignarle valores.
     - Mostrar por pantalla los valores.
     - Analizar si es posible pasar un único parámetro al método `ControlarDocumento()` y estudiar las ventajas y desventajas que tendría asociado.
-
-
 */
 
 public class Program
@@ -36,8 +34,5 @@ public class Program
         // del Ej10
         // Console.WriteLine(guardia1.ControlarDocumento(visitante1.GetDni()));
         Console.WriteLine(guardia1.ControlarDocumento(visitante1));
-
-
-
     }
 }
