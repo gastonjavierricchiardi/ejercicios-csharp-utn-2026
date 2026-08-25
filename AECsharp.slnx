@@ -2,5 +2,10 @@
   <Folder Name="/src/" />
   <Folder Name="/src/AutoEvaluaciones/">
     <Project Path="src/AutoEvaluaciones/01-AE/01-AE.csproj" />
+    <Project Path="src/AutoEvaluaciones/02-AE/02-AE.csproj" />
+    <Project Path="src/AutoEvaluaciones/03-AE/03-AE.csproj" />
+    <Project Path="src/AutoEvaluaciones/04-AE/04-AE.csproj" />
+    <Project Path="src/AutoEvaluaciones/05-AE/05-AE.csproj" />
+    <Project Path="src/AutoEvaluaciones/06-AE/06-AE.csproj" />
   </Folder>
 </Solution>

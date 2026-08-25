@@ -34,6 +34,87 @@
   <Folder Name="/src/Guia01/EJ12/">
     <Project Path="src/Guia01/EJ12/01EJ12.csproj" />
   </Folder>
+  <Folder Name="/src/Guia01/EJ13/">
+    <Project Path="src/Guia01/EJ13/01EJ13.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ14/">
+    <Project Path="src/Guia01/EJ14/01EJ14.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ15/">
+    <Project Path="src/Guia01/EJ15/01EJ15.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ16/">
+    <Project Path="src/Guia01/EJ16/01EJ16.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ17/">
+    <Project Path="src/Guia01/EJ17/01EJ17.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ18/">
+    <Project Path="src/Guia01/EJ18/01EJ18.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ19/">
+    <Project Path="src/Guia01/EJ19/01EJ19.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ20/">
+    <Project Path="src/Guia01/EJ20/01EJ20.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ21/">
+    <Project Path="src/Guia01/EJ21/01EJ21.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ22/">
+    <Project Path="src/Guia01/EJ22/01EJ22.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ23/">
+    <Project Path="src/Guia01/EJ23/01EJ23.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ24/">
+    <Project Path="src/Guia01/EJ24/01EJ24.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ25/">
+    <Project Path="src/Guia01/EJ25/01EJ25.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ26/">
+    <Project Path="src/Guia01/EJ26/01EJ26.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ27/">
+    <Project Path="src/Guia01/EJ27/01EJ27.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ28/">
+    <Project Path="src/Guia01/EJ28/01EJ28.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ29/">
+    <Project Path="src/Guia01/EJ29/01EJ29.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ30/">
+    <Project Path="src/Guia01/EJ30/01EJ30.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ31/">
+    <Project Path="src/Guia01/EJ31/01EJ31.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ32/">
+    <Project Path="src/Guia01/EJ32/01EJ32.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ33/">
+    <Project Path="src/Guia01/EJ33/01EJ33.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ34/">
+    <Project Path="src/Guia01/EJ34/01EJ34.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ35/">
+    <Project Path="src/Guia01/EJ35/01EJ35.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ36/">
+    <Project Path="src/Guia01/EJ36/01EJ36.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ37/">
+    <Project Path="src/Guia01/EJ37/01EJ37.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ38/">
+    <Project Path="src/Guia01/EJ38/01EJ38.csproj" />
+  </Folder>
+  <Folder Name="/src/Guia01/EJ39/">
+    <Project Path="src/Guia01/EJ39/01EJ39.csproj" />
+  </Folder>
   <Folder Name="/src/Herencia/">
     <Project Path="src/Herencia/Herencia01_figurasGeometricas/Herencia01_figurasGeometricas.csproj" />
     <Project Path="src/Herencia/Herencia02_sueldos/Herencia02_sueldos.csproj" />
