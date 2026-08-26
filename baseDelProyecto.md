@@ -311,6 +311,6 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_herencia01.txt
+) > dump_Herencia03.txt
 
 ```

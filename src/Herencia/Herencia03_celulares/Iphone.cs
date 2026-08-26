@@ -1,6 +1,6 @@
-// /src/Herencia/Herencia03_celulares/Program.cs
+// /src/Herencia/Herencia03_celulares/IPhone.cs
 // Gastón Ricchiardi (gastonj@hotmail.com)
-public class iPhone : Telefono
+public class IPhone : Telefono
 {
     // 1. CAMPOS / ATRIBUTOS
     // 2. CONSTRUCTOR
