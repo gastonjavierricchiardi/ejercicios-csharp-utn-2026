@@ -1,12 +1,12 @@
-// src/Guia01/EJ14/SensorInfrarojo.cs
+// src/Guia01/EJ14/SensorInfrarrojo.cs
 // Gastón Ricchiardi (gastonj@hotmail.com)
-public class SensorInfrarojo : Herramienta
+public class SensorInfrarrojo : Herramienta
 {
     // 1. CAMPOS / ATRIBUTOS
     // 2. CONSTRUCTOR
     /* Este es el constructor creao por defecto que solo hay que cambiarle el valor.
     public SensorInfrarojo(double peso) : base(peso){}*/
-    public SensorInfrarojo(double peso) : base(250) // Peso en gramos, se ignora el valor recibido por parámetro
+    public SensorInfrarrojo() : base(250) // Peso en gramos, se ignora el valor recibido por parámetro
     {
     }
 

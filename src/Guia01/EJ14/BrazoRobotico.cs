@@ -4,7 +4,7 @@ public class BrazoRobotico : Herramienta
 {
     // 1. CAMPOS / ATRIBUTOS
     // 2. CONSTRUCTOR
-    public BrazoRobotico(double peso) : base(500) // Peso en gramos, se ignora el valor recibido por parámetro
+    public BrazoRobotico() : base(500) // Peso en gramos, se ignora el valor recibido por parámetro
     {
     }
 

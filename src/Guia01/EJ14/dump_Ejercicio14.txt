@@ -1,12 +1,12 @@
 PWD: /home/gaston/vcs/ejercicios-csharp-utn-2026/src/Guia01/EJ14
-Fecha: 2026-08-29T11:15:49-03:00
+Fecha: 2026-08-29T11:26:22-03:00
 
 ARCHIVOS INCLUIDOS:
  - ./BrazoRobotico.cs
  - ./Dron.cs
  - ./Herramienta.cs
  - ./Program.cs
- - ./SensorInfrarojo.cs
+ - ./SensorInfrarrojo.cs
  - ./Taser.cs
 
 ========================================
@@ -18,7 +18,7 @@ ARCHIVOS INCLUIDOS:
      4	{
      5	    // 1. CAMPOS / ATRIBUTOS
      6	    // 2. CONSTRUCTOR
-     7	    public BrazoRobotico(double peso) : base(500) // Peso en gramos, se ignora el valor recibido por parámetro
+     7	    public BrazoRobotico() : base(500) // Peso en gramos, se ignora el valor recibido por parámetro
      8	    {
      9	    }
     10	
@@ -109,16 +109,16 @@ ARCHIVOS INCLUIDOS:
     26	}
     27	
 
-===== ./SensorInfrarojo.cs =====
-     1	// src/Guia01/EJ14/SensorInfrarojo.cs
+===== ./SensorInfrarrojo.cs =====
+     1	// src/Guia01/EJ14/SensorInfrarrojo.cs
      2	// Gastón Ricchiardi (gastonj@hotmail.com)
-     3	public class SensorInfrarojo : Herramienta
+     3	public class SensorInfrarrojo : Herramienta
      4	{
      5	    // 1. CAMPOS / ATRIBUTOS
      6	    // 2. CONSTRUCTOR
      7	    /* Este es el constructor creao por defecto que solo hay que cambiarle el valor.
      8	    public SensorInfrarojo(double peso) : base(peso){}*/
-     9	    public SensorInfrarojo(double peso) : base(250) // Peso en gramos, se ignora el valor recibido por parámetro
+     9	    public SensorInfrarrojo() : base(250) // Peso en gramos, se ignora el valor recibido por parámetro
     10	    {
     11	    }
     12	
@@ -140,7 +140,7 @@ ARCHIVOS INCLUIDOS:
      5	
      6	    // 1. CAMPOS / ATRIBUTOS
      7	    // 2. CONSTRUCTOR
-     8	    public Taser(double peso) : base(300)
+     8	    public Taser() : base(300)
      9	    {
     10	    }
     11	

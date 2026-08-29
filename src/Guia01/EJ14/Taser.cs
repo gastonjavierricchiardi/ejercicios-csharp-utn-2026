@@ -5,7 +5,7 @@ public class Taser : Herramienta
 
     // 1. CAMPOS / ATRIBUTOS
     // 2. CONSTRUCTOR
-    public Taser(double peso) : base(300)
+    public Taser() : base(300)
     {
     }
 
