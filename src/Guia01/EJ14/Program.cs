@@ -12,13 +12,16 @@ el dron reduce su velocidad en 2% y la altura en 5%.
 
 Analizar, diseñar, diagramar las relaciones e implementar el código.
 Crear instancias de cada una de las clases y asignarle al dron las distintas herramientas, procurando mostrar por pantalla los siguientes datos
- entre las distintas asignaciones: velocidad, altura y tipo de herramienta que lleva.
-
-
+entre las distintas asignaciones: velocidad, altura y tipo de herramienta que lleva.
 */
 
+public class Program
+{
+    public static void Main()
+    //static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+        // Crear objetos y probar el ejercicio
+    }
+}
 
-
-
-
-Console.WriteLine("Hello, World!");

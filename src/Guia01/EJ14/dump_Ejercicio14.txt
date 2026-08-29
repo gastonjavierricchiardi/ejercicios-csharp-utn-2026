@@ -1,0 +1,155 @@
+PWD: /home/gaston/vcs/ejercicios-csharp-utn-2026/src/Guia01/EJ14
+Fecha: 2026-08-29T11:15:49-03:00
+
+ARCHIVOS INCLUIDOS:
+ - ./BrazoRobotico.cs
+ - ./Dron.cs
+ - ./Herramienta.cs
+ - ./Program.cs
+ - ./SensorInfrarojo.cs
+ - ./Taser.cs
+
+========================================
+
+===== ./BrazoRobotico.cs =====
+     1	// src/Guia01/EJ14/BrazoRobotico.cs
+     2	// Gastón Ricchiardi (gastonj@hotmail.com)
+     3	public class BrazoRobotico : Herramienta
+     4	{
+     5	    // 1. CAMPOS / ATRIBUTOS
+     6	    // 2. CONSTRUCTOR
+     7	    public BrazoRobotico(double peso) : base(500) // Peso en gramos, se ignora el valor recibido por parámetro
+     8	    {
+     9	    }
+    10	
+    11	    // 3. PROPIEDADES / GETTERS Y SETTERS
+    12	    // Formas de exponer o modificar el estado.
+    13	
+    14	    // 4. MÉTODOS
+    15	    // Comportamiento del objeto.
+    16	
+    17	    public override string GetTipoHerramienta()
+    18	    {
+    19	        return "Brazo robótico";
+    20	    }
+    21	}
+
+===== ./Dron.cs =====
+     1	// src/Guia01/EJ14/Dron.cs
+     2	// Gastón Ricchiardi (gastonj@hotmail.com)
+     3	public class Dron
+     4	{
+     5	    // 1. CAMPOS / ATRIBUTOS
+     6	    // Estado interno del objeto.
+     7	    // Normalmente private.
+     8	
+     9	    // 2. CONSTRUCTOR
+    10	    // Recibe los datos necesarios al crear el objeto.
+    11	
+    12	    // 3. PROPIEDADES / GETTERS Y SETTERS
+    13	    // Formas de exponer o modificar el estado.
+    14	
+    15	    // 4. MÉTODOS
+    16	    // Comportamiento del objeto.
+    17	}
+
+===== ./Herramienta.cs =====
+     1	// src/Guia01/EJ14/Herramienta.cs
+     2	// Gastón Ricchiardi (gastonj@hotmail.com)
+     3	public abstract class Herramienta
+     4	{
+     5	    // 1. CAMPOS / ATRIBUTOS
+     6	    // Estado interno del objeto.
+     7	    // Normalmente private.
+     8	    private double peso; // en gramos
+     9	
+    10	    // 2. CONSTRUCTOR
+    11	    // Recibe los datos necesarios al crear el objeto.
+    12	    public Herramienta(double peso)
+    13	    {
+    14	        this.peso = peso;
+    15	    }
+    16	
+    17	    // 3. PROPIEDADES / GETTERS Y SETTERS
+    18	    // Formas de exponer o modificar el estado.
+    19	    public double Peso { get => peso; }
+    20	
+    21	    // 4. MÉTODOS
+    22	    // Comportamiento del objeto.
+    23	
+    24	    public abstract string GetTipoHerramienta();
+    25	}
+
+===== ./Program.cs =====
+     1	﻿/* /src/Guia01/EJ14/Program.cs
+     2	Gastón Ricchiardi (gastonj@hotmail.com)
+     3	14. Una empresa de seguridad que se dedica a la vigilancia mediante el empleo de drones, ha desarrollado un sistema de montaje que permitirá que 
+     4	los drones puedan cargar, además de la cámara de vigilancia, una herramienta accionable a distancia.
+     5	Actualmente el sistema de anclaje admite:
+     6	- **Sensor infrarrojo:** pesa 250 gramos
+     7	- **Taser:** pesa 300 gramos
+     8	- **Brazo robótico:** pesa 500 gramos
+     9	
+    10	El dron puede soportar hasta 200 gramos sin sufrir penalizaciones de velocidad (5 m/s) ni altura (100 m); luego, por cada 50 gramos extras, 
+    11	el dron reduce su velocidad en 2% y la altura en 5%.
+    12	
+    13	Analizar, diseñar, diagramar las relaciones e implementar el código.
+    14	Crear instancias de cada una de las clases y asignarle al dron las distintas herramientas, procurando mostrar por pantalla los siguientes datos
+    15	entre las distintas asignaciones: velocidad, altura y tipo de herramienta que lleva.
+    16	*/
+    17	
+    18	public class Program
+    19	{
+    20	    public static void Main()
+    21	    //static void Main(string[] args)
+    22	    {
+    23	        Console.WriteLine("Hello, World!");
+    24	        // Crear objetos y probar el ejercicio
+    25	    }
+    26	}
+    27	
+
+===== ./SensorInfrarojo.cs =====
+     1	// src/Guia01/EJ14/SensorInfrarojo.cs
+     2	// Gastón Ricchiardi (gastonj@hotmail.com)
+     3	public class SensorInfrarojo : Herramienta
+     4	{
+     5	    // 1. CAMPOS / ATRIBUTOS
+     6	    // 2. CONSTRUCTOR
+     7	    /* Este es el constructor creao por defecto que solo hay que cambiarle el valor.
+     8	    public SensorInfrarojo(double peso) : base(peso){}*/
+     9	    public SensorInfrarojo(double peso) : base(250) // Peso en gramos, se ignora el valor recibido por parámetro
+    10	    {
+    11	    }
+    12	
+    13	    // 3. PROPIEDADES / GETTERS Y SETTERS
+    14	
+    15	    // 4. MÉTODOS
+    16	    // Comportamiento del objeto.
+    17	    public override string GetTipoHerramienta()
+    18	    {
+    19	        return "Sensor infrarrojo";
+    20	    }
+    21	}
+
+===== ./Taser.cs =====
+     1	// src/Guia01/EJ14/Taser.cs
+     2	// Gastón Ricchiardi (gastonj@hotmail.com)
+     3	public class Taser : Herramienta
+     4	{
+     5	
+     6	    // 1. CAMPOS / ATRIBUTOS
+     7	    // 2. CONSTRUCTOR
+     8	    public Taser(double peso) : base(300)
+     9	    {
+    10	    }
+    11	
+    12	    // 3. PROPIEDADES / GETTERS Y SETTERS
+    13	
+    14	    // 4. MÉTODOS
+    15	    public override string GetTipoHerramienta()
+    16	    {
+    17	        return "Taser";
+    18	    }
+    19	}
+
