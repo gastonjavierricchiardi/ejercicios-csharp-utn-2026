@@ -2,7 +2,6 @@
 // Gastón Ricchiardi (gastonj@hotmail.com)
 public class Taser : Herramienta
 {
-
     // 1. CAMPOS / ATRIBUTOS
     // 2. CONSTRUCTOR
     public Taser() : base(300)

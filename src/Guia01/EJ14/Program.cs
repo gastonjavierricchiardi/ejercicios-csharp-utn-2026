@@ -18,10 +18,40 @@ entre las distintas asignaciones: velocidad, altura y tipo de herramienta que ll
 public class Program
 {
     public static void Main()
-    //static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-        // Crear objetos y probar el ejercicio
+        // Creamos las herramientas
+        Herramienta sensor = new SensorInfrarrojo();
+        Herramienta taser = new Taser();
+        Herramienta brazo = new BrazoRobotico();
+
+        // Mostramos la referencia base del Dron sin carga
+        Console.WriteLine("VALORES BASE DEL DRON - SIN CARGA");
+        Console.WriteLine("Velocidad: 5 m/s, altura: 100 m");
+
+        // Agregamos Sensor infrarrojo
+        Console.WriteLine();
+        Console.WriteLine($"+ Agregamos: {sensor.GetTipoHerramienta()}");
+
+        Dron dron = new Dron(sensor);
+
+        Console.WriteLine(dron.GetInfo());
+
+        // Cambiamos Sensor por Taser
+        Console.WriteLine();
+        Console.WriteLine($"- Quitamos: {sensor.GetTipoHerramienta()}");
+        Console.WriteLine($"+ Agregamos: {taser.GetTipoHerramienta()}");
+
+        dron.Herramienta = taser;
+
+        Console.WriteLine(dron.GetInfo());
+
+        // Cambiamos Taser por Brazo robótico
+        Console.WriteLine();
+        Console.WriteLine($"- Quitamos: {taser.GetTipoHerramienta()}");
+        Console.WriteLine($"+ Agregamos: {brazo.GetTipoHerramienta()}");
+
+        dron.Herramienta = brazo;
+
+        Console.WriteLine(dron.GetInfo());
     }
 }
-
