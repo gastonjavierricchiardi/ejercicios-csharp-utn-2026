@@ -38,7 +38,7 @@
     <Project Path="src/Guia01/EJ13/01EJ13.csproj" />
   </Folder>
   <Folder Name="/src/Guia01/EJ14/">
-    <Project Path="src/Guia01/EJ14/01EJ14.csproj" />
+    <Project Path="src/Guia01/EJ14/01EJ14.csproj.old2" Type="C#" />
   </Folder>
   <Folder Name="/src/Guia01/EJ15/">
     <Project Path="src/Guia01/EJ15/01EJ15.csproj" />

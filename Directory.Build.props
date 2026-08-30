@@ -1,0 +1,14 @@
+<Project>
+
+  <!--
+    En Windows evitamos generar/utilizar el appHost .exe,
+    porque Windows Application Control puede bloquear
+    los ejecutables locales no firmados de los ejercicios.
+    
+    En Linux/Zorin esta configuración no se aplica.
+  -->
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <UseAppHost>false</UseAppHost>
+  </PropertyGroup>
+
+</Project>
