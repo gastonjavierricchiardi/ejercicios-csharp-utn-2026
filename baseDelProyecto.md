@@ -314,3 +314,60 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
 ) > dump_Ejercicio14.txt
 
 ```
+
+---
+
+# Si no sincroniza Github
+
+Sí. Te dejaría una **rutina fija y segura** para esa situación.
+
+Desde la raíz del repo:
+
+```powershell
+git status
+git fetch --prune origin
+git status
+git pull --ff-only origin main
+git status
+git log --oneline -3
+code -r .
+```
+
+Didácticamente, el orden es:
+
+```text
+git status
+→ ¿tengo algo local sin guardar?
+
+git fetch --prune origin
+→ preguntale a GitHub qué hay nuevo
+
+git status
+→ ahora sí compará mi máquina contra el GitHub actualizado
+
+git pull --ff-only origin main
+→ descargá y aplicá los commits nuevos
+
+git status
+→ confirmá que quedamos sincronizados
+
+git log --oneline -3
+→ verificá visualmente los últimos commits
+
+code -r .
+→ vuelve a abrir/refrescar el proyecto en la ventana de VS Code
+```
+
+La regla importante sería esta:
+
+> Si el **primer `git status` no dice `working tree clean`**, frenamos y no hacemos el `pull` automáticamente.
+
+Y si después de `git fetch --prune origin` aparece:
+
+```text
+Your branch is behind 'origin/main' by X commits
+```
+
+ahí ya sabés que **los cambios están en GitHub y esta máquina todavía no los descargó**. El `git pull --ff-only origin main` es el que finalmente los baja.
+
+---
