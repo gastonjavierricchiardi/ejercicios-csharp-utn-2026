@@ -1,0 +1,589 @@
+Speaker 0:
+
+Buenas tardes, gente, ¿cómo andamos? Todo bien. A ver, todavía hay gente siendo admitida. Está grabando, creo que voy a compartir pantalla. Ah, esto queda oculto todavía.
+
+Muy bien. Bueno, el otro día habíamos visto polimorfismo en acción, sí, como dicen en en en la PPT, y el uso de colecciones, y lo último con lo que habíamos visto era la colección, esperen que tengo acá en el visual, lo último que habíamos hecho es una colección de costos, habíamos hecho una interfaz costeable, no sé si se acuerdan, vamos al diagrama. Ejemplo, creo que era en este, ¿no? Componencia. Acá, acá.
+
+Meterle zoom, así. Se ve bien la letra. Lo último que habíamos visto era en la parte de calculadora de costos, ¿sí? Teníamos nuestro nuevo elemento, que era una colección, que era una lista. Habíamos hablado que las listas, y ahora vamos a ver otros 2 tipos de colecciones, así que podemos generalizar en las colecciones.
+
+Me permiten almacenar objetos y referencias a otros objetos que pueden ser de distintos, o sea, del mismo tipo, pero puedo meter o definir la colección de distintos tipos, ¿no? En este caso yo estoy definiendo una lista que es de costeable. Todo lo que yo ponga dentro de la lista va a implementar la interfaz costeable, lo tengo que poder ver como el tipo costeable, Lo que nosotros habíamos hecho usando polimorfismo era tener varias cosas que podía ver como que eran costeables, como empleado, proveedor y empresa, porque todas implementaban la interface y costeable, porque todas podían calcular su costo y darme una descripción. ¿Sí? Eso me permitía a mí verlas como algo homogéneo, ¿sí?
+
+Y cualquier cosa que pase atada a la interface no conoce de cuáles son las implementaciones, que no nos interesa, ¿sí? Eso es implementar el polimorfismo a través de interfaces, que yo creo que habíamos visto 3 formas. Una era con herencia, con la redefinición a sobreescritura, otra era implementando interfaces, que es muy parecido a la herencia, ¿sí? Solo que va por otro lado, acuérdense que es como transversal, yo puedo tener una clase que hereda de una de una clase padre, pero implementa todas las interfaces que yo quiera, ¿sí? Entonces, la interfaces me permite ampliar esa visibilidad que yo tenía del objeto, ¿sí?
+
+Yo hasta ahora tenía una clase que la podía ver como la misma clase, un objeto de esta clase la podía ver como esta misma clase o como cualquier clase superior, ancestros, predecesora, padre, madre, como quieran verla, así para arriba. Como la herencia es simple, una vez que yo tenía la herencia y la jerarquía de clases armada, era atado a eso, ¿sí? No podía ser que el empleado además compartiera algún comportamiento con algo que no tiene nada que ver con personas y usuarios, ¿sí? Porque la interfaz, la herencia, perdón, ya está armada por ese por ese sentido. Lo que se hace es entonces agregar nuestra otra forma, ¿sí?
+
+Que es implementar interfaces, ¿sí? Entonces, con interfaces yo también aumento el polimorfismo a un objeto que lo podía ver como cualquier tipo del mismo objeto o de las clases anteriores, superior a la madre, etcétera, ¿sí? Ahora lo puedo ver también como cualquiera de todas las interfaces que implementa, ¿sí? Lo cual me amplía la posibilidad del polimorfismo, no solo por herencia, sino implementando interfaces, ¿sí? Lo otro que habíamos hecho era empezar a ver colecciones, habíamos hablado de que las colecciones son un objeto, ¿sí?
+
+No es más que un objeto que lo que guarda internamente es referencia a otros objetos. Y un montón de otras herramientas y utilidades, ¿no? Les había mostrado solamente para que vieran todo lo que tengo en en la API, ¿sí? Se le suele llamar esto, ¿sí? Lo que puedo hacer con una colección es básicamente un montón de cosas, ¿sí?
+
+Que nosotros no vamos a usar muchas, ¿sí? Y les sugiero que solo usen las que vemos en clase y no hagan cosas medio raras si no saben qué es lo que están haciendo, ¿sí? En ese sentido, nada, quedémoslo con lo que están en la punta, que es bastante poco y no necesitamos más para lo que nosotros vamos a estar haciendo, ¿sí? Si tengo que acumular costos, hago un acumulador y sumo, ¿sí? No hago uso de alguna herramienta que excede lo que vemos en en la cursada, ¿sí?
+
+Lo claro porque ha pasado en otras cursadas. Entonces, si tengo acumular costos, acumulo costos, recorro la colección y voy sumando, ¿sí? Y que, de hecho, es lo que hicimos el otro día, ¿no? Sí, nosotros ya vimos cómo se usa el follich, bueno, no, de hecho, no no lo hicimos, ¿sí? Le llamamos a calcular costos y lo único que hicimos fue acumularlos acá.
+
+Cuando imprimimos, imprimimos, pero no estamos acumulando. Si yo quisiera acumular, lo que hago es tener acá un acumulador y listo, ¿sí? Simple, acá vamos a tener un bar total igual a 0, ¿sí? Y, además de imprimir, lo que vamos a hacer es acumular total más igual ítem punto calcular costo. Sí, al final de todo vamos a imprimir el total, no sé.
+
+Punto online. Total de costos, puntitos. Total. ¿Sí? Si el code, van van a ver que, nada, lo que vamos a viendo durante la lo que está en el apunte, ¿sí?
+
+Y lo que vamos a viendo durante los ejercicios, van a ver que no usamos cosas muy raras, ¿sí? Nos quedamos con lo básico, y con eso solo nos alcanza para los ejercicios que vamos a estar haciendo nosotros. ¿Qué más? La colección de vuelta es un objeto, ¿sí? Por eso la tenemos que instanciar, ¿se acuerdan que hay un new new?
+
+¿Sí? Tengo que hacer un new para obtener un objeto que sea del tipo list, ¿sí? Y cuando instancio y uso una referencia a una colección, tengo que especificar de qué tipo es la colección. Y no estoy hablando de que list, estoy hablando de los objetos que voy a guardar adentro de esa colección, ¿sí? Y esto hace que yo no pueda guardar cualquier cosa, ¿sí?
+
+Yo acá no puedo poner un 123, ¿sí? Porque lo único que puedo agregar, si se fijan en el add, van a ver que el add me dice add y costeable, ¿sí? No puedo agregar lo que se me canta, ¿sí? Puedo agregar lo que declaré que iba a agregar, eran costeables. Esa limitación es parecida a la que teníamos con los vectores de programación 1 en algún punto, ¿se acuerdan que yo no podía armar vectores de distintos tipos, sí?
+
+Los arrays eran del mismo tipo, Bueno, esto es parecido solo que al tener herencia y al tener interfaces tengo que verlos con el mismo tipo, pero los objetos pueden ser de distintos tipos, ¿sí? Y hasta ahí hemos llegado, ¿no? Habíamos visto mucho más que esto. Ahí había una implementación o un uso del polimorfismo, en el sentido de que cuando yo pedía descripción a calcular costo, si bien está declarado en la interface, cada clase que implementa la interface tiene que definir cómo se hace, de hecho me está faltando acá, ¿no? Habíamos hablado también que incluso si no se ponía se podía asumir que estaba porque lo estaba implementando, pero yo suelo ponerlo para que sea un poquito más gráfico, ¿sí?
+
+Tenemos descripción en todo lo que implemente esto, porque es parte de la interface, además de calcular costo, poder imprimir una descripción. Sí, lo agarramos con el ejemplo igual, da bueno. Estamos hasta acá, nada, esto mínimo repaso, sé que cuando Andrés estuvieron haciendo el ejercicio de sueldos, sé que había habido algunas consultas, así que ese ya lo tienen ahí subido una forma de resolución, ¿sí? Después incluso cuando veamos patrones vamos a charlar de cómo se puede repensar alguno de los ejercicios, ¿sí? Pero nada, esa es una de las formas.
+
+Y la idea de hoy es seguir con las colecciones que nos quedan y con tipos estáticos, ¿sí? O datos estáticos, y de solo lectura, ¿sí? Ese es el temario de hoy, entonces ahí esto arrancamos, y, bueno, los temas que vamos a ver, como les decía, es cerrar, ¿sí? Con los distintos tipos de colecciones que vamos a estar usando. Hay más, ¿sí?
+
+Sepan que hay más en el Net, en casi todos los lenguajes hay más. Nosotros no usamos más, y hasta que les diría que el 90 por 100 de los ejercicios se puede resolver solo con list y está bien, ¿sí? O de última con un set. Pero bueno, ahora vamos a ver. Pero vamos ver 2 más y no mucho más, es para que se entienda el el concepto de qué son las colecciones, después cada una tiene sus particularidades, y es cuestión de averiguarlas, ¿sí?
+
+Cuando las van a usar. Y después los miembros estáticos y las constantes, ¿sí? Hoy vamos a ver dictionary y hashed set, ¿sí? Que es como el mapa o el map y el set, ¿sí? En algunos, en cada lenguaje, en alguno se llama distinto.
+
+El nombre de NET para mí ya quedó medio raro seguir llamándole diccionario, a todo el mundo le dice map, es medio casi una cuestión de, no sé muy bien por qué. Pero bueno, nada, es el diccionario, vamos a ver qué es, y se entiende al con el nombre nada más se entiende de qué estamos hablando, y hashed también. Y después miembros static y constantes, que son las static reon, ¿sí? Entonces, vamos al 1º, 1º de las otras 2 colecciones que nos quedan es un diccionario, ¿sí? Y como todo diccionario, ¿sí?
+
+Ustedes cuando están buscando en un diccionario buscan con una clave, que es la letra, ¿sí? Y con esa clave que es la letra encuentran cuál es el resultado que están buscando, ¿sí? Pónganle que por eso le pusieron diccionary. Mi diccionario general, yo no tengo una clave que me da una palabra, sino que me da un montón de páginas, con lo cual para mí es polémico el nombre del diccionario, pero no importa, ¿sí? Es básicamente una colección en la que yo guardo igual que antes, pero en lugar de tener que recorrer secuencial o por posición, como hacía en el list, ¿sí?
+
+Que creo que no hicimos ningún acceso por posición el otro día, pero si quieren después vemos un ejemplo, van a ver que ese acceso igual que con un vector, ahora el acceso no es por una posición, sino que es por una clave, ¿sí? Yo tengo un par que es clave valor, ¿sí? Es más parecido una función de matemática, tengo un x que me produce un I. Esto es medio lo mismo, ¿sí? Yo tengo una clave con la cual voy a buscar en la colección, y si lo que estoy buscando en la colección está, ¿sí?
+
+Con esa clave y lo encuentro con esa clave, me va a devolver el valor que yo almacené, ¿sí? Entonces, ¿qué me va a permitir? Acceder ya no por posición, sino con una clave que puede ser un poquitito más compleja y puede tener cierta lógica, ¿sí? Eso es lo que me da. Es parecido a, ustedes se acordarán cuando veíamos pub, ¿sí?
+
+¿Se acuerdan cuando veíamos pub? Y decíamos, bueno, ¿cuándo puedo usar pub? Puedo usar pub cuando tengo un conjunto de valores en un rango definido, ¿sí? Y está completo y ordenado, ¿sí? Lo de completo después habíamos visto que tenía matices, podía no estar completo, mientras estuviese en un rango acotado y hubiese alguna regla, yo podía usar porque me quedaba un agujerito, pero podía usar pug, y lo que hacía era una traducción de algún número, de algún valor que tenía un sentido lógico, si se quiere, hacía la traducción a la posición en el vector que tenía que caer ese dato.
+
+Entonces, por ejemplo, si a mí me decían que los legajos iban del 1000 al 1100, entonces yo decía, bueno, el 1º legajo es el 1000, entonces, cada vez que estoy buscando un legajo, le resto 1000, ¿sí? Entonces, si estoy buscando el legajo 1101, lo que hago es hacer 1101 menos 1000, lo que estoy buscando está en la posición 101, ¿sí? Y esa era la equivalencia que hacíamos para hacer una equivalencia entre un dato de negocio lógico, que era la clave, con la posición donde estaba el valor que yo estaba buscando, y poder acceder en cualquier momento, ¿sí? ¿Se acuerdan? Esto lo usamos, por ejemplo, para acumular, ¿no?
+
+Que yo estaba buscando, quería acumular las asistencias de un alumno, y yo la asistencia la tenía registrada por legajo, y bueno, en lugar de buscar al alumno por legajo con búsqueda binaria o con búsqueda secuencial, era mucho más fácil si yo tenía y podía usar pub, ¿sí? Posición única predecible, hacía una cuentita, encontraba el valor, ¿sí? Bueno, esto es exactamente el mismo concepto, solo que me saca la limitante que tenía antes de que tenía que ser un rango ordenado, etcétera, ¿sí? Yo ahora, en realidad, elijo cuál es la clave, y mientras use esa misma clave para guardar que para ir a buscarlo, puede ser cualquier cosa la clave, puede ser cualquier número, se acuerdan que había ejercicios que, por ejemplo, me decía, yo tengo 100 camiones, ¿sí? Pero los camiones no los tengo numerados del 1 al 100 o del 100 al 200, sino que eso, tengo la patente.
+
+Yo lo que tengo es la patente, la tengo ordenada, ¿sí? Pero no tengo algo para llegar a la posición única predecible, porque no puedo decir que de la patente AD 8 40 c j voy a llegar a una posición en el vector, ¿sí? No hay una fórmula, no puedo hacer ningún cálculo que me traduzca ese dato, que es la patente, a la posición del vector donde está guardado, ¿sí? No hay forma. Bueno, con un diccionario, con un mapa, sí, yo puedo decir la patente esta, ¿sí?
+
+Va a representar a este objeto que le voy a guardar al lado, ¿sí? Al lado sepan que no es al lado, pero no importa, ¿sí? Entonces, establezco el par, ¿sí? Que es este par que me dice clave valor. Entonces, en el uso y conceptualmente piénsenlo como algo igual que posición única predecible, ¿sí?
+
+Pero en realidad ahora ya no tengo la limitante que tenía antes, ¿sí? Yo ahora puedo hacer acceso por esa clave mientras todas las claves sean iguales, ¿no? Y, bueno, digo, si la voy a usar la patente, en todo el caso voy usar la patente, ¿no? Tampoco vamos a mezclar la forma de acceso, ¿sí? Bueno, en general no se hace, ¿sí?
+
+¿Se entendió el concepto de vuelta de qué es? Es un diccionario en ese sentido, es un mapa, ¿sí? También se suele llamar en otros lenguajes, ¿sí? Se llama map. Pero básicamente es eso, cuando voy a guardar, guardo con una clave, y cuando voy a obtener obtengo también con una clave.
+
+También lo puedo recorrer, ahora lo vamos a ver, también lo puedo recorrer secuencialmente y acceder a los 2 datos, a la clave y al valor, ¿sí? Entonces, como se declara acá, fíjense que lo que hace es, básicamente, instanciar igual, ¿sí? Nosotros podríamos, por ejemplo, en nuestro ejercicio, o en nuestro ejemplo que veníamos acumulando, ¿sí? Que cada vez está más deforme en algún sentido, pero no importa, ¿sí? Ya que estamos ahí vamos a seguir.
+
+Nuestra clase, por ejemplo, persona tiene un nombre y tiene un apellido. No tengo ningún dato que podría usar como clave clave. A ver, el proveedor, el empleado tenía un legajo, creo, sí. Entonces yo podría establecer un diccionario de empleados, ¿sí? Entonces yo pongo acá program, ¿sí?
+
+Y digo que tengo un diccionario, ¿sí? Y acá tengo que establecer cuál es el tipo de la clave, ¿sí? ¿Qué es el tipo de la clave? Es el tipo del dato que voy a usar como clave. Entonces, si yo dije que voy a usar el debajo del empleado, el debajo del empleado es del tipo int, ¿sí?
+
+Entonces, el diccionario que yo voy a estar haciendo es de int empleado. ¿Sí? Empleados es igual a new, dictionary, int empleado. Y ahí tengo declarado mi diccionario, ¿sí? Entonces fíjense que en lugar de tener solamente un tipo, ¿sí?
+
+Ahí con genérix tengo 2 tipos que especificar, tengo que especificar cuál es el tipo de la clave y cuál es el tipo de lo que voy a guardar. ¿Yo podría hacer esto? ¿Sí? Sí, podría. No lo hagan.
+
+Sí, pero poder podría, porque de vuelta, yo lo que estoy diciendo es que este diccionario va a guardar objetos de este tipo, y object es el objeto, es el la clase, perdón, que está por arriba de todas las clases, de la que todos heredan, aunque no lo pongan, ¿sí? Entonces, yo podría hacer un diccionario en el cual guardo lo que se me canta, ¿sí? Es muy difícil de usar después, no es el objetivo, por eso tratemos de ser más estructurados, ¿sí? Entonces, tengo un diccionario de entero empleado. ¿Qué quiere decir esto?
+
+Que la clave es un entero y el objeto que se guarda es un empleado. Puede ser, si ustedes no estuviesen guardando empleo, están guardando otra cosa, acá pueden poner int long, no sé, sí, no sé, lo que ustedes estén guardando, ¿se entiende? Va a depender de lo que ustedes hagan. En general, solemos tratar de usar nuestros tipos, ¿no? Porque si estamos armando una colección, en general no usamos solamente colecciones de datos primitivos, ¿sí?
+
+A veces les puede pasar que sí, ¿sí? Pero bueno, no es una matriz, que alguien me preguntaba, no, no tiene nada que ver con la matriz, ¿sí? Porque de vuelta, la matriz es de vuelta, el acceso era por posición, ¿sí? Era por fila, ponele, y acá no, en realidad yo tengo un int, y el int va a ser cualquier cosa, o sea, son los legajos posibles, yo no tengo un rango de legajos, ¿sí? ¿Lo podría haber hecho por apellido, con persona?
+
+Bueno, sí, pero solo puedo guardar, acuérdense que esta es una clave, ahora vamos a charlar de la las implicancias de usarlo como clave. La clave no no puede tener 2 valores asociados, ¿sí? Si yo estoy diciendo que el legajo es la clave de cada empleado, me tengo que asegurar que el legajo sea único, ¿sí? Porque cuando yo esté guardando, voy a guardar con ese dato, y cuando esté recuperando yo espero recuperar un objeto, ¿sí? DNI puede ser una clave, sí, aunque en nuestro país hay DNIs duplicados, ¿sí?
+
+Sépanlo, así como a veces hay CUITs duplicados. Podría ser número de pasaporte, sí que los números de pasaporte es un poquitito mejor, pero nada, se suele usar igual, en en DNI igual o como clave, y bueno, cuando hay algún caso de estos raros se ve que se hace, ¿sí? Pero sí, son datos que me identifiquen unívocamente a un objeto asociado, ¿sí? Entonces, acá, por ejemplo, yo voy a agregar a empleados, ¿sí? Fíjense que lo que tengo que poner es cuál es la...
+
+¿Ven? Ahí me lo pone la firma, cuál es la clave y cuál es el empleado, ¿sí? Entonces, si yo estaba agregando, no me acuerdo quién era, otra persona, ¿otra persona era era persona o era? Ya no me acuerdo, otro empleado era. Otro empleado punto legajo coma otro empleado.
+
+¿Sí? ¿Se entiende? Estoy usando el legajo, que está en el mismo objeto, ¿no? De vuelta. Si estoy guardando el objeto otro empleado, el legajo con que quiero que use de clave es el legajo que tiene adentro ese otro empleado, ¿sí?
+
+Obvio que si alguien entra y le cambia el legajo a este otro empleado por otro lado y ya no tiene más el legajo que tenía con el que yo lo guardé, me rompió mi asociación que había hecho, ¿sí? Por eso digo que los datos que usen tienen que ser correctos. Después vamos a ver que también en general estas colecciones, que yo las estoy tirando todas acá muy ordenadamente en program, en general, como hicimos en nuestro diagrama, terminan estando, ¿sí? Como un atributo de alguna clase que es la que se encarga de manejarla, ¿sí? Entonces yo tengo acá la calculadora de costos es la responsable de administrar esta colección de costos.
+
+Entonces, en realidad nadie accede directamente a costos y le mete y le saca elementos, ¿sí? Sino que llaman a un método que es de calculadora costos y le dicen acumulá el costo, ¿sí? Entonces, si yo tuviese, por ejemplo, acá otra clase, Sí, que fuese recursos humanos, ponele, cualquier cosa, no importa. Sí, digo que esta es la que va a tener mi colección de empleados, es un diccionario de int coma empleado. ¿Sí?
+
+Entonces, en realidad, esta clase, ¿sí? Que acá hay una composición, ¿no? Bueno, me quedó medio medio. Vamos ver si lo puedo sacar de una punta. Ahí está.
+
+Sí, hay una composición, porque la clase recursos humanos, que después veremos qué se encarga, se compone de la lista de empleados, ¿sí? Y entonces esta es la que va a tener un método así público que sea crear empleado, ¿sí? Que reciba los datos de un empleado, lo puede hacer en un objeto o los datos sueltos. En general tratamos de usar objetos, ¿sí? Y este crear empleado lo que va a hacer es básicamente registrar el empleado en su colección de empleados, ¿sí?
+
+Entonces, el crear empleado es el que hace el add, y cuando el crear empleado haga el add, va a registrarlo con ese legajo que tiene que venir ya configurado. ¿Se entiende? Entonces, la colección se intenta proteger del uso externo, ¿sí? Yo trato de que la colección no se acceda desde afuera libremente, porque prefiero manejarla yo, recursos humanos. Si yo tengo la lista de empleados, yo me encargo de, con cierta lógica, con cierta validación, con un montón de criterio, agregar, sacar, modificar datos, ¿sí?
+
+Cuando me piden modificar empleados, me pasan los datos que se modifican, yo haré la validación de los datos del empleado para ver si permito modificar. Entonces, por ejemplo, nunca te voy a permitir modificar los datos de legajo, ¿sí? Porque yo ya lo tengo registrado. O si se pudiera cambiar el legajo, tendré toda la lógica que saque al empleado que estaba registrado con un, ¿sí? Y elimine ese empleado de la lista de la del diccionario de empleados con el legajo que estaba antes y lo vuelva a agregar con el legajo nuevo, ¿se entiende?
+
+Tengo que tener a alguien que sea el que maneja esa colección, ¿sí? Y siempre hay que tener cuidado que la colección expone, ¿sí? O tiene las referencias, y los métodos que tiene una colección obviamente que son públicos, para que yo los pueda usar, y si yo le doy la colección a alguien puede usar todos esos métodos que son públicos para manipular mis datos y romperle la colección, básicamente, ¿sí? Sí, ahí justo alguien preguntaba si también ahí tendría el método para modificar, sí. Ok.
+
+¿Qué más? Acá ven que, bueno, esto ya es una particularidad de de C sharp, ¿sí? La forma en la que yo accedo por clave, ¿sí? Fíjense que no es con un, en muchas lenguajes se hace punto get, ¿sí? O at o algo, ¿sí?
+
+Y en C sharp es un poco más declarativo, ¿sí? Entonces, yo lo que hago es, por ejemplo, acá, console punto rideline, y vamos a buscar en la lista de empleados, ¿sí? El legajo este que me guardé, otro empleado punto legajo. Y esto me devuelve un objeto, ¿sí? Si se fijan, es tomar un objeto al cual yo le puedo pedir, por ejemplo, que saluden.
+
+¿Sí? Obvio, acá, como está todo en programa, está todo engalaneado, ¿no? Pero esto justamente la idea es que yo en algún lado recibo solamente el legajo, ¿sí? Supongo que sé que en realidad yo acá tengo una variable, el ID, ¿sí? O el legajo buscado, ¿sí?
+
+Que ahora me voy a guardar ese mismo dato, pero no importa, para que se entienda que obvio que la idea no es usar, ¿no? Agregarlo y usar el mismo dato para ir a buscarlo, porque no tiene mucha lógica. Esto se supone que está en otro lado, ¿sí? Y de vuelta, yendo, por ejemplo, a mi diagrama de mi clase recursos humanos, yo podría tener acá un buscar, ¿sí? U obtener empleado.
+
+Acá yo podría tener un obtener empleado, de hecho podría ser solo obtener, pero bueno, no importa, y acá le ponemos un int, ¿sí? Y devuelve un empleado. Entiende? De hecho, al crear, yo también devolvería empleado, ¿sí? Usted me dirá, no, pero ya recibe el empleado.
+
+Bueno, pero el empleado que está recibiendo acá es solo para tener los datos, y yo lo que necesito es que me devuelva la referencia al empleado que realmente está guardado adentro de recursos humanos, ¿sí? Pero es lo mismo que haría obtener empleado, ¿qué haría obtener empleado? Un return, ¿sí? Lo pongo acá, un return, ¿sí? A recursos humanos, public, obtener empleado, int debajo, y hace un return de empleados punto dato punto com.
+
+Esto asume que existe, ¿no? Vamos a ver que yo puedo chequear si existe el dato y no asumirlo. Texto, salida al dato para allá. ¿Sí? Entonces, en el crear empleado yo recibo los datos, de vuelta acá yo usé empleado para recibir los datos todos vez agrupados, pero en realidad podría recibir todos los datos sueltos y yo crear el objeto, el objeto que se guarda en recursos humanos lo lo va a gestionar recursos humanos, ¿sí?
+
+El obtener empleado lo que me devuelve justamente es el objeto que está guardado adentro de la clase empleados. Ojo, que el que lo reciba puede hacer con ese empleado lo que se le cante también, ¿no? Lo importante es que él haga lo que se le cante, ¿sí? Voy a tener que tener yo cuidado como recursos humanos, ¿sí? Como cuando hago el sistema de qué es lo que permito, ¿sí?
+
+Que públicamente se le cambie. Entonces, por ejemplo, si el legajo no se debería poder cambiar, entonces, en realidad, el legajo no debería tener un setter, sino que solo debería tener un getter y que se cree solamente en la instancia de creación del empleado. Hay un montón de cosas de esas que me permiten a mí asegurarme que nadie rompa nada. Otra cosa que se suele hacer, pero igual ya nos estamos yendo de mambo, es, en lugar de darte el empleado realmente que vos tenés acá, darte una copia de ese empleado y no el mismo objeto, ¿sí? Lo adelanto porque ahora va cuando veamos en la otra colección, el tema de la identidad de objetos y referencias tiene mucho que ver, ¿sí?
+
+Entonces, no no es algo completamente descolgado, sino para que se entienda que estamos manejando referencias. Cuando yo devuelvo lo que hay guardado en mi colección con ese legajo, estoy volviendo al mismo objeto que se agregó a la colección, ¿sí? O sea, yo cuando acá, acá, acá, cuando yo acá obtengo el empleado con ese legajo, la instancia, a ver si lo puedo... Vamos a poner f 5 ya de vagueo, le tengo que dar el de vagueo, ahora nos vamos a enterar. Para que vean que los objetos tienen un ID, no me acuerdo si lo charlamos ya, que es medio como si fuese la posición de memoria de antes.
+
+Sí, sí, tiene tiene. Bien, entonces vamos a darle. Fíjense, otro empleado, si yo paro arriba, no me lo tira a ningún lado, lamentablemente. A ver, acá. Me hacen poner la letra grande, me complica un poquito.
+
+Pero, ¿quién es el que más? ¿Cuál era otro empleado? Entonces, si paro acá... No, tampoco, che. Bueno, en ningún lado me lo está tirando, yo qué sé, me lo mostraba en algún lado el Visual Code, pero tengo una referencia, ¿sí?
+
+Hay un ID, ¿sí? Que es la referencia, la posición de memoria donde apunta la variable a otro empleado, el objeto tiene una posición de memoria, digamos, ¿sí? Entonces, lo que yo quería mostrar es que el objeto es el mismo. Igual ahora lo van a ver, porque yo acá tengo otro empleado y, bueno, lo que pasa es que no, claro, no lo van a poder ver del todo, porque los datos van a ver, son los mismos, pero, bueno, si yo tocara obtuviese acá con el con el acceso este obtuviese el objeto empleado que se guardó antes, y lo modificara, vería que estoy modificando el mismo objeto que está acá adentro. No, tampoco.
+
+Sí, mirá, estaba en el lugar. ¿Sí? Entonces siempre son referencias, y de vuelta, el mundo objeto, y esa es la parte que en general más cuesta, siempre estamos hablando de referencias cuando trabajamos con objetos, ¿sí? No es que estoy copiando o pisando un dato que está ahí solamente. Sí tengo que tener cuidado que lo pueden estar usando un montón de otros lugares más, ¿sí?
+
+Les había hablado que existe el remove, ¿sí? Ahí ven que el remove lo que hace es pasar la clave. Sí, no tiene mucho más. Y acá está el contains, ¿sí? Que les decía.
+
+Entonces, en mi diagramita, ahí en el código que yo puse que devolvía, ¿sí? Yo acá tendría que mejorarlo, y acá yo tendría que preguntar, ¿sí? TICs empleados punto contains key, legajo, ¿sí? Entonces, devuelve eso. Y si no, bueno, habría que hacer algo que hoy no hacemos todavía, que sería tirar una excepción probablemente, ¿sí?
+
+Pero podemos por ahora devolver null, ¿sí? Si no lo encontré, devuelvo null, cosa de que el que me lo esté pidiendo chequee, ¿no? O cuando él me pide un empleado que chequee si le devolví null. Si le devolví null quiere decir que no lo encontré, ¿sí? Nuggets algo que ya venían usando en programación 1.
+
+Acá es la misma lógica, ¿sí? Es la ausencia de valor de objeto, ¿sí? Bien. ¿Qué más? Y, bueno, la forma de recorrerlo.
+
+Sí, la forma de recorrerlo básicamente es... Bueno, acá no me lo pone el nombre, sí, pero es key value, ¿sí? Ahora lo cuando lo escribamos, sí, vamos a escribirlo acá, así lo lo ven bien. Cuando yo recorro... Acá aprovecharon y pusieron bar, ¿no?
+
+Entonces pusieron bar, empleado en... ¿Empleados les había puesto? Sí, empleados. Sí, entonces acá yo puedo hacer esto que estaba haciendo acá, buscando por 1, lo puedo hacer con 2, ¿no? Acá no tiene sentido entrar, ¿no?
+
+O sea, claro, solamente haría el acceso a lo que tiene empleado, que si se fijan ahí ven que me ponen cuál es el tipo, que es key value payment, ¿sí? Que básicamente es una clase que lo que me permite es exponer qué es lo que puedo hacer con el par justamente, ¿sí? Entonces, a ese par le puedo pedir la key y le puedo pedir el value, ¿sí? Entonces, yo acá podría decir empleado punto key, bueno, ahí ven lo que puedo, ¿no? O sea, ahí tienen key value, nada, no tiene mucho más.
+
+Key, acá entonces acá podemos ponerle clave, 2 puntos, empleado key. Valor, 2 puntos, empleado punto value, ¿sí? Me falta cerrar la. Y de vuelta, empleados tiene también bastantes otras cosas que no vamos a usar, ¿sí? Está acá está el contains, ¿sí?
+
+Fíjense que les puedo preguntar por el value, ¿sí? O sea, yo puedo chequear si ya puse el valor también, no solo la clave. Si el contains key me devuelve true cuando la clave ya existe en el mapa, sí, en el diccionario, perdón, y el contains value me devuelve true cuando ya existe el objeto en el diccionario, ¿sí? Ojo, tiene que ser el mismo objeto, ¿sí? No un objeto con los mismos valores, ¿sí?
+
+Ahora vamos a ver por qué hago la diferencia, ¿sí? Que tiene que ver con de vuelta con el tema de igualdad e identidad entre objetos, ¿sí? Y no tiene mucho más. De vuelta, el el los casos de uso, digamos, son estos, ¿no? Cuando yo quiero almacenar algo y necesito recuperarlo con algún criterio bien conocido, me puede servir guardarlo justamente por ese criterio, ¿no?
+
+Y no tener que después estar buscándolo, ¿sí? Entonces, vuelvo a hacer la analogía, es muy parecida a lo que antes hacían con PUP, pero sin ninguna de todas esas limitaciones y agregando objetos, ¿sí? Perdón, recién ahora veo que había manos levantadas. Alejandra, ahí te habilito.
+
+Speaker 1:
+
+Hola, profe, buenas noches.
+
+Speaker 0:
+
+Te
+
+Speaker 1:
+
+hago una consulta que quedó un poco atrás porque fue ni bien lo creo que lo declaraste, no sé si podés poner la pantalla del visual code.
+
+Speaker 0:
+
+Dale, así,.
+
+Speaker 1:
+
+Mirá, mi pregunta es la siguiente. Que te lo mande ahí por el chat, pero es capaz una pavada, pero vos ponés int porque es el tipo de dato que vas a usar para el para la lista, para el diccionario, digamos. Sí. No sé si si dije bien que sea lista o diccionario lo mismo o estoy confundiendo
+
+Speaker 0:
+
+Este es un diccionario, la lista es la otra.
+
+Speaker 1:
+
+Ok, entonces, diccionario. Mi pregunta es, si, por ejemplo, el empleado además del diccionario tiene un DNI, ¿cómo entiende con esa declaración que int hace referencia, que voy a hacer un diccionario de la
+
+Speaker 0:
+
+app? Lo entiende. ¿Y
+
+Speaker 1:
+
+y cómo?
+
+Speaker 0:
+
+O responsabilidad del que haga el código, digamos, o vos lo que estás diciendo es que vas a tener un entero, ¿sí? Y, a partir de ese entero, vas a obtener un empleado. Ese entero es lo que vos le pongas, ¿sí? O sea, como cuando vos lo lo guardaste, cuando vos le agregaste, ¿sí? Cuando vos lo agregaste a la colección, lo agregaste usando el legajo, ¿sí?
+
+Speaker 1:
+
+Pero que lo agregué a dónde, perdón, cuando vos decís lo agregaste a la colección me pierdo, o sea, cuando yo estoy en empleados. Pero yo estoy, ¿qué? Pero ¿cómo sería? En la clase de empleados, ¿en qué momento lo agrego a la colección? No lo, eso no lo entendí.
+
+Speaker 0:
+
+Acá, empleados punto add. Ajá.
+
+Speaker 1:
+
+Ah, o sea, siempre que declaro un diccionario, debajo tengo que poner inmediatamente este add para que interprete
+
+Speaker 0:
+
+no, vamos por partes. La clase, ¿sí? La clase es diccionario, es la colección, ¿sí? Esa es la clase. Empleados es una instancia, ¿sí?
+
+Yo estoy declarando, estoy haciendo un nuevo diccionario y lo estoy llamando, lo estoy apuntando con una variable que se llama empleados, ¿sí? Entonces, yo tengo una instancia de un diccionario, ¿sí? Cuya clave va ser 1 entero y cuyo valor va a ser un empleado, y yo lo estoy llamando y apuntándolo con una variable que se llama empleados, ¿sí? A partir de ahí, hacés lo que tengas que hacer, no no quiere decir que inmediatamente después tenés que hacer un add, no
+
+Speaker 1:
+
+Pero lo lo digo por esto puntual de que cómo interpreta el visual que me estoy que yo voy a organizarlo
+
+Speaker 0:
+
+no interpreta, pero este visual no interpreta, es lo que ustedes tienen que hacer. Vos lo que estás haciendo Claro, por haciendo, Cuando vos estás haciendo el app, lo estás haciendo con el legajo, cuando vas a ir a buscar a la colección, vas ir a buscar con el legajo. Si yo acá busco con un DNI, no lo va a encontrar, porque no lo agregué con el DNI, lo agregué con el legajo.
+
+Speaker 1:
+
+Y lo agregué ahí abajo, o sea, yo lo que, para organizarme porque, perdón, pero porque no lo no no me me marea un 1 poquito. Es un diccionario es una clase, no está como una como no está como empleado, que es otra clase, serían
+
+Speaker 0:
+
+No, porque son no, porque son clases que ya vienen con el framework, ninguna pusimos de esas.
+
+Speaker 1:
+
+No, no, pero está a la izquierda, tenés hecha la clase empleado, no la de Diccionary, no hace falta, esa la puedo poner directamente en programa.
+
+Speaker 0:
+
+Pero ¿de qué estamos hablando? ¿Estamos hablando del diagrama? Ah, de acá decís en el archivo, no, claro. Lo tengo arriba, bueno, acá ni siquiera me lo puso, yo tengo en el en el apunte anterior, ¿sí? Estaba puesto arriba, ¿se acuerdan que tenían el using?
+
+No sé si acá lo puso acá, así está, Esta es la forma en la que yo estoy importando todas las clases que están adentro de el namespace generic, ¿sí? Adentro de ese namespace está list, diccionario, false, todas las colecciones con generics, ¿se entiende? Entonces, eso no la tengo ni, no no no es una clase mía, por eso no la tengo acá. Y tampoco es
+
+Speaker 1:
+
+por de la biblioteca.
+
+Speaker 0:
+
+Claro, viene viene con el con el framework, tal cual.
+
+Speaker 1:
+
+Ok, ok. Y, entonces, como una buena práctica, si yo hago un Diccionary, ¿lo puedo hacer directamente en program? ¿No hace falta que lo hagan empleado o o es recomendable que lo hagan empleado para que no no sea, no sé, no sé, porque, pero para saber qué preferible.
+
+Speaker 0:
+
+En program, ni, o sea, de vuelta, yo le estoy poniendo program para el ejemplo, pero, de hecho, en lo que les mostré acá ya en el diagrama, ya directamente lo puse adentro de empleados, en realidad, adentro de, perdón, de recursos humanos.
+
+Speaker 1:
+
+De recursos humanos, ok.
+
+Speaker 0:
+
+Entonces, lo puse en program, por eso un ejemplo, pero en realidad va a depender después de que lo que estés probando en program. Acuérdese, el program es como nuestro algoritmo de entrada, ¿sí? Es como nuestro programa principal para poder probar el diseño que hicimos, pero la realidad no es que en program, en program no debería de haber lógica de un ejercicio, la lógica tiene que estar en en los objetos, en las clases, ¿sí?
+
+Speaker 1:
+
+Ok, yo debería ser... Perdón.
+
+Speaker 0:
+
+No digo que en program lo prueban, no prueban program el diseño que armó, pero en program no es que ahí, yo acá no tengo que tener la lógica de si existe o no, sí, o sea, la puedo tener, digo, pero mi idea es, si yo voy a tener una lista de empleados adentro de una clase recursos humanos, yo lo que voy a tener es, en este, en el program lo que haré es instanciar la clase de recursos humanos y agregarle empleados. El que tiene que tener la lógica de si el empleado existe, si no existe, de modificarlo, etcétera, tiene que ser la clase de recursos humanos, que es la que resuelve el ejercicio, ¿se entiende?
+
+Speaker 1:
+
+Sí. Ok. Bueno, muchísimas gracias.
+
+Speaker 0:
+
+De nada. Pero de vuelta, remarcando, lo más importante de todo lo preguntar, yo creo que sí es el hecho de que el el la lógica por la cual guardo y recupero es nuestra, ¿sí? El lenguaje ni el visual code, nadie va a interpretar cómo buscar el empleado, somos nosotros, ¿sí? Si yo lo estoy guardando con legajo cuando lo voy a ir a buscar, y la tenés que ir buscar con lo mismo, si no, no lo vas a encontrar. Probablemente, no, el error va a ser que te va a dar que no está la clave, ¿sí?
+
+Que cuando no encuentre algo te va tirar una excepción, pero no es algo que el lenguaje interprete, sino que ustedes lo tienen que hacer, es es nuestro trabajo, digamos, ¿se entiende?
+
+Speaker 1:
+
+Sí. Ok, gracias.
+
+Speaker 0:
+
+De nada. Jesús.
+
+Speaker 2:
+
+Hola, profe, buenas noches.
+
+Speaker 0:
+
+Buenas.
+
+Speaker 2:
+
+Siempre son de a pares los datos del del diccionario, siempre, ¿no?
+
+Speaker 0:
+
+Siempre.
+
+Speaker 2:
+
+¿Y se puede buscar solamente por la clave o por el valor también?
+
+Speaker 0:
+
+Sí, la verdad que no me acuerdo, pero no tendría mucho sentido buscar por la por el valor, porque el valor ya lo tenés, con lo cual, si estoy usando por el valor, porque guárdense de vuelta, que cuando yo busco por el valor tiene que ser el mismo objeto que ya está en el diccionario., Entonces, buscar el objeto que ya tengo, no Sí, sí, sí preguntar. Esperame un 2º. Sin preguntar si ya está agregado, ¿sí? Por eso tengo el contains. Ah, perfecto.
+
+Yo sí puedo preguntar si este objeto ya se agregó al diccionario, pero pedir que me devuelva el mismo objeto que yo ya tengo no tiene mucho sentido, porque yo ya lo tengo el objeto.
+
+Speaker 2:
+
+Sí, ahora entendí, ya tengo el objeto, ¿para qué voy a buscarlo?
+
+Speaker 0:
+
+Claro, ¿para qué le voy a pedir que me devuelva ese objeto? Yo ya lo tengo. Lo que sí puedo preguntarle es, che, ¿vos ya tenés este objeto guardado ahí adentro?
+
+Speaker 2:
+
+Ah, ¿puedo preguntarle por el value, por el por el Claro,
+
+Speaker 0:
+
+con el contains, así como tenemos acá en el diagrama, pusimos contains y sí, sí, sí. Hay un contains value.
+
+Speaker 2:
+
+Está bien, puedo saber si está o por el legajo o por el valor.
+
+Speaker 0:
+
+O por el objeto entero, claro, que ahora vamos a charlar qué comparación hacen realmente, ¿no? Que no es tan simple, pero bueno. Bueno. ¿Mauro?
+
+Speaker 2:
+
+Ahora ahora ahora entendí, quedó, me quedó más claro. Gracias, profe.
+
+Speaker 3:
+
+Hola,. Una consulta. Bueno, en realidad creo que son 3 consultas. Ahí, en el diagrama, entonces, cuando hacemos un método, en la parte del parámetro solamente ponemos el, ay, el tipo de dato del parámetro que vamos a recibir y, obviamente, el tipo de el tipo de dato que va el output de de ese método, por ejemplo. Ahí pusiste in, porque vamos a recibir el
+
+Speaker 0:
+
+legajo acá igual le le podés poner, si querés, legajo, 2 punto sync, creo que también lo hacíamos, sí.
+
+Speaker 3:
+
+Sí, porque me creo que me mareé también en la otra clase, bueno, el profe ponía, puso en algunos también el tipo de dato y el coso, sino solamente el la variable, entonces, no se me perdí. ¿Le puedo poner el tipo de dato? A mí me sería más fácil como que, che, saca el tipo
+
+Speaker 0:
+
+de dato. De vuelta, suma que vos me pongas legajo, cuando veo el diagrama entiendo que la búsqueda la estás haciendo por legajo, ¿sí? Ok. Sin entrar a ver el código, digamos. Incluso, si esto capaz ponele, vos no me lo escribiste, yo, bueno, entiendo que el obtener empleado busca por legajo, o que dice legajo, ¿sí?
+
+Entonces, de vuelta, la idea es en el diagrama poner lo que suma, ¿sí?
+
+Speaker 3:
+
+Y y puedo poner lega Ponle
+
+Speaker 0:
+
+en el de acá arriba, en el de acá arriba ponele, crear empleado que recibe un empleado, no me suma mucho que le pongas un nombre a este parámetro, porque es un empleado, ¿qué me importa? Claro. ¿Que le? ¿Sí?
+
+Speaker 3:
+
+Que le ponga empleado empleado, o sea, no te sirve de
+
+Speaker 0:
+
+nada Claro, eso no suma. Entonces, ahí, si querés podés obviarlo. Donde veas que suma y y aclara, siempre es bienvenido, ¿sí?
+
+Speaker 3:
+
+Dale, buenísimo. Entonces, ok, bueno, me llegó eso. Después, ahí en el foreach, que vos usás bar, empleados, inempleado, algo así ahí, eso. Sí. ¿Eso es porque así está el hecho el foreach en en CSharp?
+
+Por ejemplo, siempre bar hay que poner
+
+Speaker 0:
+
+No, el foreach no es con bar, el foreach es con el tipo en realidad. Pasa que es más cómodo poner esto que poner todo esto.
+
+Speaker 3:
+
+Ok. Y yo puedo poner bar, por eso digo, yo siempre pongo bar, digo
+
+Speaker 0:
+
+Sí, se ve
+
+Speaker 3:
+
+bar empleados. Ok.
+
+Speaker 0:
+
+Hablamos, el bar no, creo que ni siquiera lo pusimos en el apunte, porque el bar es algo recontra puntual de de net, ¿sí? El bar lo que hace es definir el tipo a partir del contexto y del uso, ¿sí? En tiempo de compilación igual, O sea, de hecho, si yo me paro arriba de legajo, fíjense que ya me dice de cuál es el tipo, que es entero. ¿Cómo sabe que es entero? Tipo, lo estoy usando en una asignación y lo que tengo del otro lado de la asignación es un entero.
+
+Speaker 3:
+
+Es un entero
+
+Speaker 0:
+
+Entonces, aunque yo no le diga, che, esto es un entero, el tipo dice, bueno, mirá, si vos vas a guardar algo acá adentro, vos me ponés var, y yo esto te lo voy declarar como un entero, porque para poder guardar un entero necesitas un entero. Hay casos en los que no no te sirve y vos querés especificarle cómo querés que sea, por ejemplo, yo quiero poner in 64, ¿sí? Acá igual las conversaciones las hace solo, pero no importa. Oye, yo quisiera ponerle un dato específico y no quiero que lo asuma a partir de esto, o como nos pasaba con el upcasting y downcasting, ¿sí? Si yo instancio un objeto con una clase, pero en realidad la variable necesito verla como algo superior, tengo que especificarlo y no puedo dejarlo con bar.
+
+Hay otros casos en los que sí, hay toda una discusión sobre si el bar es más performante, menos performante, si sirve o si no sirve, hay gente que está en contra del bar, está a favor del bar, como en el fútbol, pero bueno. Para el claramente gana, ¿sí? El el, ¿sí? Pero fíjate que si me paro, fíjate que el el tipo es ese, ¿ves que
+
+Speaker 3:
+
+lo lo? Está bien.
+
+Speaker 0:
+
+Interpretando a partir de lo que tengo adentro de empleados, ¿sí? Pero el tipo es ese, es todo el tiempo de compilación.
+
+Speaker 3:
+
+Perfecto, ahora sí me quedó superclaro, está bien, usamos, o sea, queremos un tipo que infiere al tipo de dato y chau, pues le ponemos val
+
+Speaker 0:
+
+en vez. Tal cual. Es muy usado y acorta mucho el código, ¿no? Claramente te queda mucho más legible. Cuando no te hace falta especificar, la verdad que no, nada, en en muchos de los que hicimos todo por acá arriba, que declarábamos cosas, también ponele usado bar en todo, acá ponele en lugar de string apellido, podría decir o bar
+
+Speaker 3:
+
+Sí, sí, bar, y si es, sí, las
+
+Speaker 0:
+
+names pero acá sí, pues, mirá, este es un caso en el que no, o si yo acá pongo bar, lo va a ver, lo va... Mejor si lo si lo escribí a enviar. Si yo acá le pongo bar, ves que esto lo va a interpretar como que es del tipo empleado, ¿por qué? Porque está instanciando un empleado, y yo lo que quería era verlo como una persona, entonces acá lo tengo que especificar. Pero en este caso no, porque acá lo quiero ver como un empleado y estoy instanciando a un empleado, entonces acá yo puedo usar bar.
+
+Speaker 3:
+
+Claro, perfecto.
+
+Speaker 0:
+
+Si les genera alguna confusión, no usen bar, ¿sí? Esto, yo siempre aclaro lo mismo, o sea, si creen que les suma y no los marea, úsenlo, y, si están se están perdiendo en algo, no le den bola al bar y no lo usen, y yo voy a intentar no usarlo tampoco, ¿sí? Porque es completamente secundario, ¿sí? Se puede
+
+Speaker 3:
+
+No, sí. Ahí va, ahí va, pero con el for ish, va, no sé, mi compañero, pero yo con
+
+Speaker 0:
+
+el for con el for que con la for ish de colecciones simples no, porque es solamente el tipo, entonces, con el for ish empleado a empleado se entiende. Además, el foreach del mapa es un choclo, hay que poner, hay que poner key value, paid, int, empleada, muy largo, ¿sí? Pero bueno. Si le agarro la mano, va ver que les va les va a resumir un poco.
+
+Speaker 3:
+
+Y la y la última, ahí cuando usted dijo, ahí cuando hace el ad de y y le estamos poniendo el el apuntando al al al campo, le digo yo, pero al valor que dijimos, va a recibir una entero, entonces le ponemos el legajo coma otro empleado que es el objeto. Y ahí mi compañero había consultado para buscar por por value, y vos decís, no, pero ese es el objeto, o sea, ya lo conozco. No no, esa parte no no entendí, porque si yo pongo por me va a devolver el objeto, pero en realidad no. Yo busco por legajo para obtener el objeto, ¿o no? Entonces, no sé si cómo lo conozco.
+
+Esa es la parte
+
+Speaker 0:
+
+No, no, lo que me preguntó el compañero era si yo podía buscar por el empleado entero, o sea, es como decirle empleados y pasarle el el objeto entero para que me devuelva el mismo objeto,
+
+Speaker 3:
+
+¿sí? Todos los datos del empleado, claro, no necesito
+
+Speaker 0:
+
+La idea justamente es buscar por la clave, ¿no? O si yo lo guardé con legajo, yo lo voy a ir accediendo con legajos.
+
+Speaker 3:
+
+Está bien, está bien, está bien. Porque otro empleado tiene todos los datos de esa instanciaste arriba, después vamos a hacer, no sé, muchas instancias o una lista, va, no sé, bueno, está bien.
+
+Speaker 0:
+
+Sí, después se va ir usando, va a depender de lo que estemos resolviendo en cada ejercicio puntual, pero sí, la idea es esa. De vuelta, fijate, en el diagrama hitante, el crear empleado, un compañero preguntaba si el empleado podía tener el constructor privado, ¿sí? Cosa que nadie puede instanciar el empleado y que lo instance recursos humanos. Pero ojo con eso, que yo el constructor privado solo empleado puede instanciar empleados, y yo, en realidad, si quiero que lo haga a recursos humanos, por ahí no es, ¿sí? ¿Sí?
+
+No no no es ocultando el constructor, si oculto el constructor, nadie puede instanciar más que la propia clase empleado. Eso se hace para otro tipo de patrón, pero no para esto, ¿sí? Yo lo que sí puedo hacer es usar el empleado, ¿sí? O sea, hacer que recursos humanos instance al empleado y que vea a quién se lo da o qué te da, ¿sí? Algunas veces lo que se hace es no darte el objeto, lo que les decía antes, no te da el objeto que tiene guardado, sino que te lo copia, te da cosas puntuales, la da el objeto, la referencia al objeto que tiene guardado adentro.
+
+Speaker 3:
+
+Ajá.
+
+Speaker 0:
+
+Pero, nada, estamos hilando muy fino, ¿sí?
+
+Speaker 3:
+
+De hecho,
+
+Speaker 0:
+
+la mayoría de los ejercicios que hacemos no no entramos en tanto detalle, ¿sí? Solo para que entienda que estoy compartiendo referencias.
+
+Speaker 3:
+
+Ok, bueno, muchas gracias, profe. ¿Sí?
+
+Speaker 0:
+
+De nada. ¿No sería más limpio cargar todos los empleados en un archivo? Bueno, sí, pero eso no tiene nada que ver con lo que estamos viendo ahora. Muchos transcribiendo, se podría poner empleado con un constructor privado, bueno, esto era lo que había que había leído, que les comentaba. También podría poner una función de modificar empleos, sí, eso ya lo habíamos charlado, así que, bueno, con el diccionario no hay mucho más, ¿sí?
+
+Tiene el count igual que la igual que la lista, ¿sí? Yo puedo saber cuánto cuántos empleados hay. ¿Sí? Puedo saber cuántos empleados tengo y no sé si mucho más, pero que por eso ya tenemos, no hay mucho más de la de esta colección. El otro tipo que vamos a ver es 1 que se llama hashed set, ¿sí?
+
+Que lo de hash no me interesa tanto, sí me interesa lo de set, ¿sí? Porque es un set de datos, y como es un set, ¿sí? Siempre cuando se habla de set, en la mayoría de los lenguajes se está hablando de una colección de elementos únicos, ¿sí? Que sea hash set tiene que ver con cómo establece esa unicidad, ¿sí? ¿Qué quiere decir?
+
+Que cuando yo hago un hash set, cuando agrego un objeto, siempre se le hace, se le aplica una función de hash, ¿sí? Que después buscan, si todavía no lo vieron en alguna otra materia, después buscan qué es, no me preocupa mucho, pero agarra un objeto, le aplica esa función de hash, y eso es lo que le usa para ver si el objeto ya está guardado en la colección. Se fija si ya tiene, si en realidad manda a algo, hace todo un montón de cosas más, pero me asegura que ese objeto todavía no se agregó a la colección, ¿sí? Entonces, ¿cuándo lo vamos a usar? Cuando no queremos duplicados, ¿sí?
+
+Usted me dirá, bueno, pero pará, la lista de empleados tampoco la quería duplicados. Bueno, pero como la querías accesible a través de un legajo, entonces tenía más sentido usar un diccionario que un hashed set, ¿sí? ¿Por qué? Porque el hashed set se recorre y se accede más parecido a lo que es un list, ¿sí? Yo voy a poder acceder a alguna posición, a lo que hay, al elemento que está en cada una de sus posiciones, pero, en realidad, no puedo acceder por una clave y obtener el valor, ¿sí?
+
+Entonces, no tiene mucho más misterio que esto, igual que en la lista hay que establecer de qué tipo es, ¿sí? Entonces, voy a hacer un hash set de enteros, ¿sí? Entonces, cuando hago el app, fíjense que me devuelve un booleano ver si se pudo agregar o no, ¿sí? Entonces, el 1º add funcionó, devolvió true, el 2º add funcionó, me devolvió true, y el 3º add no funcionó porque ya estaba. Este me devolvió false y, en realidad, no hizo nada con la colección.
+
+No da una excepción, ¿sí? Sino que me devuelve false para que yo lo controle si quiero, pero no explotar, ¿sí? ¿Por qué? Porque suele usarse para guardar cosas que yo en realidad lo que necesito es garantizar que se guardan una sola vez, y no me interesa, muchas veces no me interesa tanto el el acceso después, ¿sí? Para trabajar con conjunto, bueno, sí, como todo acá aclara que devuelve truce y se agregó, fácil ya estaba, cada elemento es único sin duplicados, ¿sí?
+
+Acá como como dato extra, digamos, o que me interesa más, es justamente cómo se hace o cómo funciona un hash set, pero no de enteros, ¿sí? Porque yo sé si un entero está o no está en la colección, ¿por qué? Porque el número es el número, es el 1 o es el 2, ¿sí? El hash del 1 es el 1, el hash del 2 es el 2, ¿sí? Entonces, cuando vuelvo a tratar de insertar el 1, hace el hash, encuentra que el 1 ya estaba dentro de los hash que tiene ahí en en la colección, te devuelve que no se agregó y listo, ¿sí?
+
+Ahora, cuando estoy agregando objetos, no es tan simple, ¿sí? Esa parte es más interesante, sobre todo porque no vamos a generar, o en general no vamos a hacer hash set de enteros o de strings, ¿sí? En general vamos a usar colecciones de objetos de los nuestros, ¿sí? Entonces, para establecer si un objeto es igual a otro, o si un objeto es el mismo que otro, se tiene que redefinir 2 cosas, ¿sí? 2 métodos que vienen de object, ¿sí?
+
+Son 2 métodos que todos tienen, ¿sí vieron que yo estaba acá? Y no me acuerdo, creo que era al key value o key no sé cuánto, acá, fíjense que tengo el key, tengo el value y después tengo lo que tienen todos los objetos, que es el equals, el hash code, el get type y el two string, ¿sí? Esos 4 vienen de object, ¿sí? Por eso todo objeto tiene estos métodos. Si yo heredo, o sea, si yo yo creo una clase, aunque no herede, si yo creo una clase, heredo the object, entonces yo ya heredo estos métodos, ¿sí?
+
+Pero si no los redefino, tienen un comportamiento default, ¿sí? Y, para el uso de muchas de las cosas que hacemos con colecciones, el comportamiento default a veces no nos sirve del todo y tenemos que redefinirlos, ¿sí? Un caso, por ejemplo, es en el caso de establecer si el objeto es igual que otro, porque cuando está buscando, por ejemplo, cuando hago un remove, ¿sí? Cuando yo hacía el add, sí, en la lista o en, bueno, en listening también, pero en listening ya el remove es por clave, con lo cual es distinto, en una lista yo hacía el add y podía hacer el remove, ¿sí? Cuando yo hacía el remove del objeto, lo que le pasaba como dato era el objeto, ¿sí?
+
+Yo le decía este objeto sacalo de tu colección, ¿sí? Cuando digo este objeto es el mismo objeto, ¿sí? Tiene que ser la misma referencia, es el mismo circulito, ¿sí? Es el mismo. Este, ¿sí?
+
+Si yo quiero que personas saque este objeto de la colección, lo que hago es decirle a personas punto remove una persona, ¿sí? Y lo que le estoy pasando es la referencia del objeto al que quiero que borre, ¿se entiende? Si yo tuviese otro objeto, acá, que tiene el mismo nombre, mismo apellido, mismo contacto, ¿sí? Y le digo personas, vamos ponerle acá, otra persona. Y yo, bueno, acá lo tengo a Juan Pérez, si bien todos se llaman Juan Pérez, ¿no?
+
+Hagan de cuenta todos estos se llaman distintos y tengo solo 2 que se llaman igual, si yo a otras a personas le digo remu, otra persona, pensando que porque se llama igual lo va a encontrar y lo va a borrar, estoy equivocada, ¿sí? ¿Por qué? Porque personas no tienen referencia a ese objeto que yo le dije que borre. ¿Me siguen? Cuando yo le dije remove, le tengo que pasar el objeto que quiero que borre, ¿sí?
+
+Con el hashed pasa lo mismo, cuando yo estoy diciendo si el objeto está o no está, en este caso, fíjense, todos se llaman igual, los otros objetos distintos, entonces, yo los puedo agregar todos a mi hashed set, ¿sí? Porque son objetos distintos. Entonces, por default, el comportamiento heredado es que cuando yo uso el equals o la igualdad, ¿sí? Lo que compara es referencias de objetos, ¿sí? Entonces, cuando yo pregunto o cuando yo busco o cuando yo agrego un con unicidad, si yo no redefino algunas cositas, lo que va a hacer es chequear si el objeto, el mismo objeto ya está, no los valores del objeto, sino el mismo, mismo objeto, ¿sí?
+
+Por eso lo veo la diferencia entre igualdad e identidad, ¿sí? Si yo no cambio la forma en la que se establece la identidad, entonces la igualdad no me alcanza, tipo, no lo voy a encontrar, ¿sí? Entonces, ¿cuáles son los 2 métodos que voy a tener que redefinir? El equals y el get hash town, ¿Sí? Entonces, voy a tener que usar algún criterio, ¿sí?
+
+Que me diga cuando un objeto es igual a otro, y ese es el equals, ¿sí? El equals recibe un objeto, fíjense que es un object, ¿sí? Y lo que hace es devolver true cuando el object es del tipo que yo estoy preguntando, que es persona, ¿sí? Y que tienen el mismo valor como ID. Yo estoy diciendo que 2 personas son iguales cuando tienen el mismo ID.
+
+Yendo a mi ejemplo, yo tendría que venir acá y redefinir en empleado, y yo tendría que venir acá y redefinir public order. Equals, sí, bueno, acá ya me ya me lo arma de una, no quiero usar el de base, porque el de base sería el de persona, y el de persona no está redefinido, y yo lo quiero redefinir con el legajo, que no está en persona, lo que voy a hacer es acá preguntar si OG is empleado, en nuestro caso, no persona, and OG punto, acá tengo que castearlo, is persona p le tengo que poner. Si no le pongo el tipo, después no puedo usar el ID. ¿Sí? ¿Dónde estás?
+
+Empleado.. Empleado.. Lo que hacen así, que como lo conozco. Punto legajo es igual igual a legajo. ¿Sí?
+
+Entonces, 1º chequeo que sea, o sea, que el objeto que yo recibí es del tipo empleado. Ya, si el objeto no del tipo empleado, se va, ¿sí? Porque ya no son iguales, ¿sí? No me estás comparando pela con bananas, o yo necesito 2 empleados para poder compararlo. De vuelta, 2 empleados o si empleado tuviese subclases, ¿sí?
+
+Debería poder ser asignable. Ahí no, vos te tendría que usar assignable float, vale, vamos. No, no, ahí lo hago tan profundo, ¿sí? Me fijo que sea del mismo tipo. Si es del mismo tipo, entonces lo que hago es castear lo que recibí, porque yo recibí un object, ¿sí?
+
+Tengo que recibir un object porque equals, acuérdense, viene de object, ¿sí? Viene de arriba a arriba, antes de que yo haga una clase, ¿sí? Entonces, lo casteo a la clase empleada para poder preguntarle el legajo de lo que recibí, y pregunto si el legajo de lo que recibí es igual a mi legajo. Y acá podría tener un diss, si quieren, para que le sea más gráfico, me va decir que ya no hace falta, pero no me importa. ¿Sí?
+
+Entonces, con esto yo redefiní el equals, ¿sí? No redefiní el igual igual, el igual igual sigue siendo por por referencia. El igual igual siempre compara posiciones de memoria, digamos, que ahora lo vamos a ver cuando lo lo chequeemos el programa. Y el otro método que tengo que sobrescribir es el get hash code, que acá en general justamente tiene que tener un sentido, ¿no? O sea, si yo digo que la igualdad de 2 empleados tiene que ver con su legajo, entonces el hash code tiene que estar relacionado con el legajo, ¿sí?
+
+Porque, si 2 objetos son iguales, tienen que devolver el mismo hash code. Si no, no cumplo, ¿sí? Con el, vamos a decir ahí un tolon. No, que era int. Vamos a agarrar int el hash code, ¿sí?
+
+Ahí, entonces, no quiero que sea levail, sino que le voy a pedir el hash code a punto legajo punto get hash code. ¿Sí? Entonces, ¿con qué qué me aseguro esto? Que cuando yo esté comparando por equals, ¿sí? Y en cualquier colección, cuando esté haciendo el remove o cuando esté haciendo el usando el hash set, la igualdad está redefinida y ya no es la igualdad de referencias, sino que es la igualdad con el criterio que yo le establecí acá, que tiene que ver con el legajo.
+
+Si fuese el DNI, será el DNI, si es nombre y apellido, bueno, será nombre y apellido, medio endeble, pero bueno, ¿sí? Yo tengo que ocuparme de que esto esté redefinido para que funcione con este criterio de unicidad. Si a mí no me interesa, digamos, y y el criterio base es la referencia, está bien, me alcanza, pero en general es raro yo darme un hashed set, ¿sí? Y yo diga quiero tener una lista única de empleados, tengo que redefinirlo, ¿sí? Porque si no cualquiera me agrega otro objeto, pero con el mismo legajo y tengo duplicado el el empleado, ¿sí?
+
+Está 2 veces. ¿Se entiende? ¿Por qué está 2 veces? Porque son 2 objetos distintos, a pesar de que tiene el mismo legajo. Si yo lo redefino, entonces, cuando yo pregunte por el equants y cuando yo pregunte para el el get hash code, para el hash set, entonces, como me devuelve el mismo valor, porque usa el legajo, ya me va a decir que existe el objeto.
+
+Cuando yo haga un remove, por ejemplo, puedo hacer el remove de otro objeto que no es el que yo agregué, puedo hacer el remove, ¿sí? Pasándole un objeto que tiene el mismo legajo y lo va encontrar y lo va borrar, ¿sí? Hay un convenio que pregunta si todo hereda de object. Sí, todo hereda de object. Sí, no hay ninguna clase que no herede de object, ¿no?
+
+Nos podría como como hablar. Toda clase hereda de object, todas tienen arriba, allá arriba, arriba, viene siempre desde Object. Está, entonces, ahora yo vengo a program. Yo tengo acá, por ejemplo, pasa que no sé qué le bajó el tiene esto, ¿no? Otro empleado, empleado, otro empleado, empleado, otro empleado, no tiene nada.
+
+Ah, sí, datos contactos. Pinta, estos datos contactos. No le pusimos nada, y le bajó. Se ve que no está como requerido el dato. No sé qué le estará poniendo cuando no tiene...
+
+En el constructor, no sé qué le estará poniendo, nada, y ahí tenemos un problema, ¿no? Fíjense que si legajo es el dato con el cual yo voy a hacer la identidad y me tendría que asegurar que no existan empleados sin legajo, ¿sí? Entonces, en realidad, el empleado no debería tener un constructor vacío, ¿sí? El empleado siempre debería recibir, por lo menos, el legajo, ¿sí? No sé si nombre y apellido, todo esto, si quieren opcional, pero el legajo lo debería recibir.
+
+No lo voy a cambiar ahora, pero detalles. Entonces, si yo a... Claramente, estaba yendo a un 0. Como es entero, no explota, sino que devuelve 0 y listo. Entonces, vamos a crearle datos donde me instan ese otro empleado.
+
+Vamos a crearlo a Juan Pérez. Ya está, pero bueno. Pérez. 1 1, 2, 3, 3, Sí, este es un empleado, y teníamos un empleado y otro empleado, ¿sí? Entonces, ahí tengo 2 empleados con distintos legajos.
+
+Entonces, yo puedo ahora acá crear hash set de empleado. Vista única empleados, póngale. Y en esa lista, única empleada, 0.1 empleado. No le gustó, pues no le gustó. Con una persona, tu...
+
+Oh, un empleado lo estaba viendo.. Un empleado, ¿con qué le instancié? Empleado, estamos bien entonces, solo que castear. Pero, bueno, no importa. Movido el ejemplo.
+
+Y otro empleado, que ese sí ya lo estamos viendo como empleado, con el cual ahí no tenemos nada, solo pasarle otro empleado. Y, si quieren, acá hacemos un consult punto trialine empleados agregados. Y hacemos el count, y que en teoría debería ser 2, ¿no? Empleados punto. Igual, como vamos a agregar, no hace falta porque podemos ir viendo, pero en 4.
+
+Sí, entonces, a poner el gripal acá, cerramos este de acá, y f 5. Entonces, me los va a agregar porque son legajos distintos. Ahora, después lo que vamos a hacer es cambiarle, a lo podría haber hecho yo ahora. Vamos a cambiarle el legajo a alguno de los 2 para que sea el mismo. Sí, fíjense, tengo este, y acá el listado, unico empleados, ahí tengo un empleado.
+
+Y cuando le voy agregar el 2º, ¿sí? Ahí tengo el otro empleado. ¿Sí? Y el con me dice que empleados cerrados, hay 2. ¿Sí?
+
+Entonces, si yo creo otro... Voy a copiar la instanciación para escribirla, por ejemplo, este. Todos los otros datos pueden cambiar, ¿no? O sea, el el que importa es el que nosotros definimos en el EQ es el hash code. O se llama Roberto Roberto Sánchez, con antigüedad de 50 años.
+
+Sí, si ahí lo trato de agregar,
+
+Speaker 3:
+
+me lo podría
+
+Speaker 0:
+
+guardar. Ah, resulta igual, ¿sí? Como para que lo veamos en el inspector aunque sea. Sí, y, en teoría, ese 3º empleado no me lo va a agregar porque coincide el legajo con 1 que ya está. Y, de vuelta, no es que busque por si no es que recorre la colección a ver si hay alguno que tiene el mismo legajo, no, ¿sí?
+
+Lo que hace es aplicarle o pedirle la función de hash, ¿sí? A cada elemento y ver si esa función de hash le devuelve lo mismo de lo que estoy tratando de agregar, ¿sí? Entonces, es responsabilidad nuestra redefinir justamente lo que devuelve el get hash code.
