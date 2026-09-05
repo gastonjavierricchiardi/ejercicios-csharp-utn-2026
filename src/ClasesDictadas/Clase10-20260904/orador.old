@@ -1,0 +1,21 @@
+public class Orador : Asistente
+{
+private string tema;
+
+    public Orador(int documento, string nombre, string tema) : base(documento, nombre)
+    {
+        Tema = tema;
+    }
+
+    public string Tema
+    {
+        get { return tema; }
+        set { tema = value; }
+    }
+
+    public override string InformarBeneficio()
+    {
+        return "Acceso total y dará la charla de " + tema;
+    }
+
+}
