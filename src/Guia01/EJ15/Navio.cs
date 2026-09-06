@@ -20,13 +20,12 @@ public abstract class Navio
         this.estabilidad = estabilidad;
     }
 
+    // 3. PROPIEDADES / GETTERS Y SETTERS
     public string Nombre { get => nombre; }
     public string Flotabilidad { get => flotabilidad; }
     public string Estabilidad { get => estabilidad; }
 
 
-    // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
 
     // 4. MÉTODOS
     // Comportamiento del objeto.

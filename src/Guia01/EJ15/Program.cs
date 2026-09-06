@@ -7,9 +7,7 @@ Gastón Ricchiardi (gastonj@hotmail.com)
     - "La gaucha" y "El gaucho" son dos lanchas destinadas a brindar servicio médico que se emplean para salvatajes rápidos; poseen motor fuera de borda, una elevada flotabilidad que le permite ir muy rápido, aunque debido a que la estabilidad no es muy buena, la maniobrabilidad se ve afectada; ambas poseen una grúa pequeña que les permite subir y/o arriar objetos de hasta trescientos kilos.
 
     Analizar, diseñar, diagramar las relaciones e implementar el código.
-    Crear instancias de los distintos barcos, asignar valores y mostrar por pantalla.
-
-*/
+    Crear instancias de los distintos barcos, asignar valores y mostrar por pantalla.*/
 public class Program
 {
     public static void Main()
@@ -33,6 +31,7 @@ public class Program
         Console.WriteLine($"Estabilidad      : {acorazado.Estabilidad}");
         // Agregamos lo nuevo
         Console.WriteLine($"Solidez          : {acorazado.Solidez}");
+        Console.WriteLine($"Blindaje         : {acorazado.Blindaje}");
         Console.WriteLine($"Potencia de fuego: {acorazado.PotenciaFuego}");
         Console.WriteLine($"Velocidad crucero: {acorazado.VelocidadCrucero}");
 
@@ -49,16 +48,63 @@ public class Program
                 );
 
         Console.WriteLine("DESTRUCTOR");
-        Console.WriteLine($"Nombre: {destructor.Nombre}");
-        Console.WriteLine($"Flotabilidad: {destructor.Flotabilidad}");
-        Console.WriteLine($"Estabilidad: {destructor.Estabilidad}");
-        Console.WriteLine($"Solidez: {destructor.Solidez}");
+        Console.WriteLine($"Nombre           : {destructor.Nombre}");
+        Console.WriteLine($"Flotabilidad     : {destructor.Flotabilidad}");
+        Console.WriteLine($"Estabilidad      : {destructor.Estabilidad}");
+        Console.WriteLine($"Solidez          : {destructor.Solidez}");
         Console.WriteLine($"Potencia de fuego: {destructor.PotenciaFuego}");
-        Console.WriteLine($"Maniobrabilidad: {destructor.Maniobrabilidad}");
+        Console.WriteLine($"Maniobrabilidad  : {destructor.Maniobrabilidad}");
         Console.WriteLine($"Velocidad crucero: {destructor.VelocidadCrucero}");
+
+        Console.WriteLine();
+        // Creamos el BarcoHospital
+        BarcoHospital sibelancia = new BarcoHospital(
+                    "Sibelancia",
+                    "Excelente",
+                    "Extrema",
+                    75
+                );
+
+        Console.WriteLine("BARCO HOSPITAL");
+        Console.WriteLine($"Nombre               : {sibelancia.Nombre}");
+        Console.WriteLine($"Flotabilidad         : {sibelancia.Flotabilidad}");
+        Console.WriteLine($"Estabilidad          : {sibelancia.Estabilidad}");
+        Console.WriteLine($"Cantidad de pacientes: {sibelancia.CapacidadPacientes}");
+
+        Console.WriteLine();
+        // Lancha médica "laGaucha"
+        LanchaMedica laGaucha = new LanchaMedica(
+            "La Gaucha",
+            "Elevada",
+            "No muy buena",
+            "Afectada",
+            "Fuera de borda",
+            300
+        );
+        Console.WriteLine("LANCHA MÉDICA");
+        Console.WriteLine($"Nombre         : {laGaucha.Nombre}");
+        Console.WriteLine($"Flotabilidad   : {laGaucha.Flotabilidad}");
+        Console.WriteLine($"Estabilidad    : {laGaucha.Estabilidad}");
+        Console.WriteLine($"Maniobrabilidad: {laGaucha.Maniobrabilidad}");
+        Console.WriteLine($"Tipo de motor  : {laGaucha.TipoMotor}");
+        Console.WriteLine($"Capacidad grúa : {laGaucha.CapacidadGrua} kg.");
+
+        Console.WriteLine();
+        // Lancha médica "elGaucho"
+        LanchaMedica elGaucho = new LanchaMedica(
+            "El Gaucho",
+            "Elevada",
+            "No muy buena",
+            "Afectada",
+            "Fuera de borda",
+            300
+        );
+        Console.WriteLine("LANCHA MÉDICA");
+        Console.WriteLine($"Nombre         : {elGaucho.Nombre}");
+        Console.WriteLine($"Flotabilidad   : {elGaucho.Flotabilidad}");
+        Console.WriteLine($"Estabilidad    : {elGaucho.Estabilidad}");
+        Console.WriteLine($"Maniobrabilidad: {elGaucho.Maniobrabilidad}");
+        Console.WriteLine($"Tipo de motor  : {elGaucho.TipoMotor}");
+        Console.WriteLine($"Capacidad grúa : {elGaucho.CapacidadGrua} kg.");
     }
-
-
-
 }
-
