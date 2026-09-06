@@ -32,4 +32,4 @@ Modelar los micros y las personas de forma tal que:
 
 ---
 
-# Análisis
+# Análisis:
