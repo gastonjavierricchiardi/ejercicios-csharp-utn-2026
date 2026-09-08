@@ -122,4 +122,7 @@
   <Folder Name="/src/Herencia/Herencia03_celulares/">
     <Project Path="src/Herencia/Herencia03_celulares/Herencia03_sueldos.csproj" />
   </Folder>
+  <Folder Name="/src/Micros/">
+    <Project Path="src/Micros/EJMicros.csproj" />
+  </Folder>
 </Solution>

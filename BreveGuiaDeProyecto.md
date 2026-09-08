@@ -580,9 +580,9 @@ EJ08
 ## Windows / PowerShell
 
 ```powershell
-dotnet new console --name 01EJ08 --output .\src\Guia01\EJ08 --framework net10.0
-dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Guia01\EJ08\01EJ08.csproj
-dotnet run --project ".\src\Guia01\EJ08\01EJ08.csproj"
+dotnet new console --name EJMicros --output .\src\Micros --framework net10.0
+dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Micros\EJMicros.csproj
+dotnet run --project ".\src\Micros\EJMicros.csproj"
 ```
 
 ## Zorin OS / Bash
