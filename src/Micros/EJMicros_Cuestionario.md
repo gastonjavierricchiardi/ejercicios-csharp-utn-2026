@@ -3,6 +3,15 @@
 Sin adaptarla a ningún caso particular:
 
 1. **¿Qué es?** → posibles **clases / entidades**.
+
+- - Micros
+- - Personas
+    - Apurados
+    - Claustrofobicos
+    - Fiaca
+    - Moderados
+    - Obsecuentes
+
 2. **¿Qué información tiene?** → **atributos / estado**.
 3. **¿Qué sabe hacer?** → **métodos / responsabilidades**.
 4. **¿Qué debe tener obligatoriamente al nacer?** → **constructor**.
