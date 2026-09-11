@@ -14,4 +14,8 @@ public class Fiaca : Persona
 
     // 4. MÉTODOS
     // Comportamiento del objeto.
+    public override bool AceptaSubir(Micro micro)
+    {
+        return micro.HayLugarSentado();
+    }
 }

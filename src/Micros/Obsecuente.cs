@@ -3,15 +3,20 @@
 public class Obsecuente : Persona
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
 
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    public Obsecuente(Persona jefe) : base(jefe) { }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
 
     // 4. MÉTODOS
-    // Comportamiento del objeto.
+    public override bool AceptaSubir(Micro micro)
+    {
+        Persona? jefe = GetJefe();
+        if (jefe != null)
+        {
+            return jefe.AceptaSubir(micro);
+        }
+        throw new Exception("El obsecuente debe tener un jefe");
+    }
 }

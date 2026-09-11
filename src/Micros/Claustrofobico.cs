@@ -14,4 +14,8 @@ public class Claustrofobico : Persona
 
     // 4. MÉTODOS
     // Comportamiento del objeto.
+    public override bool AceptaSubir(Micro micro)
+    {
+        return micro.GetVolumenM3() > 120;
+    }
 }

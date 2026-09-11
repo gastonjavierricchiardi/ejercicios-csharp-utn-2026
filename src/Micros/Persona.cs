@@ -1,17 +1,40 @@
 ﻿// /src/Micros/Persona.cs
-
-public class Persona
+using System.Collections.Generic;
+public abstract class Persona
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
+    private Persona? jefe;
+    private List<Persona> subordinados;
 
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    protected Persona()
+    {
+        subordinados = new List<Persona>();
+    }
+    protected Persona(Persona jefe)
+    {
+        subordinados = new List<Persona>();
+        this.jefe = jefe;
+        jefe.AgregarSubordinado(this);
+    }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
+
+
+    public Persona? GetJefe()
+    {
+        return jefe;
+    }
 
     // 4. MÉTODOS
-    // Comportamiento del objeto.
+    public bool EsJefe()
+    {
+        return subordinados.Count > 0;
+    }
+
+    private void AgregarSubordinado(Persona subordinado)
+    {
+        subordinados.Add(subordinado);
+    }
+    public abstract bool AceptaSubir(Micro micro);
 }
