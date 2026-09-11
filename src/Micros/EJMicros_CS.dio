@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="3TR7McjGl6b2OsUbKvCn" name="CS">
-        <mxGraphModel dx="1597" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1559" dy="321" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -127,8 +127,8 @@
                 <mxCell id="65" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="64" target="60" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="se suben si quedan solo x lugares libres, sin distinguir entre parados o sentados.&lt;div&gt;En moderado si necesitamos atributos propios.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;lugaresMinimosLibres: int&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="835" y="730" width="340" height="80" as="geometry"/>
+                <mxCell id="64" value="AceptaSubir&lt;div&gt;(Micro micr&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;o&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;: bool {&lt;/span&gt;&lt;/div&gt;&lt;div&gt;return micro.LugaresLibres() &amp;gt;= lugaresMinimosLibres;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="670" width="330" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" style="edgeStyle=none;html=1;endArrow=classic;endFill=0;" parent="1" source="66" target="31" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -145,8 +145,8 @@
                 <mxCell id="71" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="70" target="66" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="70" value="Toman la misma descición que sus jefes(cada empleado sabe quién es su jefe)" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="1160" y="565" width="130" height="80" as="geometry"/>
+                <mxCell id="70" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;AceptaSubir&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;(&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Micro micro&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;): bool&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Persona? jefe = GetJefe();&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if (jefe != null)&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; {&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return jefe.AceptaSubir(micro);&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw new Exception(&quot;El obsecuente debe tener un jefe&quot;);&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; }&lt;/font&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="1190" y="544" width="200" height="186" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;gt;&amp;nbsp; Los primeros pasajeros ocupan los asientos&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;hasta llenar capacidadSentados&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;y recién después van parados&lt;/span&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=10;verticalAlign=top;align=left;" parent="1" vertex="1">
                     <mxGeometry y="80" width="240" height="80" as="geometry"/>
@@ -172,49 +172,55 @@
                 <mxCell id="90" value="+ AceptaSubir(micro Micro): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="39" vertex="1">
                     <mxGeometry y="38" width="210" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="103" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="102" target="78">
+                <mxCell id="103" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="102" target="78" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-60" y="150" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="102" value="return capacidadSentados + capacidadParados" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="102" value="return capacidadSentados + capacidadParados" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="120" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="105" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="104" target="80">
+                <mxCell id="105" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="104" target="80" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="104" value="return pasajeros.Count &amp;lt; CalcularCapacidadTotal();" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="104" value="return pasajeros.Count &amp;lt; CalcularCapacidadTotal();" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="150" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="107" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="106" target="9">
+                <mxCell id="107" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="106" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="return HayLugar() &amp;amp;&amp;amp; persona.AceptaSubir(this);" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="106" value="return HayLugar() &amp;amp;&amp;amp; persona.AceptaSubir(this);" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="270" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="109" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="108" target="81">
+                <mxCell id="109" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="108" target="81" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="return pasajeros.Count &amp;lt; CalcularCapacidadTotal();" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="108" value="return pasajeros.Count &amp;lt; CalcularCapacidadTotal();" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="180" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="111" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="110" target="85">
+                <mxCell id="111" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="110" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="110" value="" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="210" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="115" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="112" target="85">
+                <mxCell id="115" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="112" target="85" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="112" value="return CalcularCapacidadTotal() - pasajeros.Count;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="112" value="return CalcularCapacidadTotal() - pasajeros.Count;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="240" width="320" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="114" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="113" target="97">
+                <mxCell id="114" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="113" target="97" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="113" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;if (PuedeSubir(persona))&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; pasajeros.Add(persona);&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; else&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw new Exception(&quot;La persona no puede subir al micro.&quot;);&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=left;" vertex="1" parent="1">
+                <mxCell id="113" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;if (PuedeSubir(persona))&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; pasajeros.Add(persona);&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; else&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; throw new Exception(&quot;La persona no puede subir al micro.&quot;);&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=left;" parent="1" vertex="1">
                     <mxGeometry x="-440" y="300" width="320" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="Acá, tenemos un problema de diseño&lt;div&gt;* El obsecuente Nace con un Jefe ?&lt;/div&gt;&lt;div&gt;O puede nacer solo ?&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1400" y="440" width="120" height="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="Se decide arbitrariamente que SI, que el OBSECUENTE, nace siempre con un JEFE, si no su JEFE no tiene sentido de existencia." style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1400" y="538" width="120" height="122" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
