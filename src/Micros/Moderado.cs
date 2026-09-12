@@ -10,6 +10,11 @@ public class Moderado : Persona
     {
         this.lugaresMinimosLibres = lugaresMinimosLibres;
     }
+    // Constructor para que nazca como JEFE
+    public Moderado(int lugaresMinimosLibres, Persona jefe) : base(jefe)
+    {
+        this.lugaresMinimosLibres = lugaresMinimosLibres;
+    }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
 

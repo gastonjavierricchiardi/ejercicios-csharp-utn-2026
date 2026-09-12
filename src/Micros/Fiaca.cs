@@ -3,17 +3,11 @@
 public class Fiaca : Persona
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
-
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
-
+    public Fiaca() { }
+    public Fiaca(Persona jefe) : base(jefe) { }
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
-
     // 4. MÉTODOS
-    // Comportamiento del objeto.
     public override bool AceptaSubir(Micro micro)
     {
         return micro.HayLugarSentado();

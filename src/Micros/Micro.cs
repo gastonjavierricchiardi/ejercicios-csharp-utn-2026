@@ -35,17 +35,37 @@ public class Micro
     }
     public bool HayLugarSentado()
     {
-        return pasajeros.Count < capacidadSentados;
+        // Refactorizamos para no usar .Count
+        // return pasajeros.Count < capacidadSentados;
+        int cantidadPasajeros = 0;
+        foreach (Persona pasajeros in pasajeros)
+        {
+            cantidadPasajeros++;
+        }
+        return cantidadPasajeros < capacidadSentados;
     }
 
     public bool HayLugar()
     {
-        return pasajeros.Count < CalcularCapacidadTotal();
+        // Refactorizamos return pasajeros.Count < CalcularCapacidadTotal();
+        int cantidadPasajeros = 0;
+        foreach (Persona pasajeros in pasajeros)
+        {
+            cantidadPasajeros++;
+        }
+        return cantidadPasajeros < CalcularCapacidadTotal();
     }
 
     public int LugaresLibres()
     {
-        return CalcularCapacidadTotal() - pasajeros.Count;
+        // Refactorizamos
+        int cantidadPasajeros = 0;
+
+        foreach (Persona pasajero in pasajeros)
+        {
+            cantidadPasajeros++;
+        }
+        return CalcularCapacidadTotal() - cantidadPasajeros;
     }
 
     public bool PuedeSubir(Persona persona)
@@ -67,11 +87,24 @@ public class Micro
 
     public void BajarPasajero(Persona persona)
     {
-        if (pasajeros.Count == 0)
+        bool hayPasajeros = false;
+        bool personaEncontrada = false;
+        foreach (Persona pasajero in pasajeros)
+        {
+            hayPasajeros = true;
+
+            if (pasajero == persona)
+            {
+                personaEncontrada = true;
+            }
+        }
+
+        if (!hayPasajeros)
         {
             throw new Exception("El micro está vaciío.");
         }
-        if (pasajeros.Contains(persona))
+
+        if (personaEncontrada)
         {
             pasajeros.Remove(persona);
         }
@@ -80,6 +113,13 @@ public class Micro
             throw new Exception("La persona no se encuentra en el micro.");
         }
     }
-
-    public Persona? PrimerPasajero() { throw new NotImplementedException(); }
+    public Persona? PrimerPasajero()
+    // Refactorizamos
+    {
+        foreach (Persona pasajero in pasajeros)
+        {
+            return pasajero;
+        }
+        return null;
+    }
 }

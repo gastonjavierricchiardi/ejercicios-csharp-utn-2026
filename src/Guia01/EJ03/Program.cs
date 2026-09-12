@@ -19,8 +19,8 @@ public class Program
         // Mostramos los valores en pantalla
         Console.Write(art1._marca);
         Console.WriteLine(); // Salto de línea
-        Console.Write(art1._modelo);
-
+        // Console.Write(art1._modelo);
+        Console.WriteLine(art1.GetModelo());
         // o bien podemos hace el salto de línea como en TS con "\n"
     }
 }

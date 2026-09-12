@@ -66,13 +66,35 @@ public class Program
         MostrarEsJefe("Apurado", apurado.EsJefe());
         MostrarEsJefe("Claustrofobico", claustrofobico.EsJefe());
 
-        /*Probamos de subir un pasajero y 
-        bajarlo*/
+        // Probamos que cualquier persona pueda tener Jefe
+        Fiaca fiacaConJefe = new Fiaca(claustrofobico);
+        MostrarEsJefe(
+            "Claustrofobico después de asignarle un subordinado",
+            claustrofobico.EsJefe()
+            );
+
+
+        // Probamos de subir un pasajero y luego bajarlo
         Apurado pasajeroPrueba = new Apurado();
         micro.SubirPasajero(pasajeroPrueba);
         Console.WriteLine($"Lugares libres antes de bajar: {micro.LugaresLibres()}");
         micro.BajarPasajero(pasajeroPrueba);
-        System.Console.WriteLine($"Lugares libres después de bajar: {micro.LugaresLibres()}");
+        Console.WriteLine($"Lugares libres después de bajar: {micro.LugaresLibres()}");
+
+        // No mezclamos nada, creamos un nuevo micro de prueba
+        Micro microPrimerPasajero = new Micro(2, 1, 130);
+
+        MostrarMicroVacio(microPrimerPasajero.PrimerPasajero() == null);
+
+        Apurado primerPasajeroPrueba = new Apurado();
+        Apurado segundoPasajeroPrueba = new Apurado();
+
+        microPrimerPasajero.SubirPasajero(primerPasajeroPrueba);
+        microPrimerPasajero.SubirPasajero(segundoPasajeroPrueba);
+
+        MostrarPrimerPasajero(
+            microPrimerPasajero.PrimerPasajero() == primerPasajeroPrueba
+        );
     }
 
     private static void MostrarResultado(string persona, bool acepta)
@@ -96,6 +118,30 @@ public class Program
         else
         {
             Console.WriteLine($"{persona} NO es jefe");
+        }
+    }
+
+    private static void MostrarMicroVacio(bool estaVacio)
+    {
+        if (estaVacio == true)
+        {
+            Console.WriteLine("El micro está vacío");
+        }
+        else
+        {
+            Console.WriteLine("El micro tiene pasajeros");
+        }
+    }
+
+    private static void MostrarPrimerPasajero(bool esElEsperado)
+    {
+        if (esElEsperado == true)
+        {
+            Console.WriteLine("El primer pasajero es el esperado");
+        }
+        else
+        {
+            Console.WriteLine("El primer pasajero NO es el esperado");
         }
     }
 }

@@ -195,6 +195,8 @@ Ese sí lo podemos tomar como base C# para seguir.
 ### Mejorado sin basura CS
 
 ```
+cd\
+cd .\vcs\ejercicios-csharp-utn-2026\src\
 
 $salida = "dump_EJMicros.txt"
 

@@ -14,6 +14,5 @@
       - **v. Bicicletas:** tamaño de rodado, si son eléctricas y cantidad de cambios.
 
     Analizar, diseñar, diagramar las relaciones e implementar el código considerando que la capacidad máxima de carga del auto es de 5 elementos, mientras que para la camioneta es de 10.
-
 */
 

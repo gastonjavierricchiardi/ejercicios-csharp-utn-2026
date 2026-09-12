@@ -20,5 +20,8 @@ public class Articulo
     {
         this._modelo = modelo;
     }
-
+    public string GetModelo()
+    {
+        return this._modelo;
+    }
 }
