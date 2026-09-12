@@ -36,9 +36,8 @@ public class Micro
     public bool HayLugarSentado()
     {
         // Refactorizamos para no usar .Count
-        // return pasajeros.Count < capacidadSentados;
         int cantidadPasajeros = 0;
-        foreach (Persona pasajeros in pasajeros)
+        foreach (Persona pasajero in pasajeros)
         {
             cantidadPasajeros++;
         }
@@ -47,9 +46,8 @@ public class Micro
 
     public bool HayLugar()
     {
-        // Refactorizamos return pasajeros.Count < CalcularCapacidadTotal();
         int cantidadPasajeros = 0;
-        foreach (Persona pasajeros in pasajeros)
+        foreach (Persona pasajero in pasajeros)
         {
             cantidadPasajeros++;
         }
@@ -58,7 +56,6 @@ public class Micro
 
     public int LugaresLibres()
     {
-        // Refactorizamos
         int cantidadPasajeros = 0;
 
         foreach (Persona pasajero in pasajeros)
@@ -101,7 +98,7 @@ public class Micro
 
         if (!hayPasajeros)
         {
-            throw new Exception("El micro está vaciío.");
+            throw new Exception("El micro está vacío.");
         }
 
         if (personaEncontrada)
@@ -114,7 +111,6 @@ public class Micro
         }
     }
     public Persona? PrimerPasajero()
-    // Refactorizamos
     {
         foreach (Persona pasajero in pasajeros)
         {

@@ -28,8 +28,13 @@ public abstract class Persona
 
     // 4. MÉTODOS
     public bool EsJefe()
+    // Refactorizamos
     {
-        return subordinados.Count > 0;
+        foreach (Persona subordinado in subordinados)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void AgregarSubordinado(Persona subordinado)

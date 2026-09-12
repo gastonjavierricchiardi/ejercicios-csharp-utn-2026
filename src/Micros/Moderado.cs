@@ -10,7 +10,7 @@ public class Moderado : Persona
     {
         this.lugaresMinimosLibres = lugaresMinimosLibres;
     }
-    // Constructor para que nazca como JEFE
+    // Constructor para que nazca con un jefe
     public Moderado(int lugaresMinimosLibres, Persona jefe) : base(jefe)
     {
         this.lugaresMinimosLibres = lugaresMinimosLibres;
