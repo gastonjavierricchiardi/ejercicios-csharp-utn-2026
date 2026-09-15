@@ -22,6 +22,7 @@ class Player : GameObject
 }
 */
 /*
+*/
 // Pregunta 3
 
 Person employee = new Employee(); // Upcasting implicito
@@ -41,7 +42,6 @@ class Employee : Person
         Console.WriteLine("Adiós, soy un empleado.");
     }
 }
-*/
 
 // Pregunta 7
 /*
@@ -214,12 +214,12 @@ class Circle : Shape
 }
 */
 
+/*
 Printer generalPrinter = new HigResolutionPrinter(); // Upcasting
 generalPrinter.PrintDocument("reporte Anual");
 
 generalPrinter.Calibrate();
 // Error: No se puede acceder al método de la clase derivada a través de la referencia de la clase base
-
 class Printer
 {
     public virtual void PrintDocument(string doc)
@@ -240,3 +240,4 @@ class HigResolutionPrinter : Printer
         Console.WriteLine("Calibrando...");
     }
 }
+*/
