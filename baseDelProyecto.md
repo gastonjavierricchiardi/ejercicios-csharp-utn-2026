@@ -52,7 +52,7 @@ Mientras que `Program.cs` queda para el punto de entrada:
 public class Program
 {
     public static void Main()
-    //static void Main(string[] args)
+    //static void Main(string[] args) // si tiene que recibir datos por consola
     {
         // Crear objetos y probar el ejercicio
     }
@@ -198,7 +198,7 @@ Ese sí lo podemos tomar como base C# para seguir.
 cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
-$salida = "dump_EJMicros.txt"
+$salida = "dump_EJTrenesyDeposito.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.
