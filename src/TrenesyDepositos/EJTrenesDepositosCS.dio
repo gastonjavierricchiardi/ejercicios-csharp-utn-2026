@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="6X4lzVXwV-n36GUQ4lvA" name="CS_v01">
-        <mxGraphModel dx="1192" dy="1370" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1327" dy="1457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -118,7 +118,7 @@
                 <mxCell id="54" value="+ ArrastreUtil(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="47" vertex="1">
                     <mxGeometry y="98" width="240" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="+ EsEficiente(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="47">
+                <mxCell id="108" value="+ EsEficiente(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="47" vertex="1">
                     <mxGeometry y="118" width="240" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="91" style="edgeStyle=none;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="61" target="14" edge="1">
@@ -154,13 +154,13 @@
                 <mxCell id="88" value="+ EsEficiente(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
                     <mxGeometry y="157" width="255" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="81" value="+ PuedeMoverse():" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                <mxCell id="81" value="+ PuedeMoverse(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
                     <mxGeometry y="177" width="255" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="80" value="+ KilosEmpujeFaltante():" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                <mxCell id="80" value="+ KilosEmpujeFaltante(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
                     <mxGeometry y="197" width="255" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="89" value="+ EsCompleja()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                <mxCell id="89" value="+ EsCompleja(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
                     <mxGeometry y="217" width="255" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="74" value="PesoMaximo() = CantidadPasajeros() * 80" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
@@ -184,10 +184,10 @@
                 <mxCell id="101" style="edgeStyle=none;html=1;entryX=0.188;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" parent="1" source="100" target="54" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="109" target="108">
+                <mxCell id="110" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="109" target="108" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="109" value="return ArrastreUtil() &amp;gt;= peso * 5;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" vertex="1" parent="1">
+                <mxCell id="109" value="return ArrastreUtil() &amp;gt;= peso * 5;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-470" y="408" width="190" height="30" as="geometry"/>
                 </mxCell>
             </root>
