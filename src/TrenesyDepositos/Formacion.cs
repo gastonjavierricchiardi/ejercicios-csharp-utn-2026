@@ -46,4 +46,92 @@ public class Formacion
         }
         return cantidadVagonesLivianos;
     }
+
+    public double VelocidadMaxima()
+    {
+        double velocidadMaxima = locomotoras[0].VelocidadMaxima;
+        foreach (Locomotora locomotora in locomotoras)
+        {
+            if (locomotora.VelocidadMaxima < velocidadMaxima)
+            {
+                velocidadMaxima = locomotora.VelocidadMaxima;
+            }
+        }
+        return velocidadMaxima;
+    }
+
+    public bool EsEficiente()
+    {
+        foreach (Locomotora locomotora in locomotoras)
+        {
+            if (!locomotora.EsEficiente())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool PuedeMoverse()
+    {
+        double arrastreUtilTotal = 0;
+
+        foreach (Locomotora locomotora in locomotoras)
+        {
+            arrastreUtilTotal += locomotora.ArrastreUtil();
+        }
+        double pesoMaximoVagones = 0;
+
+        foreach (Vagon vagon in vagones)
+        {
+            pesoMaximoVagones += vagon.PesoMaximo();
+        }
+        return arrastreUtilTotal >= pesoMaximoVagones;
+    }
+    public double KilosEmpujeFaltantes()
+    {
+        double arrastreUtilTotal = 0;
+
+        foreach (Locomotora locomotora in locomotoras)
+        {
+            arrastreUtilTotal += locomotora.ArrastreUtil();
+        }
+        double pesoMaximoVagones = 0;
+        foreach (Vagon vagon in vagones)
+        {
+            pesoMaximoVagones += vagon.PesoMaximo();
+        }
+        if (arrastreUtilTotal >= pesoMaximoVagones)
+        {
+            return 0;
+        }
+        return pesoMaximoVagones - arrastreUtilTotal;
+    }
+
+    // Vemos si una formación es compleja
+
+    public bool EsCompleja()
+    {
+        int cantidadUnidades = 0;
+        double pesoTotal = 0;
+
+        foreach (Locomotora locomotora in locomotoras)
+        {
+            cantidadUnidades++;
+            pesoTotal += locomotora.Peso;
+        }
+
+        foreach (Vagon vagon in vagones)
+        {
+            cantidadUnidades++;
+            pesoTotal += vagon.PesoMaximo();
+        }
+        return cantidadUnidades > 20 || pesoTotal > 10000;
+
+
+    }
+
+
+
+
 }
