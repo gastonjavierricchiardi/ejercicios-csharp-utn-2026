@@ -11,11 +11,13 @@ public class VagonCarga : Vagon
         this.cargaMaxima = cargaMaxima;
     }
     // 3. PROPIEDADES / GETTERS Y SETTERS
-
     // 4. MÉTODOS
-
     public override double PesoMaximo()
     {
         return cargaMaxima + 160;
+    }
+    public override double CantidadPasajeros()
+    {
+        return 0;
     }
 }

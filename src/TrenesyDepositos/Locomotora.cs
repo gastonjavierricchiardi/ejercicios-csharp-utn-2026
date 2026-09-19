@@ -3,15 +3,28 @@
 public class Locomotora
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
+    private double peso;
+    private double pesoMaximoArrastre;
+    private double velocidadMaxima;
 
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    public Locomotora(
+        double peso,
+        double pesoMaximoArrastre,
+        double velocidadMaxima
+    )
+    {
+        this.peso = peso;
+        this.pesoMaximoArrastre = pesoMaximoArrastre;
+        this.velocidadMaxima = velocidadMaxima;
+    }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
 
     // 4. MÉTODOS
-    // Comportamiento del objeto.
+
+    public double ArrastreUtil()
+    {
+        return pesoMaximoArrastre - peso;
+    }
 }

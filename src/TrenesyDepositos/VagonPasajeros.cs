@@ -16,9 +16,8 @@ public class VagonPasajeros : Vagon
     }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-
     // 4. MÉTODOS
-    public double CantidadPasajeros()
+    public override double CantidadPasajeros()
     {
         if (anchoUtil <= 2.5)
         {
