@@ -1,76 +1,70 @@
 <mxfile host="65bd71144e">
     <diagram id="6X4lzVXwV-n36GUQ4lvA" name="CS_v01">
-        <mxGraphModel dx="1327" dy="1457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1284" dy="1421" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="&lt;b&gt;Deposito&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="-20" y="-30" width="240" height="175" as="geometry"/>
+                    <mxGeometry x="-80" y="-30" width="360" height="135" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="- locomotoras: List&amp;lt;Locomotora&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="27" width="240" height="20" as="geometry"/>
+                <mxCell id="4" value="- List&amp;lt;Formacion&amp;gt; formacion" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="27" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="102" value="- vagones: List&amp;lt;Vagones&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="47" width="240" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="103" value="- estaEnMovimiento: bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="67" width="240" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="82" value="- locomotorasSueltas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="87" width="240" height="20" as="geometry"/>
+                <mxCell id="102" value="- List&amp;lt;Locomotora&amp;gt; locomotorasSueltas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="47" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="2" vertex="1">
-                    <mxGeometry y="107" width="240" height="8" as="geometry"/>
+                    <mxGeometry y="67" width="360" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="+ VagonesMasPesados()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="115" width="240" height="20" as="geometry"/>
+                <mxCell id="9" value="+ VagonesMasPesados(): List&amp;lt;Vagon&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="75" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="83" value="+ NecesitaConductorExperimentado()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="135" width="240" height="20" as="geometry"/>
+                <mxCell id="83" value="+ NecesitaConductorExperimentado(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="95" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="84" value="+ AgregarLocomotora(fromacion ...)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
-                    <mxGeometry y="155" width="240" height="20" as="geometry"/>
+                <mxCell id="84" value="+ AgregarLocomotora(Formacion formacion): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="2" vertex="1">
+                    <mxGeometry y="115" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="&lt;i&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;Vagon&lt;/b&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{abstract}&lt;/span&gt;&lt;/i&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="610" y="350" width="220" height="88" as="geometry"/>
+                    <mxGeometry x="610" y="350" width="220" height="108" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="14" vertex="1">
                     <mxGeometry y="40" width="220" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="14" vertex="1">
+                <mxCell id="21" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=2" parent="14" vertex="1">
                     <mxGeometry y="48" width="220" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="104" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="14" vertex="1">
+                <mxCell id="104" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=2" parent="14" vertex="1">
                     <mxGeometry y="68" width="220" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="+ EsLiviano: bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=0" vertex="1" parent="14">
+                    <mxGeometry y="88" width="220" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="22" target="14" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="&lt;b&gt;Pasajeros&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="590" width="190" height="138" as="geometry"/>
+                <mxCell id="22" value="&lt;b&gt;VagonPasajeros&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="590" width="190" height="118" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="- largo" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="22" vertex="1">
+                <mxCell id="24" value="- largo: double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="22" vertex="1">
                     <mxGeometry y="30" width="190" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="39" value="- anchoUtil" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="22" vertex="1">
+                <mxCell id="39" value="- anchoUtil: double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="22" vertex="1">
                     <mxGeometry y="50" width="190" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="22" vertex="1">
                     <mxGeometry y="70" width="190" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="76" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="22" vertex="1">
+                <mxCell id="105" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=0" parent="22" vertex="1">
                     <mxGeometry y="78" width="190" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="105" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="22" vertex="1">
+                <mxCell id="76" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=0" parent="22" vertex="1">
                     <mxGeometry y="98" width="190" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="71" value="+ CantidadPasajeros" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="22" vertex="1">
-                    <mxGeometry y="118" width="190" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="70" style="edgeStyle=none;html=1;endArrow=block;endFill=0;" parent="1" source="30" target="14" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="&lt;b&gt;Carga&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+                <mxCell id="30" value="&lt;b&gt;VagonCarga&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
                     <mxGeometry x="750" y="590" width="210" height="98" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="- cargaMaxima: double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="30" vertex="1">
@@ -79,20 +73,11 @@
                 <mxCell id="35" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="30" vertex="1">
                     <mxGeometry y="50" width="210" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="77" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="30" vertex="1">
+                <mxCell id="77" value="+ PesoMaximo(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=0" parent="30" vertex="1">
                     <mxGeometry y="58" width="210" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=1" parent="30" vertex="1">
+                <mxCell id="106" value="+ CantidadPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;fontStyle=0" parent="30" vertex="1">
                     <mxGeometry y="78" width="210" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="40" value="anchoUtil &amp;lt;= 2.5 mts = metros de largo * 8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="270" y="758" width="250" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="41" value="anchoUtil &amp;gt; 2.5 mts = metros de largo * 10" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="270" y="800" width="250" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="44" value="Si anchoUtil &amp;lt;= 2.5&lt;div&gt;pasajeros = largo * 8&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Si anchoUtil &amp;gt; 2.5&lt;/div&gt;&lt;div&gt;pasajeros = largo * 10&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="758" width="140" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="92" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="47" target="61" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -101,7 +86,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="47" value="&lt;b&gt;Locomotora&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="-200" y="319.5" width="240" height="138" as="geometry"/>
+                    <mxGeometry x="-200" y="309.5" width="240" height="138" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="- peso: double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="47" vertex="1">
                     <mxGeometry y="30" width="240" height="20" as="geometry"/>
@@ -128,67 +113,49 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="61" value="&lt;b&gt;Formacion&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="220" y="260" width="255" height="237" as="geometry"/>
+                    <mxGeometry x="160" y="240" width="360" height="297" as="geometry"/>
                 </mxCell>
-                <mxCell id="63" value="- locomotoras: List&amp;lt;Locomotora&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="29" width="255" height="20" as="geometry"/>
+                <mxCell id="63" value="- List&amp;lt;Locomotora&amp;gt; locomotora" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                    <mxGeometry y="29" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="78" value="- vagones: List&amp;lt;Vagon&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="49" width="255" height="20" as="geometry"/>
+                <mxCell id="78" value="- List&amp;lt;Vagon&amp;gt; vagones" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                    <mxGeometry y="49" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value="- estaEnMovimiento: bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="69" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="69" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="61" vertex="1">
-                    <mxGeometry y="89" width="255" height="8" as="geometry"/>
+                    <mxGeometry y="89" width="360" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="+ TotalPasajeros(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="97" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="97" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="+ CantidadVagonesLivianos(): int" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="117" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="117" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="+ VelocidadMaxima(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="137" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="137" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="+ EsEficiente(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="157" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="157" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="81" value="+ PuedeMoverse(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="177" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="177" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="80" value="+ KilosEmpujeFaltante(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="197" width="255" height="20" as="geometry"/>
+                <mxCell id="80" value="+ KilosEmpujeFaltantes(): double" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                    <mxGeometry y="197" width="360" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="+ EsCompleja(): bool" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
-                    <mxGeometry y="217" width="255" height="20" as="geometry"/>
+                    <mxGeometry y="217" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="PesoMaximo() = CantidadPasajeros() * 80" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="475" y="850" width="280" height="30" as="geometry"/>
+                <mxCell id="112" value="+ VagonMasPesado: Vagon" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                    <mxGeometry y="237" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="97" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="75" target="77" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="113" value="+ AgregarLocomotora(locomotora Locomotara): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="61" vertex="1">
+                    <mxGeometry y="257" width="360" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="75" value="PesoMaximo() = CargaMaxima + 160" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="1000" y="602.5" width="280" height="35" as="geometry"/>
-                </mxCell>
-                <mxCell id="29" value="+ CalcularAnchoUtil()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="310" y="610" width="190" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="43" value="+ CalcularPasajeros()" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="1" vertex="1">
-                    <mxGeometry x="310" y="630" width="190" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="100" value="return pesoMaximoArrastre - peso;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="-490" y="340" width="210" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="101" style="edgeStyle=none;html=1;entryX=0.188;entryY=0.625;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" parent="1" source="100" target="54" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="110" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="109" target="108" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="109" value="return ArrastreUtil() &amp;gt;= peso * 5;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=0;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="-470" y="408" width="190" height="30" as="geometry"/>
+                <mxCell id="116" value="+ IniciarMovimiento(): void" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="61">
+                    <mxGeometry y="277" width="360" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
