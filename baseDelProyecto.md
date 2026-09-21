@@ -198,6 +198,7 @@ Ese sí lo podemos tomar como base C# para seguir.
 cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
+
 $salida = "dump_EJTrenesyDeposito.txt"
 
 # Solo archivos .cs reales del proyecto.

@@ -8,4 +8,5 @@ public abstract class Vagon
     // 4. MÉTODOS
     public abstract double PesoMaximo();
     public abstract double CantidadPasajeros();
+    public bool EsLiviano() { return PesoMaximo() < 2500; }
 }

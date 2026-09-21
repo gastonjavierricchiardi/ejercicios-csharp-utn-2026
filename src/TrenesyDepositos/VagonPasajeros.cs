@@ -23,7 +23,6 @@ public class VagonPasajeros : Vagon
         {
             return largo * 8;
         }
-
         return largo * 10;
     }
 

@@ -12,20 +12,21 @@ public class Formacion
     el enunciado dice: "una formación, tiene una o más locomotoras y uno o mas
     Vagones, por lo que conceptualmente no debería nacer vacía.
     */
-    public Formacion(
-        List<Locomotora> locomotoras,
-        List<Vagon> vagones
-    )
+    public Formacion(List<Locomotora> locomotoras, List<Vagon> vagones)
     {
         this.locomotoras = locomotoras;
         this.vagones = vagones;
         this.estaEnMovimiento = false;
     }
+
     // 3. PROPIEDADES / GETTERS Y SETTERS
+    public bool EstaEnMovimiento { get { return estaEnMovimiento; } } // Lo necesitamos para el punto 9
+
     // 4. MÉTODOS
     public double TotalPasajeros()
     {
         double totalPasajeros = 0;
+
         foreach (Vagon vagon in vagones)
         {
             totalPasajeros += vagon.CantidadPasajeros();
@@ -39,7 +40,7 @@ public class Formacion
 
         foreach (Vagon vagon in vagones)
         {
-            if (vagon.PesoMaximo() < 2500)
+            if (vagon.EsLiviano())
             {
                 cantidadVagonesLivianos++;
             }
@@ -50,6 +51,7 @@ public class Formacion
     public double VelocidadMaxima()
     {
         double velocidadMaxima = locomotoras[0].VelocidadMaxima;
+
         foreach (Locomotora locomotora in locomotoras)
         {
             if (locomotora.VelocidadMaxima < velocidadMaxima)
@@ -109,7 +111,6 @@ public class Formacion
     }
 
     // Vemos si una formación es compleja
-
     public bool EsCompleja()
     {
         int cantidadUnidades = 0;
@@ -127,11 +128,31 @@ public class Formacion
             pesoTotal += vagon.PesoMaximo();
         }
         return cantidadUnidades > 20 || pesoTotal > 10000;
-
-
     }
 
+    public Vagon VagonMasPesado()
+    {
+        Vagon vagonMasPesado = vagones[0];
 
+        foreach (Vagon vagon in vagones)
+        {
+            if (vagon.PesoMaximo() > vagonMasPesado.PesoMaximo())
+            {
+                vagonMasPesado = vagon;
+            }
+        }
+        return vagonMasPesado;
+    }
 
+    // la propia formación debe administrar su lista, entonces agregamos un comportamiento público para incorporar una locomotora.
 
+    public void AgregarLocomotora(Locomotora locomotora)
+    {
+        locomotoras.Add(locomotora);
+    }
+
+    public void IniciarMovimiento()
+    {
+        estaEnMovimiento = true;
+    }
 }

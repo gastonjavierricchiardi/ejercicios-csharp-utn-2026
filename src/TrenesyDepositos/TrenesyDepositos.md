@@ -49,260 +49,173 @@ En caso de que no existan locomotoras disponibles se debe arrojar un error.
 
 ---
 
-# Ejercicio - Trenes y Depósitos
+# Trenes y Depósitos
 
-Una administradora ferroviaria necesita una aplicación que le ayude a manejar las formaciones que tiene disponibles en distintos depósitos.
+Este ejercicio modela el funcionamiento básico de una empresa ferroviaria que administra formaciones dentro de distintos depósitos.
 
-Una formación es lo que habitualmente llamamos "un tren", tiene una o varias locomotoras, y uno o varios vagones. Hay vagones de pasajeros y vagones de carga.
+Una **formación** está compuesta por una o más locomotoras y uno o más vagones. A su vez, los vagones pueden ser de pasajeros o de carga, y cada tipo posee reglas propias para calcular su capacidad y su peso máximo.
 
-En cada depósito hay:
+El objetivo principal del ejercicio es distribuir correctamente las responsabilidades entre las distintas clases y utilizar herencia, clases abstractas, polimorfismo, colecciones y excepciones.
 
-- Formaciones ya armadas.
-- Locomotoras sueltas que pueden ser agregadas a una formación.
+## Modelo principal
 
----
+El sistema se divide en las siguientes entidades:
 
-## 🚃 Vagones
+- `Vagon`
+- `VagonCarga`
+- `VagonPasajeros`
+- `Locomotora`
+- `Formacion`
+- `Deposito`
 
-### Vagón de Pasajeros
+### Vagon
 
-De cada vagón de pasajeros se conoce el **largo** en metros y el **ancho útil** también en metros.
+`Vagon` es una clase abstracta que representa las características comunes de todos los vagones.
 
-La cantidad de pasajeros que puede transportar un vagón de pasajeros es:
+Define los comportamientos:
 
-- **Si el ancho útil es de hasta 2.5 metros:** `metros de largo * 8`
-- **Si el ancho útil es de más de 2.5 metros:** `metros de largo * 10`
+- `PesoMaximo()`
+- `CantidadPasajeros()`
+- `EsLiviano()`
 
-_Ejemplo:_ Si tenemos dos vagones de pasajeros, los dos de 10 metros de largo, uno de 2 metros de ancho útil y otro de 3 metros de ancho útil, entonces el primero puede llevar 80 pasajeros y el segundo puede llevar 100.
+Los métodos `PesoMaximo()` y `CantidadPasajeros()` son abstractos porque su implementación depende del tipo concreto de vagón.
 
-> **Nota:** Un vagón de pasajeros no puede llevar carga.
+El método `EsLiviano()` pertenece a `Vagon`, ya que cada vagón conoce su propio peso máximo y puede determinar si pesa menos de `2500 kg`.
 
----
+## Tipos de vagones
 
-### Vagón de Carga
+### VagonPasajeros
 
-De cada vagón de carga se conoce la **carga máxima** que puede llevar, en kilos.
+Un vagón de pasajeros conoce:
 
-> **Nota:** Un vagón de carga no puede llevar ningún pasajero. No hay vagones mixtos.
+- su largo;
+- su ancho útil.
 
----
+La cantidad de pasajeros depende de su ancho:
 
-### Peso Máximo de un Vagón
+- si el ancho útil es menor o igual a `2.5 m`, puede transportar `largo × 8` pasajeros;
+- si el ancho útil es mayor a `2.5 m`, puede transportar `largo × 10` pasajeros.
 
-El peso máximo de un vagón, medido en kilos, se calcula así:
+Su peso máximo se calcula considerando `80 kg` por pasajero.
 
-- **Vagón de pasajeros:** `cantidad de pasajeros que puede llevar * 80`
-- **Vagón de carga:** `carga máxima que puede llevar + 160` _(en cada vagón de carga van dos guardas)_
+### VagonCarga
 
----
+Un vagón de carga conoce su carga máxima.
 
-## 🚂 Locomotoras
+Su peso máximo se obtiene sumando:
 
-De cada locomotora se sabe: su **peso**, el **peso máximo que puede arrastrar** y su **velocidad máxima**.
+```text
+carga máxima + 160 kg
+```
 
-_Ejemplo:_ Puedo tener una locomotora que pesa 1000 kg, puede arrastrar hasta 12000 kg y su velocidad máxima es de 80 km/h. Obviamente se tiene que arrastrar a ella misma, entonces no le puedo cargar 12000 kg de vagones, solamente 11000 kg; diremos que este es su **"arrastre útil"**.
+Los `160 kg` adicionales representan el peso de dos guardas.
 
----
+Como no transporta pasajeros, `CantidadPasajeros()` devuelve `0`.
 
-## 🏢 Operaciones e Integración
+## Locomotora
 
-Una locomotora puede ser agregada a una formación sólo si la formación se encuentra en el depósito detenida o en depósito. Si la formación ya está en movimiento no se debe hacer nada.
+Una locomotora conoce:
 
-Tener en cuenta que:
+- su peso;
+- el peso máximo que puede arrastrar;
+- su velocidad máxima.
 
-- El peso útil de la locomotora a agregar debe ser mayor o igual a los kilos de empuje que le faltan a la formación.
-- En caso de que no existan locomotoras disponibles se debe arrojar un error.
+El arrastre útil se calcula descontando su propio peso:
 
----
+```text
+arrastre útil = peso máximo de arrastre - peso propio
+```
 
-## 🎯 Requerimientos
+También puede determinar si es eficiente.
 
-Generar el diagrama de clases y código que permita saber:
+Una locomotora se considera eficiente cuando su arrastre útil es al menos cinco veces su propio peso.
 
-1. **Total de pasajeros:** El total de pasajeros que puede transportar una formación.
-2. **Vagones livianos:** Cuántos vagones livianos tiene una formación; un vagón es liviano si su peso máximo es menor a 2500 kg.
-3. **Velocidad máxima:** La velocidad máxima de una formación, que es el mínimo entre las velocidades máximas de sus locomotoras.
-4. **Eficiencia de formación:** Si una formación es eficiente; es eficiente si cada una de sus locomotoras arrastra, al menos, 5 veces su peso (el de la locomotora misma).
-5. **Capacidad de movimiento:** Si una formación puede moverse. Una formación puede moverse si el arrastre útil total de las locomotoras es mayor o igual al peso máximo total de los vagones.
-6. **Empuje faltante:** Cuántos kilos de empuje le faltan a una formación para poder moverse, que es:
-   - `0` si ya se puede mover.
-   - `peso máximo total de los vagones - arrastre útil total de las locomotoras` en caso contrario.
-7. **Vagón más pesado por depósito:** Dado un depósito, el conjunto formado por el vagón más pesado de cada formación; se espera un conjunto de vagones.
-8. **Conductor experimentado:** Si un depósito necesita un conductor experimentado. Un depósito necesita un conductor experimentado si alguna de sus formaciones es compleja. Una formación es compleja si:
-   - Tiene más de 20 unidades (sumando locomotoras y vagones), **o**
-   - El peso total (sumando locomotoras y vagones) es de más de 10000 kg.
-9. **Agregar locomotora:** Agregar una locomotora a una formación. Evaluar distintos escenarios.
+## Formacion
 
----
+`Formacion` administra sus locomotoras y vagones.
 
-# Análisis:
+Entre sus responsabilidades se encuentran:
 
-# Ejercicio - Trenes y Depósitos
+- calcular la cantidad total de pasajeros;
+- contar los vagones livianos;
+- determinar la velocidad máxima de la formación;
+- determinar si todas sus locomotoras son eficientes;
+- saber si posee suficiente capacidad de arrastre para moverse;
+- calcular los kilos de empuje faltantes;
+- determinar si la formación es compleja;
+- obtener su vagón más pesado;
+- incorporar una locomotora;
+- administrar su estado de movimiento.
 
-Una administradora ferroviaria necesita una aplicación que le ayude a manejar las formaciones que tiene disponibles en distintos depósitos.
+La velocidad máxima de una formación queda determinada por la locomotora más lenta.
 
-Una formación es lo que habitualmente llamamos "un tren", tiene una o varias locomotoras, y uno o varios vagones. Hay vagones de pasajeros y vagones de carga.
+Una formación puede moverse cuando la suma del arrastre útil de sus locomotoras es suficiente para soportar el peso máximo total de sus vagones.
 
-En cada depósito hay:
+Si no puede moverse, `KilosEmpujeFaltantes()` informa cuánto arrastre adicional necesita.
 
-- Formaciones ya armadas.
-- Locomotoras sueltas que pueden ser agregadas a una formación.
+Una formación es considerada compleja cuando:
 
----
+- posee más de `20` unidades entre locomotoras y vagones; o
+- su peso total supera los `10000 kg`.
 
-## 🚃 Vagones
+## Deposito
 
-### Vagón de Pasajeros
+`Deposito` administra:
 
-De cada vagón de pasajeros se conoce el **largo** en metros y el **ancho útil** también en metros.
+- las formaciones que se encuentran en él;
+- las locomotoras sueltas disponibles.
 
-La cantidad de pasajeros que puede transportar un vagón de pasajeros es:
+Entre sus responsabilidades se encuentran:
 
-- **Si el ancho útil es de hasta 2.5 metros:** `metros de largo * 8`
-- **Si el ancho útil es de más de 2.5 metros:** `metros de largo * 10`
+- obtener el vagón más pesado de cada formación;
+- determinar si alguna formación necesita un conductor experimentado;
+- agregar una locomotora disponible a una formación.
 
-_Ejemplo:_ Si tenemos dos vagones de pasajeros, los dos de 10 metros de largo, uno de 2 metros de ancho útil y otro de 3 metros de ancho útil, entonces el primero puede llevar 80 pasajeros y el segundo puede llevar 100.
+Para agregar una locomotora se verifican distintas condiciones:
 
-> **Nota:** Un vagón de pasajeros no puede llevar carga.
+1. La formación debe pertenecer al depósito.
+2. La formación no debe estar en movimiento.
+3. Debe existir una locomotora suelta cuyo arrastre útil sea suficiente para cubrir el empuje faltante.
+4. Si se encuentra una locomotora adecuada:
+   - se agrega a la formación;
+   - se elimina de la lista de locomotoras sueltas.
 
----
+5. Si no existe una locomotora disponible que pueda cumplir la necesidad de arrastre, se genera una excepción.
 
-### Vagón de Carga
+## Conceptos aplicados
 
-De cada vagón de carga se conoce la **carga máxima** que puede llevar, en kilos.
+En la resolución del ejercicio se utilizan principalmente:
 
-> **Nota:** Un vagón de carga no puede llevar ningún pasajero. No hay vagones mixtos.
+- Programación Orientada a Objetos;
+- encapsulamiento;
+- herencia;
+- clases abstractas;
+- polimorfismo;
+- sobreescritura de métodos;
+- colecciones genéricas con `List<T>`;
+- recorrido de colecciones mediante `foreach`;
+- delegación de responsabilidades;
+- propiedades de solo lectura;
+- manejo de excepciones con `try`, `catch` y `throw`.
 
----
+## Pruebas realizadas
 
-### Peso Máximo de un Vagón
+En `Program.cs` se probaron distintos escenarios, entre ellos:
 
-El peso máximo de un vagón, medido en kilos, se calcula así:
+- cálculo de pasajeros;
+- cálculo del peso máximo de cada tipo de vagón;
+- identificación de vagones livianos;
+- velocidad máxima de una formación;
+- locomotoras eficientes y no eficientes;
+- formaciones que pueden y no pueden moverse;
+- cálculo del empuje faltante;
+- formaciones complejas;
+- búsqueda del vagón más pesado;
+- incorporación de locomotoras desde un depósito;
+- eliminación de la locomotora utilizada de la lista de locomotoras sueltas;
+- intento de agregar locomotoras insuficientes;
+- falta de locomotoras disponibles;
+- intento de agregar locomotoras a una formación en movimiento;
+- intento de modificar una formación que no pertenece al depósito.
 
-- **Vagón de pasajeros:** `cantidad de pasajeros que puede llevar * 80`
-- **Vagón de carga:** `carga máxima que puede llevar + 160` _(en cada vagón de carga van dos guardas)_
-
----
-
-## 🚂 Locomotoras
-
-De cada locomotora se sabe: su **peso**, el **peso máximo que puede arrastrar** y su **velocidad máxima**.
-
-_Ejemplo:_ Puedo tener una locomotora que pesa 1000 kg, puede arrastrar hasta 12000 kg y su velocidad máxima es de 80 km/h. Obviamente se tiene que arrastrar a ella misma, entonces no le puedo cargar 12000 kg de vagones, solamente 11000 kg; diremos que este es su **"arrastre útil"**.
-
----
-
-## 🏢 Operaciones e Integración
-
-Una locomotora puede ser agregada a una formación sólo si la formación se encuentra en el depósito detenida o en depósito. Si la formación ya está en movimiento no se debe hacer nada.
-
-Tener en cuenta que:
-
-- El peso útil de la locomotora a agregar debe ser mayor o igual a los kilos de empuje que le faltan a la formación.
-- En caso de que no existan locomotoras disponibles se debe arrojar un error.
-
----
-
-## 🎯 Requerimientos
-
-Generar el diagrama de clases y código que permita saber:
-
-1. **Total de pasajeros:** El total de pasajeros que puede transportar una formación.
-2. **Vagones livianos:** Cuántos vagones livianos tiene una formación; un vagón es liviano si su peso máximo es menor a 2500 kg.
-3. **Velocidad máxima:** La velocidad máxima de una formación, que es el mínimo entre las velocidades máximas de sus locomotoras.
-4. **Eficiencia de formación:** Si una formación es eficiente; es eficiente si cada una de sus locomotoras arrastra, al menos, 5 veces su peso (el de la locomotora misma).
-5. **Capacidad de movimiento:** Si una formación puede moverse. Una formación puede moverse si el arrastre útil total de las locomotoras es mayor o igual al peso máximo total de los vagones.
-6. **Empuje faltante:** Cuántos kilos de empuje le faltan a una formación para poder moverse, que es:
-   - `0` si ya se puede mover.
-   - `peso máximo total de los vagones - arrastre útil total de las locomotoras` en caso contrario.
-7. **Vagón más pesado por depósito:** Dado un depósito, el conjunto formado por el vagón más pesado de cada formación; se espera un conjunto de vagones.
-8. **Conductor experimentado:** Si un depósito necesita un conductor experimentado. Un depósito necesita un conductor experimentado si alguna de sus formaciones es compleja. Una formación es compleja si:
-   - Tiene más de 20 unidades (sumando locomotoras y vagones), **o**
-   - El peso total (sumando locomotoras y vagones) es de más de 10000 kg.
-9. **Agregar locomotora:** Agregar una locomotora a una formación. Evaluar distintos escenarios.
-
----
-
-Perfecto. **No modelamos todavía, no hacemos UML y no escribimos código.** Primero desarmamos el enunciado con preguntas. Esto encaja con el criterio de la cursada: identificar objetos, responsabilidades y relaciones antes de implementar.
-
-### 1. Primero: ¿qué cosas existen en este dominio?
-
-Leé el enunciado y preguntate:
-
-- ¿Cuáles son las entidades importantes?
-- ¿`Formacion` es una entidad?
-- ¿`Deposito` es una entidad?
-- ¿`Locomotora` es una entidad?
-- ¿`Vagon` es una entidad?
-- ¿`VagonPasajeros` y `VagonCarga` son entidades distintas?
-- ¿Un `VagonPasajeros` **es un** `Vagon`?
-- ¿Un `VagonCarga` **es un** `Vagon`?
-- ¿Una `Locomotora` es un `Vagon`? ¿O son conceptos diferentes?
-- ¿Hay alguna otra palabra del enunciado que parezca una clase, pero en realidad sea solamente un dato o un estado?
-
-Acá estamos buscando solamente **clases candidatas**. No asumimos todavía que todas deban existir. La cátedra justamente plantea que no todo sustantivo tiene que convertirse mecánicamente en clase.
-
-### 2. Después: para cada candidata, ¿qué tiene y qué sabe hacer?
-
-Para cada una preguntate:
-
-**Locomotora**
-
-- ¿Qué datos conoce de sí misma?
-- ¿Quién debería calcular su `arrastre útil`?
-- ¿Quién sabe si esa locomotora es eficiente?
-
-**Vagón**
-
-- ¿Qué tienen en común todos los vagones?
-- ¿Todos saben calcular su peso máximo?
-- ¿Todos pueden transportar pasajeros?
-- ¿Todos pueden transportar carga?
-- ¿Qué cambia entre pasajeros y carga?
-
-**Formación**
-
-- ¿Qué contiene?
-- ¿Debe conocer sus locomotoras?
-- ¿Debe conocer sus vagones?
-- ¿Quién debería calcular pasajeros totales?
-- ¿Quién debería decidir si puede moverse?
-- ¿Quién conoce cuánto empuje le falta?
-- ¿Quién sabe cuál es su velocidad máxima?
-- ¿Quién sabe si es compleja?
-
-**Depósito**
-
-- ¿Qué guarda?
-- ¿Guarda formaciones?
-- ¿Guarda locomotoras sueltas?
-- ¿Quién debería encontrar el vagón más pesado de cada formación?
-- ¿Quién debería decidir si necesita conductor experimentado?
-- ¿Quién debería encargarse de buscar una locomotora para agregar a una formación?
-
-La pregunta rectora sigue siendo:
-
-> **¿Quién tiene la información necesaria para responder esto?**
-
-Eso nos ayuda a poner cada comportamiento en el objeto responsable, en lugar de concentrarlo todo afuera.
-
-### 3. Finalmente: ¿cómo se relacionan y qué casos especiales aparecen?
-
-Sin dibujar todavía, preguntate:
-
-- ¿Una `Formacion` **tiene** locomotoras y vagones?
-- ¿Un `Deposito` **tiene** formaciones y locomotoras disponibles?
-- ¿Qué multiplicidades sugiere “una o varias locomotoras” y “uno o varios vagones”?
-- ¿Necesitamos una colección para cada relación?
-- ¿Qué comportamiento común justificaría una clase `Vagon`?
-- ¿El cálculo de `PesoMaximo()` cambia según el tipo real de vagón?
-- ¿El cálculo de pasajeros cambia según el tipo real de vagón?
-- ¿Qué significa exactamente que una formación esté “detenida o en depósito” frente a “en movimiento”? ¿Eso parece un dato/estado de `Formacion`?
-- Para agregar una locomotora: ¿qué condiciones deben comprobarse y **en qué orden**?
-- ¿Qué ocurre si la formación ya está moviéndose?
-- ¿Qué ocurre si ya puede moverse?
-- ¿Qué ocurre si ninguna locomotora alcanza?
-- ¿Qué ocurre si directamente no hay locomotoras disponibles?
-- Después de agregarla, ¿la locomotora sigue estando entre las “sueltas” del depósito?
-
-**Nos quedamos acá.** El primer punto que yo resolvería con vos es solamente este: **hacer la lista de clases candidatas del ejercicio y discutir una por una si realmente merecen ser clase.**
+De esta manera, el ejercicio permite integrar distintos conceptos de Programación Orientada a Objetos dentro de un mismo modelo y comprobar el comportamiento de cada responsabilidad mediante casos concretos.

@@ -1,8 +1,8 @@
 ﻿// src/TrenesyDepositos/Program.cs
+// gastonj@hotmail.com
+
 using System;
 using System.Collections.Generic;
-using System.Net;
-
 public class Program
 {
     public static void Main()
@@ -22,13 +22,11 @@ public class Program
         Console.WriteLine("=== VAGÓN DE CARGA ===");
         Console.WriteLine($"Peso máximo: {vagonCarga.PesoMaximo()} kg");
 
-
         Console.WriteLine();
 
         Console.WriteLine("=== VAGÓN DE PASAJEROS ANGOSTO ===");
         Console.WriteLine($"Cantidad de pasajeros: {vagonPasajerosAngosto.CantidadPasajeros()}");
         Console.WriteLine($"Peso máximo: {vagonPasajerosAngosto.PesoMaximo()} kg");
-
 
         Console.WriteLine();
 
@@ -105,7 +103,7 @@ public class Program
 
         // Si bien kiloEmpujeFaltantes() fue modelado a posterior de las pruebas, para no engordar el main, lo pruebo antes de el vagonCargaPesado
 
-        Console.WriteLine($"kilos de empuje faltantes: {formacion.KilosEmpujeFaltantes()} kg."); // Espeeramos 0
+        Console.WriteLine($"kilos de empuje faltantes: {formacion.KilosEmpujeFaltantes()} kg."); // Esperamos 0
 
         // Ahora probamos un caso inverso, agregamos un Vagón súper pesado.
         VagonCarga vagonCargaPesado = new VagonCarga(10000);
@@ -115,37 +113,151 @@ public class Program
         Console.WriteLine($"¿La formación puede moverse después de agregar el vagón pesado?: {formacion.PuedeMoverse()}"); // Esperamos falso
 
         // ahora probamos los KiloEmpujeFaltantes()
-        Console.WriteLine($"kilos de empuje faltantes después de agregar el vagón pesado: {formacion.KilosEmpujeFaltantes()} kg."); // Espeeramos 0
+        Console.WriteLine($"kilos de empuje faltantes después de agregar el vagón pesado: {formacion.KilosEmpujeFaltantes()} kg."); // Esperamos 7780
 
         // Vemos si la formación es compleja
         Console.WriteLine($"¿La formación es compleja?: {formacion.EsCompleja()}");
+        /*
+        Veamos el vagon mas pesado que viene del punto 7 del enunciado.
+        7. Dado un depósito, el conjunto formado por el vagón más pesado de cada formación; se
+            espera un conjunto de vagones.
+        Si bien, no queda claro que pide, voy a modelar que entregue el vagón mas pesado.
+        */
+        Vagon vagonMasPesado = formacion.VagonMasPesado();
+        Console.WriteLine($"Peso máximo del vagón mas pesado: {vagonMasPesado.PesoMaximo()}");
 
+        // Creamos la lista de formaciones del depósito.
+        // Por ahora tenemos una sola formación.
+        List<Formacion> formaciones = new List<Formacion> { formacion };
 
+        // Creamos la lista de locomotoras sueltas disponibles en el depósito.
+        List<Locomotora> locomotorasSueltas = new List<Locomotora>();
 
+        Locomotora locomotoraSuelta = new Locomotora(1000, 10000, 80);
+        locomotorasSueltas.Add(locomotoraSuelta);
+
+        // Creamos el depósito.
+        Deposito deposito = new Deposito(
+            formaciones,
+            locomotorasSueltas
+        );
+
+        Console.WriteLine();
+        Console.WriteLine("=== AGREGAR LOCOMOTORA DESDE EL DEPÓSITO ===");
+        Console.WriteLine($"Empuje faltante antes: {formacion.KilosEmpujeFaltantes()} kg");
+
+        deposito.AgregarLocomotora(formacion);
+
+        // Hacemos la prueba de ver si locomotora, salió de locomotorasSueltas
+        int cantidadLocomotorasSueltas = 0;
+
+        foreach (Locomotora locomotoraRestante in locomotorasSueltas)
+        {
+            cantidadLocomotorasSueltas++;
+        }
+
+        Console.WriteLine(
+            $"Locomotoras sueltas después de agregar: {cantidadLocomotorasSueltas}"
+        );
+
+        Console.WriteLine($"Empuje faltante después: {formacion.KilosEmpujeFaltantes()} kg");
+        Console.WriteLine($"¿La formación puede moverse?: {formacion.PuedeMoverse()}");
+
+        // Pedimos al depósito el vagón más pesado de cada formación.
+        List<Vagon> vagonesMasPesados = deposito.VagonesMasPesados();
+
+        // Mostramos los resultados.
+        Console.WriteLine();
+        Console.WriteLine("=== VAGONES MÁS PESADOS DEL DEPÓSITO ===");
+
+        foreach (Vagon vagon in vagonesMasPesados)
+        {
+            Console.WriteLine($"Peso máximo: {vagon.PesoMaximo()} kg");
+        }
+
+        Console.WriteLine($"¿El depósito necesita conductor experimentado? {deposito.NecesitaConductorExperimentado()}");
+
+        // Vemos las excepciones.
+        Console.WriteLine();
+        Console.WriteLine("=== PRUEBA SIN LOCOMOTORAS DISPONIBLES ===");
+
+        // Agregamos otro vagón para que vuelva a faltar empuje.
+        VagonCarga otroVagonCarga = new VagonCarga(2000);
+        vagones.Add(otroVagonCarga);
+
+        Console.WriteLine($"Empuje faltante: {formacion.KilosEmpujeFaltantes()} kg");
+
+        try
+        {
+            deposito.AgregarLocomotora(formacion);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("=== PRUEBA CON LOCOMOTORA INSUFICIENTE ===");
+
+        // Esta locomotora tiene solamente 500 kg de arrastre útil.
+        Locomotora locomotoraInsuficiente = new Locomotora(1000, 1500, 40);
+
+        locomotorasSueltas.Add(locomotoraInsuficiente);
+
+        Console.WriteLine(
+            $"Empuje faltante: {formacion.KilosEmpujeFaltantes()} kg"
+        );
+
+        Console.WriteLine(
+            $"Arrastre útil de la locomotora disponible: {locomotoraInsuficiente.ArrastreUtil()} kg"
+        );
+
+        try
+        {
+            deposito.AgregarLocomotora(formacion);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("=== PRUEBA FORMACIÓN EN MOVIMIENTO ===");
+
+        // Agregamos una locomotora que sí alcanzaría.
+        Locomotora locomotoraDisponible =
+            new Locomotora(1000, 12000, 80);
+
+        locomotorasSueltas.Add(locomotoraDisponible);
+
+        // Ponemos la formación en movimiento.
+        formacion.IniciarMovimiento();
+        Console.WriteLine($"¿La formación está en movimiento?: {formacion.EstaEnMovimiento}");
+        Console.WriteLine($"Empuje faltante antes: {formacion.KilosEmpujeFaltantes()} kg");
+
+        // Intentamos agregar una locomotora.
+        deposito.AgregarLocomotora(formacion);
+        Console.WriteLine($"Empuje faltante después: {formacion.KilosEmpujeFaltantes()} kg");
+        Console.WriteLine();
+        Console.WriteLine("=== PRUEBA FORMACIÓN AJENA AL DEPÓSITO ===");
+
+        List<Locomotora> locomotorasFormacionAjena = new List<Locomotora>
+        {
+            new Locomotora(
+            1000,
+            2000,
+            50)
+        };
+
+        List<Vagon> vagonesFormacionAjena = new List<Vagon> { new VagonCarga(3000) };
+
+        Formacion formacionAjena = new Formacion(
+            locomotorasFormacionAjena,
+            vagonesFormacionAjena
+        );
+
+        Console.WriteLine($"Empuje faltante antes: {formacionAjena.KilosEmpujeFaltantes()} kg");
+        deposito.AgregarLocomotora(formacionAjena);
+        Console.WriteLine($"Empuje faltante después: {formacionAjena.KilosEmpujeFaltantes()} kg");
     }
 }
-
-/*
-Con los objetos que tenemos ahora, actualmente nuestra formación tiene este arrastre útil:
-
-Locomotora original       → 11000 kg
-Locomotora lenta          →  9100 kg
-Locomotora no eficiente   →  4000 kg
-                           --------
-Total                     → 24100 kg
-----------------------------------------
-Y los vagones pesan cómo máximo:
-Vagón carga          → 5160 kg
-Pasajeros angosto    → 6400 kg
-Pasajeros ancho      → 8000 kg
-Carga liviano        → 2160 kg
-                       -------
-Total                → 21720 kg
-Este vagón agrega
-10000 + 160 =        → 10160 kg
-                       -------
-                     → 31880 kg
-
----------------------------------------
-entonces: 24100 >= 21720 --> true
-*/
