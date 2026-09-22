@@ -430,12 +430,13 @@ EJECUTAR EL PROYECTO
 ## Windows / PowerShell
 
 ```powershell
-
 dotnet new console --name EJMuebleria --output .\src\Muebleria-preParcial --framework net10.0
 
 dotnet sln .\EjerciciosCSharpUtn2026.slnx add .\src\Muebleria-preParcial\EJMuebleria.csproj
 
-dotnet run --project ".\src\Muebleria-preParcial\EJMuebleria.csproj"
+dotnet run --project ".\src\Muebleria-preParcial\ >
+
+.csproj"
 
 
 ```
