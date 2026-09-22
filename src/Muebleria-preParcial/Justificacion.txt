@@ -1,0 +1,67 @@
+---
+Gastón Javier Ricchiardi
+DNI: 26470141
+Correo: gastonj@hotmail.com
+---
+
+Enunciado:
+
+# Práctica 1er Parcial
+
+Los empleados de una mueblería necesitan una aplicación que los asista en su operatoria diaria de venta de muebles. La mueblería vende muebles de todo tipo, sillas, mesas, placares, mesas de luz, mesas ratonas, etc. De cada mueble se conoce su nombre, su precio unitario y la cantidad que la mueblería posee, es decir su stock.
+
+Cuando la mueblería realiza una venta, la misma puede estar compuesta por una cantidad X de muebles de distintos tipos. Los muebles son envíados al comprador mediante un flete perteneciente a la misma mueblería.
+
+Se requiere que la aplicación calcule e informe el precio final de la venta sabiendo que el mismo se compone de:
+
+- El precio unitario x la cantidad de cada mueble.
+- Algunos muebles, como las mesas (de todo tipo) y los placares ocupan un volumen considerable dentro del flete, por lo que su precio varía en función del volumen
+  ocupado. En el caso de las mesas, según la tabla de la misma, los casos pueden ser:
+- - Mesa redonda. Volumen = Pi * r2 * h. Siendo "r" el radio de la tabla y "h" la altura de la mesa
+- - Mesa cuadrada. Volumen = L2 * h. Siendo "l" el lado de la tabla y "h" la altura de la mesa
+- - Mesa rectangular. Volumen = L1 * L2 x h. Siendo "l" los lados de la tabla y "h" la altura de la mesa
+
+## En el caso de los placares el volumen se obtiene igual que en las mesas rectangulares.
+
+En base al volumen:
+
+- Si v < 1m3 al precio del producto se le adiciona un 20% de su valor unitario
+- Si 1m3 <= v <= 2m3 al precio del producto se le adiciona un 50% de su valor unitario.
+- Si v > 2m3 al precio del producto se le adiciona un 75% de su valor unitario.
+
+Por último la mueblería le suma al monto total de la venta un monto fijo que depende del tiempo que le lleve cargar el flete. De esta manera si el tiempo requerido para cargar el flete es mayor a 1hs, se le suma $10000 al monto total de la venta. Si el tiempo requerido para cargar el flete es mayor a 3hs, se le suma $100000 al monto total de la venta. En otros casos se suma $0.
+
+### Se pide:
+
+1. Diagrama de clases completo de la solución
+2. Codificar los métodos necesarios para obtener el precio total de una venta.
+3. Desarrolle un breve código de ejemplo, mostrando el uso de la aplicación.
+
+### Consideraciones:
+
+- El punto de entrada para el punto 2, debe ser el método realizarVenta(muebles) →
+  number
+- En caso de no contar con la cantidad de muebles requerida se deberá arrojar un
+  error que indique lo sucedido
+- Asuma que existe la clase Cronometro con 2 métodos estáticos:
+- - iniciar(): void
+- - detener(): number. Devuelve la cantidad de minutos transcurridos desde que
+    se inició.
+
+---
+
+JUSTIFICACIÓN
+
+Se definió Mueble como una clase concreta porque la mueblería puede vender muebles que no necesitan un comportamiento particular, como por ejemplo una silla. Los datos comunes a todos los muebles, como el nombre, el precio unitario y el stock, quedaron concentrados en esta clase.
+
+Para los muebles cuyo precio depende del volumen se creó la clase abstracta MuebleVoluminoso. De esta forma se comparte en un solo lugar la lógica del recargo según el volumen, mientras que cada tipo concreto se encarga únicamente de calcular su propio volumen. MesaRedonda, MesaCuadrada, MesaRectangular y Placard heredan de esta clase.
+
+Se utilizó ItemVenta para representar un mueble junto con la cantidad solicitada dentro de una venta. El cálculo del subtotal se delega al propio mueble, permitiendo que cada objeto aplique su forma correspondiente de calcular el precio sin que Venta tenga que preguntar de qué tipo de mueble se trata.
+
+La clase Venta se encarga de coordinar la operación completa: recorre los ítems, acumula sus subtotales y agrega el importe correspondiente al tiempo de carga informado por Cronometro. Cronometro no fue implementado como parte de la solución porque la consigna indica que debe asumirse su existencia.
+
+Para el control de stock se creó StockInsuficienteException. Antes de calcular el subtotal se verifica que exista cantidad suficiente y, en caso contrario, se lanza la excepción informando el mueble, el stock disponible y la cantidad solicitada.
+
+No se descuenta el stock luego de realizar la venta porque la consigna solicita verificar la disponibilidad, pero no indica que deba actualizarse el inventario.
+
+Tampoco se creó una clase Flete, ya que en esta solución no tendría estado ni comportamiento propio definido por la consigna. El único dato necesario para calcular ese adicional es el tiempo de carga, que ya es provisto por Cronometro.

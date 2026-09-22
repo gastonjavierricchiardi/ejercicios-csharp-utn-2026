@@ -4,10 +4,8 @@
 /*
 public class Program
 {
-    static void Main(string[] args)
-    {
-        // Crear objetos y probar el ejercicio
-    }
+    public static void Main(){}
+    // static void Main(string[] args){// Crear objetos y probar el ejercicio}
 }
 
 public class Clase
