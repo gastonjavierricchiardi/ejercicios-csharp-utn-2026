@@ -48,7 +48,7 @@ public class Program
             100
         );
         Objeto aguaOxigenada = new Objeto(
-            Material.liquido,
+            Material.Liquido,
             250
         );
 

@@ -5,7 +5,7 @@ public enum Material
     Madera,
     Vidrio,
     Plastico,
-    liquido,
+    Liquido,
     Textil,
     Goma,
     Otro
