@@ -27,11 +27,14 @@ public class Analizador
         {
             tipoObjeto = TipoObjeto.Contenedor;
         }
+        else if (estaContenido && !tieneContenido)
+        {
+            tipoObjeto = TipoObjeto.Contenido;
+        }
         else
         {
             tipoObjeto = TipoObjeto.Sambuchito;
         }
-
         System.Console.WriteLine($"Material   : {objeto.Material}");
         System.Console.WriteLine($"Volumen    : {objeto.Volumen} cm3");
         System.Console.WriteLine($"Tipo Objeto: {tipoObjeto}");
