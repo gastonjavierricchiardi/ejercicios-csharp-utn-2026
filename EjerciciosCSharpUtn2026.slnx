@@ -1,10 +1,13 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/Prueba-Preparcial/Prueba-Preparcial.csproj" />
+    <Project Path="src/02-PruebaPreParcial_v1/Prueba-Preparcial.csproj" />
     <Project Path="src/TrenesyDepositos/TrenesyDepositos.csproj" />
   </Folder>
   <Folder Name="/src/01-MuebleriaPreParcial/">
     <Project Path="src/01-MuebleriaPreParcial/EJMuebleria.csproj" />
+  </Folder>
+  <Folder Name="/src/03-PruebaPreParcial_v2/">
+    <Project Path="src/03-PruebaPreParcial_v2/03PruebaParcial.csproj" />
   </Folder>
   <Folder Name="/src/Guia01/" />
   <Folder Name="/src/Guia01/EJ01/">

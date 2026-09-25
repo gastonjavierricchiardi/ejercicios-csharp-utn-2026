@@ -427,6 +427,42 @@ DESARROLLAR EL EJERCICIO
 EJECUTAR EL PROYECTO
 ```
 
+## Texto para generar el entorno:
+
+```ascii
+Preparame esta carpeta con nuestro bloque estándar de proyecto C#.
+
+Quiero resolverlo paso a paso.
+
+IMPORTANTE:
+- No asumas rutas.
+- No asumas el nombre de la solución.
+- No asumas el nombre del proyecto.
+- El tipo de proyecto para estos ejercicios es siempre console.
+- No me des todos los comandos de una.
+- Preguntame una sola cosa por vez.
+- Esperá mi respuesta antes de avanzar.
+- Si necesitás verificar algo, dame un solo comando PowerShell.
+- Yo ejecuto el comando y te pego la salida.
+- Recién después analizás esa salida y seguimos.
+- No crear carpetas nuevas dentro de la carpeta destino salvo que yo lo pida.
+- Cuando finalmente tengas todos los datos validados, primero indicame claramente en qué carpeta exacta debo estar parado para ejecutar el bloque final.
+- Después dame un único bloque PowerShell con:
+  1. creación del proyecto;
+  2. agregado del .csproj a la solución;
+  3. ejecución del proyecto.
+- Los comandos del bloque final deben estar calculados para ejecutarse exactamente desde la carpeta que me indiques.
+
+La primera pregunta que tenés que hacerme es:
+"¿En qué carpeta estás parado ahora? Pegame el prompt completo de PowerShell."
+```
+
+```txt
+console   → aplicación de consola -------------------------> Notros usamos CONSOLE
+classlib  → biblioteca de clases, no se ejecuta sola
+web       → aplicación web
+```
+
 ## Windows / PowerShell
 
 ```powershell

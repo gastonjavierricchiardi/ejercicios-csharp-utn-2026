@@ -1,0 +1,24 @@
+Datos del alumno:
+Gastón Ricchiardi
+DNI: 26470141
+gastonj@hotmail.com
+
+-----
+
+Justificación de Ejercicio online, pre parcial 25/9/26
+
+JUSTIFICACIÓN DE LA SOLUCIÓN
+
+Para representar los distintos vehículos se definió Vehiculo como una clase abstracta, ya que todos comparten patente, marca, modelo y precio base por día, pero cada tipo de vehículo posee una forma particular de calcular el costo de un alquiler.
+
+Auto, Camioneta y Moto heredan de Vehiculo y sobrescriben el método CalcularCosto(). De esta manera el cálculo se resuelve mediante polimorfismo, evitando consultar desde Alquiler qué tipo concreto de vehículo se está utilizando. En el caso de Camioneta también se contempla el límite de kilómetros incluidos y el costo correspondiente a los kilómetros excedentes.
+
+El alquiler se modeló mediante la clase Alquiler, que mantiene una referencia al vehículo, la cantidad de días y los kilómetros recorridos. El cálculo del costo total se delega al vehículo asociado.
+
+Para las entregas se utilizó la interfaz IEntregable. La consigna indica que solamente algunos vehículos pueden realizar entregas, por lo que se decidió que Auto y Camioneta implementen este contrato, mientras que Moto no lo implementa. Como la consigna no establece capacidades concretas, se adoptaron como decisión de modelado 200 kg para Auto y 1000 kg para Camioneta.
+
+La clase Entrega registra el vehículo que cumple con IEntregable y el peso de la carga. Si el peso supera la capacidad permitida se lanza la excepción personalizada CapacidadCargaExcedidaException, evitando registrar una entrega inválida.
+
+Empresa concentra la administración de los vehículos, alquileres y entregas mediante colecciones. También permite buscar vehículos por patente y controla que no se registre más de un vehículo con la misma patente.
+
+Finalmente, en Program se probaron los distintos escenarios solicitados: registro y consulta de vehículos, búsqueda por patente, alquileres de Auto, Camioneta y Moto, intento de registrar una patente duplicada, una entrega válida y una entrega que supera la capacidad permitida.
