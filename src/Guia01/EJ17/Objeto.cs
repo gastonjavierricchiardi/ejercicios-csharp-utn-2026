@@ -28,7 +28,7 @@ public class Objeto
     public bool TieneContenido()
     {
         // return contenido.Count > 0;
-        // para refactorizar con un foreac, ni siquiera necesitamos contador...
+        // para refactorizar con un foreach, ni siquiera necesitamos contador...
         // Si tiene 1 solo elemento sabemos que teiene contenido.
         foreach (Objeto objeto in contenido)
         {

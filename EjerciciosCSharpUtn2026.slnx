@@ -3,6 +3,9 @@
     <Project Path="src/Prueba-Preparcial/Prueba-Preparcial.csproj" />
     <Project Path="src/TrenesyDepositos/TrenesyDepositos.csproj" />
   </Folder>
+  <Folder Name="/src/01-MuebleriaPreParcial/">
+    <Project Path="src/01-MuebleriaPreParcial/EJMuebleria.csproj" />
+  </Folder>
   <Folder Name="/src/Guia01/" />
   <Folder Name="/src/Guia01/EJ01/">
     <Project Path="src/Guia01/EJ01/01EJ01.csproj" />
@@ -127,8 +130,5 @@
   </Folder>
   <Folder Name="/src/Micros/">
     <Project Path="src/Micros/EJMicros.csproj" />
-  </Folder>
-  <Folder Name="/src/Muebleria-preParcial/">
-    <Project Path="src/Muebleria-preParcial/EJMuebleria.csproj" />
   </Folder>
 </Solution>

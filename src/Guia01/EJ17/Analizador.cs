@@ -35,10 +35,10 @@ public class Analizador
         {
             tipoObjeto = TipoObjeto.Sambuchito;
         }
-        System.Console.WriteLine($"Material   : {objeto.Material}");
-        System.Console.WriteLine($"Volumen    : {objeto.Volumen} cm3");
-        System.Console.WriteLine($"Tipo Objeto: {tipoObjeto}");
-        System.Console.WriteLine();
+        Console.WriteLine($"Material   : {objeto.Material}");
+        Console.WriteLine($"Volumen    : {objeto.Volumen} cm3");
+        Console.WriteLine($"Tipo Objeto: {tipoObjeto}");
+        Console.WriteLine();
 
         foreach (Objeto objetoContenido in objeto.ObtenerContenido())
         {
