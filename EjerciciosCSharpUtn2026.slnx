@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Prueba-Preparcial/Prueba-Preparcial.csproj" />
     <Project Path="src/TrenesyDepositos/TrenesyDepositos.csproj" />
   </Folder>
   <Folder Name="/src/Guia01/" />
