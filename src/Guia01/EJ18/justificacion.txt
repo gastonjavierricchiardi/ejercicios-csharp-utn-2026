@@ -1,0 +1,79 @@
+JUSTIFICACIÓN — EJ18
+
+HERENCIA
+
+Modelé Inmueble como clase abstracta porque Casa y Departamento comparten varios datos y comportamientos, pero no tiene mucho sentido crear un inmueble genérico.
+
+Casa y Departamento heredan de Inmueble y cada una agrega solamente la información que le corresponde.
+
+
+DATOS CATASTRALES Y AMBIENTES
+
+Separé DatosCatastrales y Ambiente en clases propias porque cada una agrupa información que tiene sentido tratar en conjunto.
+
+Cada inmueble tiene un solo conjunto de datos catastrales y uno o más ambientes.
+
+En ambos casos usé composición porque los tomé como partes propias de un inmueble dentro de este modelo.
+
+
+CONTACTO
+
+Contacto también quedó como una clase separada porque reúne los datos de una persona y además tiene su propia validación.
+
+La relación con Inmueble la representé como asociación, porque el inmueble conoce a su contacto, pero no consideré que sea una parte propia del inmueble de la misma manera que los ambientes o los datos catastrales.
+
+
+VALIDACIÓN
+
+Cada clase valida la información que le corresponde mediante EstaCompleto().
+
+Contacto controla que existan nombre y apellido, y que por lo menos se haya cargado teléfono o correo electrónico.
+
+DatosCatastrales controla que sus datos obligatorios estén completos.
+
+Ambiente controla que tenga un tipo y dimensiones válidas.
+
+Inmueble junta esas validaciones y además controla que tenga por lo menos un ambiente y que todos los ambientes estén completos.
+
+La observación no se valida porque la consigna dice que es opcional.
+
+Los datos booleanos tampoco los tomo como incompletos, porque tanto true como false son respuestas válidas.
+
+Departamento sobreescribe EstaCompleto() porque además necesita controlar que se haya cargado su número o letra.
+
+Casa no necesita agregar otra validación porque sus datos particulares son booleanos.
+
+
+POLIMORFISMO
+
+Trabajo con Casa y Departamento mediante el tipo común Inmueble.
+
+ObtenerDescripcion() se sobreescribe en las dos clases para que cada inmueble muestre también sus datos particulares.
+
+EstaCompleto() también puede cambiar según el tipo de inmueble, como pasa en Departamento.
+
+De esta forma no necesito preguntar desde afuera si el objeto es una Casa o un Departamento para decidir qué hacer.
+
+
+COLECCIÓN
+
+Usé List<Inmueble> porque lo que necesito es guardar los inmuebles en memoria, recuperarlos y recorrerlos.
+
+En la misma lista puedo guardar casas y departamentos porque ambos son Inmueble.
+
+No usé Dictionary ni otra colección porque la consigna no pide buscar por una clave determinada.
+
+
+ESTRATEGIA POR CAPAS
+
+Separé la solución en responsabilidades simples.
+
+Program se encarga de crear los objetos, pedir las altas y mostrar los resultados.
+
+GestorInmuebles se encarga del alta y controla que un inmueble esté completo antes de guardarlo.
+
+RepositorioInmueblesMemoria se encarga solamente de guardar y devolver los inmuebles almacenados en memoria.
+
+La idea fue evitar que Program termine haciendo también las validaciones y manejando directamente la colección.
+
+No agregué interfaces ni una estructura de persistencia más compleja porque para este ejercicio no hacía falta.
