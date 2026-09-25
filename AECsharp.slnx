@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/src/" />
+  <Folder Name="/src/">
+    <Project Path="src/1ErParcial-25-09-2026/1ErParcial-25-09-2026.csproj" />
+  </Folder>
   <Folder Name="/src/AutoEvaluaciones/">
     <Project Path="src/AutoEvaluaciones/01-AE/01-AE.csproj" />
     <Project Path="src/AutoEvaluaciones/02-AE/02-AE.csproj" />
