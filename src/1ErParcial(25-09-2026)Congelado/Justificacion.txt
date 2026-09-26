@@ -1,0 +1,61 @@
+Correo: gastonj@htomail.com
+---
+Herencia y clase abstracta
+
+Se modeló Envio como clase abstracta porque todos los envíos comparten
+número de guía, destino, kilómetros, peso y tarifa por kilómetro, pero
+cada tipo calcula su costo de una manera diferente.
+
+Documentacion, Paquete y CargaPesada heredan de Envio y redefinen
+CalcularCosto() según las reglas correspondientes a cada tipo.
+
+
+Polimorfismo
+
+El cálculo del costo se resolvió mediante polimorfismo. Todos los envíos
+pueden recibir el mismo llamado CalcularCosto(), pero el resultado se
+obtiene según el tipo concreto del objeto.
+
+
+Seguro
+
+Se definió IAsegurable como contrato para los tipos de envío que pueden
+contratar seguro. Paquete y CargaPesada implementan esta interfaz,
+mientras que Documentacion no la implementa.
+
+El contrato permite conocer el valor declarado, la descripción de la
+cobertura, si el seguro fue contratado y realizar la contratación.
+
+
+Excepción propia
+
+Se creó EnvioNoAsegurableException para representar el intento de
+contratar un seguro sobre un envío que no admite esta operación.
+
+TransportesDelLitoral lanza esta excepción cuando recibe un envío que
+no cumple el contrato IAsegurable.
+
+
+Colecciones
+
+Se utilizó List<Envio> para conservar el historial porque se necesita
+mantener los envíos en el mismo orden en que fueron registrados.
+
+También se utilizó List<Envio> para los pendientes. Los envíos se agregan
+al final y se despacha el primero, manteniendo así el orden de salida
+solicitado.
+
+Se utilizó Dictionary<int, Envio> para registrar los envíos por número
+de guía, ya que la guía es irrepetible y se utiliza como clave para
+buscar un envío y evitar registros duplicados.
+
+
+Responsabilidad de TransportesDelLitoral
+
+TransportesDelLitoral es responsable de administrar el registro, las
+búsquedas, los pendientes, el historial, la contratación de seguros y
+los cálculos generales de facturación y promedio.
+
+El cálculo particular del costo no se coloca en esta clase, sino en
+cada tipo de Envio, porque cada objeto posee la información y las reglas
+necesarias para resolverlo.
