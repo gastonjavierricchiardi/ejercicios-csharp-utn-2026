@@ -2,12 +2,14 @@ namespace MisClases;
 
 public abstract class Envio
 {
+    // 1. CAMPOS / ATRIBUTOS
     private int numeroGuia;
     private string destino;
     private double kilometros;
     private double peso;
     private double tarifaPorKilometro;
 
+    // 2. CONSTRUCTOR
     protected Envio(
         int numeroGuia,
         string destino,
@@ -22,18 +24,13 @@ public abstract class Envio
         this.tarifaPorKilometro = tarifaPorKilometro;
     }
 
-    public int NumeroGuia
-    {
-        get { return numeroGuia; }
-    }
-
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    public int NumeroGuia { get { return numeroGuia; } }
     public string Destino { get { return destino; } }
-
     protected double Kilometros { get { return kilometros; } }
-
     protected double Peso { get { return peso; } }
 
+    // 4. MÉTODOS
     protected double TarifaPorKilometro { get { return tarifaPorKilometro; } }
-
-    public abstract double CalcularCosto();
+    public abstract double CalcularCosto(); // Abstracto
 }

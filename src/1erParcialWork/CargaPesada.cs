@@ -2,6 +2,8 @@ namespace MisClases;
 
 public class CargaPesada : Envio, IAsegurable
 {
+    // 1. CAMPOS / ATRIBUTOS
+
     private static readonly double COSTO_POR_KILO = 200;
     private static readonly double RECARGO_EXCESO = 20000;
 
@@ -10,19 +12,20 @@ public class CargaPesada : Envio, IAsegurable
     private string descripcionCobertura;
     private bool seguroContratado;
 
+    // 2. CONSTRUCTOR
     public CargaPesada(
-        int numeroGuia,
-        string destino,
-        double kilometros,
-        double peso,
-        double tarifaPorKilometro,
-        double pesoMaximoAdmitido)
-        : base(
-            numeroGuia,
-            destino,
-            kilometros,
-            peso,
-            tarifaPorKilometro)
+    int numeroGuia,
+    string destino,
+    double kilometros,
+    double peso,
+    double tarifaPorKilometro,
+    double pesoMaximoAdmitido)
+    : base(
+        numeroGuia,
+        destino,
+        kilometros,
+        peso,
+        tarifaPorKilometro)
     {
         this.pesoMaximoAdmitido = pesoMaximoAdmitido;
 
@@ -31,6 +34,8 @@ public class CargaPesada : Envio, IAsegurable
         seguroContratado = false;
     }
 
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // 4. MÉTODOS
     public override double CalcularCosto()
     {
         double costoDistancia = Kilometros * TarifaPorKilometro;

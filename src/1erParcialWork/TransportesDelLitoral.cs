@@ -1,13 +1,14 @@
 using System.Collections.Generic;
-
 namespace MisClases;
 
 public class TransportesDelLitoral
 {
+    // 1. CAMPOS / ATRIBUTOS
     private List<Envio> historial;
     private List<Envio> pendientes;
     private Dictionary<int, Envio> enviosPorGuia;
 
+    // 2. CONSTRUCTOR
     public TransportesDelLitoral()
     {
         historial = new List<Envio>();
@@ -15,6 +16,8 @@ public class TransportesDelLitoral
         enviosPorGuia = new Dictionary<int, Envio>();
     }
 
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // 4. MÉTODOS
     public bool RegistrarEnvio(Envio envio)
     {
         if (enviosPorGuia.ContainsKey(envio.NumeroGuia))

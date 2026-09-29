@@ -84,7 +84,7 @@ El material oficial usa consistentemente `static void Main(string[] args)`.
 ```csharp
 public class Program
 {
-    public static void Main()
+    public static void Main() // static void Main(string[] args) { }
     {
     }
 }
@@ -125,6 +125,18 @@ public class Clase
 
     // 4. MÉTODOS
     // Comportamiento del objeto.
+}
+```
+
+1.1 Resumido
+
+```csharp
+public class Clase
+{
+    // 1. CAMPOS / ATRIBUTOS
+    // 2. CONSTRUCTOR
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // 4. MÉTODOS
 }
 ```
 
