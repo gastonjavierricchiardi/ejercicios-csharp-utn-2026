@@ -7,11 +7,11 @@ using MisClases;
 TransportesDelLitoral transportes = new TransportesDelLitoral();
 
 Documentacion documentacion = new Documentacion(
-    1001,
-    "Rosario",
-    300,
-    2,
-    10);
+    1001,       // nro de guia
+    "Rosario",  // destino
+    300,        // kilometros
+    2,          // peso
+    10);        // tarifa por kilometro
 
 Paquete paquete = new Paquete(
     1002,
