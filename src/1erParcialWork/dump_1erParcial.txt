@@ -1,0 +1,559 @@
+﻿PWD: C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork
+Fecha: 2026-09-29T10:14:16.5780000-03:00
+
+ARCHIVOS INCLUIDOS:
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\CargaPesada.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Documentacion.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Envio.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\EnvioNoAsegurableException.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\IAsegurable.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Paquete.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Program.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\TransportesDelLitoral.cs
+
+========================================
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\CargaPesada.cs =====
+1: namespace MisClases;
+2: 
+3: public class CargaPesada : Envio, IAsegurable
+4: {
+5:     private static readonly double COSTO_POR_KILO = 200;
+6:     private static readonly double RECARGO_EXCESO = 20000;
+7: 
+8:     private double pesoMaximoAdmitido;
+9:     private double valorDeclarado;
+10:     private string descripcionCobertura;
+11:     private bool seguroContratado;
+12: 
+13:     public CargaPesada(
+14:         int numeroGuia,
+15:         string destino,
+16:         double kilometros,
+17:         double peso,
+18:         double tarifaPorKilometro,
+19:         double pesoMaximoAdmitido)
+20:         : base(
+21:             numeroGuia,
+22:             destino,
+23:             kilometros,
+24:             peso,
+25:             tarifaPorKilometro)
+26:     {
+27:         this.pesoMaximoAdmitido = pesoMaximoAdmitido;
+28: 
+29:         valorDeclarado = 0;
+30:         descripcionCobertura = "";
+31:         seguroContratado = false;
+32:     }
+33: 
+34:     public override double CalcularCosto()
+35:     {
+36:         double costoDistancia = Kilometros * TarifaPorKilometro;
+37:         double costoPeso = Peso * COSTO_POR_KILO;
+38:         double costoTotal = costoDistancia + costoPeso;
+39: 
+40:         if (Peso > pesoMaximoAdmitido)
+41:         {
+42:             costoTotal += RECARGO_EXCESO;
+43:         }
+44: 
+45:         return costoTotal;
+46:     }
+47: 
+48:     public double ObtenerValorDeclarado()
+49:     {
+50:         return valorDeclarado;
+51:     }
+52: 
+53:     public string ObtenerDescripcionCobertura()
+54:     {
+55:         return descripcionCobertura;
+56:     }
+57: 
+58:     public bool TieneSeguroContratado()
+59:     {
+60:         return seguroContratado;
+61:     }
+62: 
+63:     public void ContratarSeguro(
+64:         double valorDeclarado,
+65:         string descripcionCobertura)
+66:     {
+67:         this.valorDeclarado = valorDeclarado;
+68:         this.descripcionCobertura = descripcionCobertura;
+69:         seguroContratado = true;
+70:     }
+71: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Documentacion.cs =====
+1: namespace MisClases;
+2: 
+3: public class Documentacion : Envio
+4: {
+5:     private static readonly double ADICIONAL_FIJO = 1000;
+6: 
+7:     public Documentacion(
+8:         int numeroGuia,
+9:         string destino,
+10:         double kilometros,
+11:         double peso,
+12:         double tarifaPorKilometro)
+13:         : base(
+14:             numeroGuia,
+15:             destino,
+16:             kilometros,
+17:             peso,
+18:             tarifaPorKilometro)
+19:     {
+20:     }
+21: 
+22:     public override double CalcularCosto()
+23:     {
+24:         double costoDistancia = Kilometros * TarifaPorKilometro;
+25:         return costoDistancia + ADICIONAL_FIJO;
+26:     }
+27: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Envio.cs =====
+1: namespace MisClases;
+2: 
+3: public abstract class Envio
+4: {
+5:     private int numeroGuia;
+6:     private string destino;
+7:     private double kilometros;
+8:     private double peso;
+9:     private double tarifaPorKilometro;
+10: 
+11:     protected Envio(
+12:         int numeroGuia,
+13:         string destino,
+14:         double kilometros,
+15:         double peso,
+16:         double tarifaPorKilometro)
+17:     {
+18:         this.numeroGuia = numeroGuia;
+19:         this.destino = destino;
+20:         this.kilometros = kilometros;
+21:         this.peso = peso;
+22:         this.tarifaPorKilometro = tarifaPorKilometro;
+23:     }
+24: 
+25:     public int NumeroGuia
+26:     {
+27:         get { return numeroGuia; }
+28:     }
+29: 
+30:     public string Destino { get { return destino; } }
+31: 
+32:     protected double Kilometros { get { return kilometros; } }
+33: 
+34:     protected double Peso { get { return peso; } }
+35: 
+36:     protected double TarifaPorKilometro { get { return tarifaPorKilometro; } }
+37: 
+38:     public abstract double CalcularCosto();
+39: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\EnvioNoAsegurableException.cs =====
+1: using System;
+2: 
+3: namespace MisClases;
+4: 
+5: public class EnvioNoAsegurableException : Exception
+6: {
+7:     public EnvioNoAsegurableException(string mensaje)
+8:         : base(mensaje)
+9:     {
+10:     }
+11: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\IAsegurable.cs =====
+1: namespace MisClases;
+2: 
+3: public interface IAsegurable
+4: {
+5:     double ObtenerValorDeclarado();
+6: 
+7:     string ObtenerDescripcionCobertura();
+8: 
+9:     bool TieneSeguroContratado();
+10: 
+11:     void ContratarSeguro(
+12:         double valorDeclarado,
+13:         string descripcionCobertura);
+14: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Paquete.cs =====
+1: namespace MisClases;
+2: 
+3: public class Paquete : Envio, IAsegurable
+4: {
+5:     private static readonly double COSTO_POR_KILO = 300;
+6: 
+7:     private double valorDeclarado;
+8:     private string descripcionCobertura;
+9:     private bool seguroContratado;
+10: 
+11:     public Paquete(
+12:         int numeroGuia,
+13:         string destino,
+14:         double kilometros,
+15:         double peso,
+16:         double tarifaPorKilometro)
+17:         : base(
+18:             numeroGuia,
+19:             destino,
+20:             kilometros,
+21:             peso,
+22:             tarifaPorKilometro)
+23:     {
+24:         valorDeclarado = 0;
+25:         descripcionCobertura = "";
+26:         seguroContratado = false;
+27:     }
+28: 
+29:     public override double CalcularCosto()
+30:     {
+31:         double costoDistancia = Kilometros * TarifaPorKilometro;
+32:         double costoPeso = Peso * COSTO_POR_KILO;
+33: 
+34:         return costoDistancia + costoPeso;
+35:     }
+36: 
+37:     public double ObtenerValorDeclarado()
+38:     {
+39:         return valorDeclarado;
+40:     }
+41: 
+42:     public string ObtenerDescripcionCobertura()
+43:     {
+44:         return descripcionCobertura;
+45:     }
+46: 
+47:     public bool TieneSeguroContratado()
+48:     {
+49:         return seguroContratado;
+50:     }
+51: 
+52:     public void ContratarSeguro(
+53:         double valorDeclarado,
+54:         string descripcionCobertura)
+55:     {
+56:         this.valorDeclarado = valorDeclarado;
+57:         this.descripcionCobertura = descripcionCobertura;
+58:         seguroContratado = true;
+59:     }
+60: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\Program.cs =====
+1: // (gastonj@hotmail.com)
+2: 
+3: using System;
+4: using System.Collections.Generic;
+5: using MisClases;
+6: 
+7: TransportesDelLitoral transportes = new TransportesDelLitoral();
+8: 
+9: Documentacion documentacion = new Documentacion(
+10:     1001,       // nro de guia
+11:     "Rosario",  // destino
+12:     300,        // kilometros
+13:     2,          // peso
+14:     10);        // tarifa por kilometro
+15: 
+16: Paquete paquete = new Paquete(
+17:     1002,
+18:     "Cordoba",
+19:     500,
+20:     10,
+21:     12);
+22: 
+23: CargaPesada cargaPesada = new CargaPesada(
+24:     1003,
+25:     "Mendoza",
+26:     1000,
+27:     120,
+28:     15,
+29:     100);
+30: 
+31: Console.WriteLine("=== Registro ===");
+32: 
+33: Console.WriteLine("Guía 1001 registrada: " + transportes.RegistrarEnvio(documentacion));
+34: 
+35: Console.WriteLine("Guía 1002 registrada: " + transportes.RegistrarEnvio(paquete));
+36: 
+37: Console.WriteLine("Guía 1003 registrada: " + transportes.RegistrarEnvio(cargaPesada));
+38: 
+39: 
+40: Console.WriteLine();
+41: Console.WriteLine("=== Guía duplicada ===");
+42: 
+43: Paquete paqueteDuplicado = new Paquete(
+44:     1002,
+45:     "Santa Fe",
+46:     200,
+47:     5,
+48:     10);
+49: 
+50: bool registroDuplicado = transportes.RegistrarEnvio(paqueteDuplicado);
+51: 
+52: Console.WriteLine("Segundo registro de guía 1002 aceptado: " + registroDuplicado);
+53: 
+54: 
+55: Console.WriteLine();
+56: Console.WriteLine("=== Búsqueda por guía ===");
+57: 
+58: Envio? encontrado = transportes.BuscarPorGuia(1003);
+59: 
+60: if (encontrado != null)
+61: {
+62:     Console.WriteLine(
+63:         "Encontrado: "
+64:         + encontrado.NumeroGuia
+65:         + " - "
+66:         + encontrado.Destino);
+67: }
+68: 
+69: 
+70: Console.WriteLine();
+71: Console.WriteLine("=== Costos ===");
+72: 
+73: Console.WriteLine("Documentación: $" + documentacion.CalcularCosto());
+74: 
+75: Console.WriteLine("Paquete: $" + paquete.CalcularCosto());
+76: 
+77: Console.WriteLine("Carga pesada: $" + cargaPesada.CalcularCosto());
+78: 
+79: 
+80: Console.WriteLine();
+81: Console.WriteLine("=== Seguros ===");
+82: 
+83: transportes.ContratarSeguro(
+84:     paquete,
+85:     50000,
+86:     "Cobertura de mercadería");
+87: 
+88: transportes.ContratarSeguro(
+89:     cargaPesada,
+90:     200000,
+91:     "Cobertura de carga pesada");
+92: 
+93: Console.WriteLine("Paquete asegurado: " + paquete.TieneSeguroContratado());
+94: 
+95: Console.WriteLine("Carga pesada asegurada: " + cargaPesada.TieneSeguroContratado());
+96: 
+97: 
+98: Console.WriteLine();
+99: Console.WriteLine("=== Intento de asegurar documertancion ===");
+100: 
+101: try
+102: {
+103:     transportes.ContratarSeguro(
+104:         documentacion,
+105:         10000,
+106:         "Cobertura documental");
+107: }
+108: catch (EnvioNoAsegurableException ex)
+109: {
+110:     Console.WriteLine(ex.Message);
+111: }
+112: 
+113: 
+114: Console.WriteLine();
+115: Console.WriteLine("=== Proximo envío ===");
+116: 
+117: Envio? proximo = transportes.ConsultarProximo();
+118: 
+119: if (proximo != null)
+120: {
+121:     Console.WriteLine("Próximo: " + proximo.NumeroGuia);
+122: }
+123: 
+124: 
+125: Console.WriteLine();
+126: Console.WriteLine("=== Despachos ===");
+127: 
+128: Envio? primerDespacho = transportes.Despachar();
+129: Envio? segundoDespacho = transportes.Despachar();
+130: 
+131: if (primerDespacho != null)
+132: {
+133:     Console.WriteLine("Primer despacho: " + primerDespacho.NumeroGuia);
+134: }
+135: 
+136: if (segundoDespacho != null)
+137: {
+138:     Console.WriteLine("Segundo despacho: " + segundoDespacho.NumeroGuia);
+139: }
+140: 
+141: Envio? nuevoProximo = transportes.ConsultarProximo();
+142: 
+143: if (nuevoProximo != null)
+144: {
+145:     Console.WriteLine("Ahora queda primero: " + nuevoProximo.NumeroGuia);
+146: }
+147: 
+148: 
+149: Console.WriteLine();
+150: Console.WriteLine("=== Historia completo ===");
+151: 
+152: List<Envio> historial = transportes.ObtenerHistorial();
+153: 
+154: foreach (Envio envio in historial)
+155: {
+156:     Console.WriteLine(
+157:         envio.NumeroGuia
+158:         + " - "
+159:         + envio.Destino
+160:         + " - $"
+161:         + envio.CalcularCosto());
+162: }
+163: 
+164: 
+165: Console.WriteLine();
+166: Console.WriteLine("=== Totales ===");
+167: 
+168: Console.WriteLine("Facturación total: $" + transportes.CalcularFacturacion());
+169: 
+170: Console.WriteLine("Promedio de envíos asegurados: $" + transportes.CalcularCostoPromedioAsegurados());
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\1erParcialWork\TransportesDelLitoral.cs =====
+1: using System.Collections.Generic;
+2: 
+3: namespace MisClases;
+4: 
+5: public class TransportesDelLitoral
+6: {
+7:     private List<Envio> historial;
+8:     private List<Envio> pendientes;
+9:     private Dictionary<int, Envio> enviosPorGuia;
+10: 
+11:     public TransportesDelLitoral()
+12:     {
+13:         historial = new List<Envio>();
+14:         pendientes = new List<Envio>();
+15:         enviosPorGuia = new Dictionary<int, Envio>();
+16:     }
+17: 
+18:     public bool RegistrarEnvio(Envio envio)
+19:     {
+20:         if (enviosPorGuia.ContainsKey(envio.NumeroGuia))
+21:         {
+22:             return false;
+23:         }
+24: 
+25:         enviosPorGuia.Add(envio.NumeroGuia, envio);
+26:         historial.Add(envio);
+27:         pendientes.Add(envio);
+28: 
+29:         return true;
+30:     }
+31: 
+32:     public Envio? BuscarPorGuia(int numeroGuia)
+33:     {
+34:         if (enviosPorGuia.ContainsKey(numeroGuia))
+35:         {
+36:             return enviosPorGuia[numeroGuia];
+37:         }
+38: 
+39:         return null;
+40:     }
+41: 
+42:     public void ContratarSeguro(
+43:         Envio envio,
+44:         double valorDeclarado,
+45:         string descripcionCobertura)
+46:     {
+47:         if (envio is IAsegurable)
+48:         {
+49:             IAsegurable asegurable = (IAsegurable)envio;
+50: 
+51:             asegurable.ContratarSeguro(
+52:                 valorDeclarado,
+53:                 descripcionCobertura);
+54: 
+55:             return;
+56:         }
+57: 
+58:         throw new EnvioNoAsegurableException(
+59:             "El envío " + envio.NumeroGuia + " no admite seguro.");
+60:     }
+61: 
+62:     public Envio? ConsultarProximo()
+63:     {
+64:         if (pendientes.Count == 0)
+65:         {
+66:             return null;
+67:         }
+68: 
+69:         return pendientes[0];
+70:     }
+71: 
+72:     public Envio? Despachar()
+73:     {
+74:         if (pendientes.Count == 0)
+75:         {
+76:             return null;
+77:         }
+78: 
+79:         Envio envio = pendientes[0];
+80: 
+81:         pendientes.RemoveAt(0);
+82: 
+83:         return envio;
+84:     }
+85: 
+86:     public List<Envio> ObtenerHistorial()
+87:     {
+88:         List<Envio> copiaHistorial = new List<Envio>();
+89: 
+90:         foreach (Envio envio in historial)
+91:         {
+92:             copiaHistorial.Add(envio);
+93:         }
+94: 
+95:         return copiaHistorial;
+96:     }
+97: 
+98:     public double CalcularFacturacion()
+99:     {
+100:         double total = 0;
+101: 
+102:         foreach (Envio envio in historial)
+103:         {
+104:             total += envio.CalcularCosto();
+105:         }
+106: 
+107:         return total;
+108:     }
+109: 
+110:     public double CalcularCostoPromedioAsegurados()
+111:     {
+112:         double total = 0;
+113:         int cantidad = 0;
+114: 
+115:         foreach (Envio envio in historial)
+116:         {
+117:             if (envio is IAsegurable)
+118:             {
+119:                 IAsegurable asegurable = (IAsegurable)envio;
+120: 
+121:                 if (asegurable.TieneSeguroContratado())
+122:                 {
+123:                     total += envio.CalcularCosto();
+124:                     cantidad++;
+125:                 }
+126:             }
+127:         }
+128: 
+129:         if (cantidad == 0)
+130:         {
+131:             return 0;
+132:         }
+133: 
+134:         return total / cantidad;
+135:     }
+136: }
+

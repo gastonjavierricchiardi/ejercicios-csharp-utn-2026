@@ -41,7 +41,7 @@ Console.WriteLine();
 Console.WriteLine("=== Guía duplicada ===");
 
 Paquete paqueteDuplicado = new Paquete(
-    1002,
+    1002, // Paquete duplicado
     "Santa Fe",
     200,
     5,
@@ -50,7 +50,6 @@ Paquete paqueteDuplicado = new Paquete(
 bool registroDuplicado = transportes.RegistrarEnvio(paqueteDuplicado);
 
 Console.WriteLine("Segundo registro de guía 1002 aceptado: " + registroDuplicado);
-
 
 Console.WriteLine();
 Console.WriteLine("=== Búsqueda por guía ===");
@@ -66,7 +65,6 @@ if (encontrado != null)
         + encontrado.Destino);
 }
 
-
 Console.WriteLine();
 Console.WriteLine("=== Costos ===");
 
@@ -76,14 +74,14 @@ Console.WriteLine("Paquete: $" + paquete.CalcularCosto());
 
 Console.WriteLine("Carga pesada: $" + cargaPesada.CalcularCosto());
 
-
 Console.WriteLine();
 Console.WriteLine("=== Seguros ===");
 
 transportes.ContratarSeguro(
-    paquete,
-    50000,
-    "Cobertura de mercadería");
+    paquete,                    // Envío
+    50000,                      // Valor declarado
+    "Cobertura de mercadería"   // Descripción de cobertura
+    );
 
 transportes.ContratarSeguro(
     cargaPesada,
@@ -94,9 +92,8 @@ Console.WriteLine("Paquete asegurado: " + paquete.TieneSeguroContratado());
 
 Console.WriteLine("Carga pesada asegurada: " + cargaPesada.TieneSeguroContratado());
 
-
 Console.WriteLine();
-Console.WriteLine("=== Intento de asegurar documertancion ===");
+Console.WriteLine("=== Intento de asegurar documentación ===");
 
 try
 {
@@ -110,7 +107,6 @@ catch (EnvioNoAsegurableException ex)
     Console.WriteLine(ex.Message);
 }
 
-
 Console.WriteLine();
 Console.WriteLine("=== Proximo envío ===");
 
@@ -120,7 +116,6 @@ if (proximo != null)
 {
     Console.WriteLine("Próximo: " + proximo.NumeroGuia);
 }
-
 
 Console.WriteLine();
 Console.WriteLine("=== Despachos ===");
@@ -144,7 +139,6 @@ if (nuevoProximo != null)
 {
     Console.WriteLine("Ahora queda primero: " + nuevoProximo.NumeroGuia);
 }
-
 
 Console.WriteLine();
 Console.WriteLine("=== Historia completo ===");
