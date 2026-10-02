@@ -4,7 +4,6 @@ public class Program
 {
     public static void Main() //static void Main(string[] args){}
     {
-
         // CREAR EMPRESA
         Empresa empresa = new Empresa();
 
@@ -117,9 +116,7 @@ public class Program
 
                 if (detalle.Articulo.Observacion != "")
                 {
-                    Console.WriteLine(
-                        "Observación    : " + detalle.Articulo.Observacion
-                    );
+                    Console.WriteLine("Observación    : " + detalle.Articulo.Observacion);
                 }
             }
             Console.WriteLine();
