@@ -3,10 +3,10 @@ En C# se llama **método `Main`** y es el **punto de entrada** del programa.
 El equivalente a tu estructura de TypeScript sería:
 
 ```csharp
+using System;
 public class Program
 {
-    public static void Main()
-    //static void Main(string[] args)
+    public static void Main() //static void Main(string[] args){}
     {
     }
 }
@@ -49,6 +49,7 @@ public class Clase
 Mientras que `Program.cs` queda para el punto de entrada:
 
 ```csharp
+using System;
 public class Program
 {
     public static void Main()
@@ -273,7 +274,7 @@ $archivos = Get-ChildItem -Path . -Recurse -File -Filter *.cs |
     findstr /n "^" "%f"
     echo(
   )
-) > dump_03enunciados.txt
+) > dump_EJ19.txt
 
 ```
 
@@ -326,7 +327,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_Ejercicio14.txt
+) > dump_EJ19.txt
 
 ```
 

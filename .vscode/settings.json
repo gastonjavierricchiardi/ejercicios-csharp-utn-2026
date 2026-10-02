@@ -5,5 +5,5 @@
   "code-runner.fileDirectoryAsCwd": true,
   "code-runner.runInTerminal": true,
   "cSpell.language": "en,es-ES",
-  "dotnet.defaultSolution": "AECsharp.slnx"
+  "dotnet.defaultSolution": "EjerciciosCSharpUtn2026.slnx"
 }
