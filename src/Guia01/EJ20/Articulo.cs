@@ -20,23 +20,35 @@ public class Articulo
         this.costoProduccion = costoProduccion;
         this.observacion = observacion;
     }*/
+
+    // CONSTRUCTORES MODIFICADOS EJ20
     public Articulo(
         string nombre,
         double costoProduccion
     )
     {
+        ValidarDatos(
+        nombre,
+        costoProduccion,
+        ""
+        );
         this.nombre = nombre;
         this.costoProduccion = costoProduccion;
         this.observacion = "";
     }
-    // Cómo las observaciones pueden ser opcionales, mantenemos los dos para que
-    // pueda crearse
+
+    // EJ 20 Segundo constructor
     public Articulo(
         string nombre,
         double costoProduccion,
         string observacion
     )
     {
+        ValidarDatos(
+            nombre,
+            costoProduccion,
+            observacion
+        );
         this.nombre = nombre;
         this.costoProduccion = costoProduccion;
         this.observacion = observacion;
@@ -48,4 +60,24 @@ public class Articulo
     public double CostoProduccion { get { return costoProduccion; } }
     public string Observacion { get { return observacion; } }
     // 4. MÉTODOS
+    private void ValidarDatos(
+        string nombre,
+        double costoProduccion,
+        string observacion
+    )
+    {
+        // Las validaciones del EJ20
+        if (nombre.Length > 15)
+        {
+            throw new ExceptionArticulo("El nombre no puede superar los 15 caracteres");
+        }
+        if (costoProduccion <= 0)
+        {
+            throw new ExceptionArticulo("El costo de producción debe ser mayor a cero");
+        }
+        if (observacion.Length > 30)
+        {
+            throw new ExceptionArticulo("La observación no puede superar los 30 caracteres");
+        }
+    }
 }

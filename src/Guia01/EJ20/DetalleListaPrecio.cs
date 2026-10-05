@@ -18,4 +18,9 @@ public class DetalleListaPrecio
     public Articulo Articulo { get { return articulo; } }
     public double PrecioVenta { get { return precioVenta; } }
     // 4. MÉTODOS
+    // Para el EJ 20, necesitamos que el precio se pueda modificar lo dejamos encapsulado, pero agregamos un método
+    public void ActualizarPrecio(double nuevoPrecio)
+    {
+        precioVenta = nuevoPrecio;
+    }
 }

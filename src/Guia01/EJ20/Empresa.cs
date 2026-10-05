@@ -25,4 +25,51 @@ public class Empresa
     {
         listasDePrecio.Add(lista);
     }
+    public void AjustarPrecios()
+    {
+        foreach (Articulo articulo in articulos)
+        {
+            double precioMayor = 0;
+            bool encontroPrecio = false;
+
+            // PRIMER RECORRIDO:
+            // buscar el precio más alto del artículo
+            foreach (ListaPrecio lista in listasDePrecio)
+            {
+                foreach (DetalleListaPrecio detalle in lista.Detalles)
+                {
+                    if (detalle.Articulo == articulo)
+                    {
+                        if (encontroPrecio == false || detalle.PrecioVenta > precioMayor)
+                        {
+                            precioMayor = detalle.PrecioVenta;
+                            encontroPrecio = true;
+                        }
+                    }
+                }
+            }
+
+            // SEGUNDO RECORRIDO:
+            // ajustar los precios que superen la diferencia permitida
+            if (encontroPrecio)
+            {
+                double precioMinimoPermitido =
+                    precioMayor / 1.30;
+
+                foreach (ListaPrecio lista in listasDePrecio)
+                {
+                    foreach (DetalleListaPrecio detalle in lista.Detalles)
+                    {
+                        if (detalle.Articulo == articulo)
+                        {
+                            if (detalle.PrecioVenta < precioMinimoPermitido)
+                            {
+                                detalle.ActualizarPrecio(precioMinimoPermitido);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

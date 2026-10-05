@@ -427,7 +427,7 @@ DESARROLLAR EL EJERCICIO
 EJECUTAR EL PROYECTO
 ```
 
-## Texto para generar el entorno:
+## Texto para generar el entorno: (slnx), (jproj)
 
 ```ascii
 Preparame esta carpeta con nuestro bloque estándar de proyecto C#.
