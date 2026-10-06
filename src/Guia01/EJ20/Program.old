@@ -1,9 +1,8 @@
-// EJ20, EJ19
+﻿// EJ20, EJ19
 using System;
-
 public class Program
 {
-    public static void Main()
+    public static void Main() //static void Main(string[] args){}
     {
         // Crear empresa
         Empresa empresa = new Empresa();
@@ -31,21 +30,16 @@ public class Program
         empresa.DarDeAlta(mesa);
         empresa.DarDeAlta(biblioteca);
 
-
-        // ==================================================
-        // EJ20 - Probar artículos con errores
-        // ==================================================
-
-        Console.WriteLine("=== ARTÍCULOS CON ERROR ===");
-
-        // EJ20 - Error en el nombre
+        // EJ20
+        // Probar artículos con errores
+        Console.WriteLine("=== Artículos con error ===");
+        // Error en el nombre
         try
         {
             Articulo articuloNombreInvalido = new Articulo(
-                "MesaExtremadamenteLarga",
+                "MesaExtremadamenteLarga)", // 23 caracteres
                 30000
             );
-
             empresa.DarDeAlta(articuloNombreInvalido);
         }
         catch (ExceptionArticulo ex)
@@ -53,54 +47,46 @@ public class Program
             Console.WriteLine("Error: " + ex.Message);
         }
 
-        // EJ20 - Error en el costo
+        // Error en el costo
         try
         {
             Articulo articuloCostoInvalido = new Articulo(
                 "Escritorio",
-                0
+                0 // El costo tiene que ser mayor a 0
             );
-
             empresa.DarDeAlta(articuloCostoInvalido);
         }
-        catch (ExceptionArticulo ex)
+        catch (Exception ex)
         {
             Console.WriteLine("Error: " + ex.Message);
         }
 
-        // EJ20 - Error en la observación
+        // Error en la observación
         try
         {
             Articulo articuloObservacionInvalida = new Articulo(
                 "Estante",
                 25000,
-                "Observación demasiado extensa para este articulo"
+                "Observación demasiado extensa para este articulo" // 48 caracteres
             );
-
             empresa.DarDeAlta(articuloObservacionInvalida);
         }
         catch (ExceptionArticulo ex)
         {
+
             Console.WriteLine("Error: " + ex.Message);
         }
-
         Console.WriteLine();
 
-
-        // Mostrar artículos
-        Console.WriteLine("=== ARTÍCULOS ===");
-
+        // Mostrar artículos dados de alta
         foreach (Articulo articulo in empresa.Articulos)
         {
-            Console.WriteLine("Nombre               : " + articulo.Nombre);
-
-            Console.WriteLine("Costo de producción  : " + articulo.CostoProduccion);
-
+            Console.WriteLine("Nombre              : " + articulo.Nombre);
+            Console.WriteLine("Costos de producción: " + articulo.CostoProduccion);
             if (articulo.Observacion != "")
             {
-                Console.WriteLine("Observación          : " + articulo.Observacion);
+                Console.WriteLine("Observación         : " + articulo.Observacion);
             }
-
             Console.WriteLine();
         }
 
@@ -127,7 +113,6 @@ public class Program
             85000
         );
 
-
         // Crear lista minorista
         ListaPrecio listaMinorista = new ListaPrecio(
             "Lista Minorista",
@@ -137,12 +122,7 @@ public class Program
 
         listaMinorista.AgregarArticulo(
             silla,
-
-            // EJ20
-            // En EJ19 era 35000.
-            // Se cambia solamente este valor para provocar
-            // una diferencia mayor al 30% y comprobar el ajuste.
-            50000
+            50000 // Cambiamos un valor por fuera de los parámetros para obligar al sistema a actuar
         );
 
         listaMinorista.AgregarArticulo(
@@ -160,49 +140,30 @@ public class Program
         empresa.AgregarListaPrecio(listaMayorista);
         empresa.AgregarListaPrecio(listaMinorista);
 
+        // Mostrar lista antes del ajuste
+        Console.WriteLine("=== Lista antes del ajuste ===");
 
-        // ==================================================
-        // EJ20 - Mostrar listas ANTES del ajuste
-        // ==================================================
 
-        Console.WriteLine("=== LISTAS ANTES DEL AJUSTE ===");
+        // Mostrar artículos
+        Console.WriteLine("=== ARTÍCULOS ===");
 
-        foreach (ListaPrecio lista in empresa.ListasDePrecio)
+        foreach (Articulo articulo in empresa.Articulos)
         {
-            Console.WriteLine("Nombre         : " + lista.Nombre);
-            Console.WriteLine("Vigencia       : " + lista.FechaTopeVigencia);
-            Console.WriteLine("Tipo           : " + lista.Tipo);
+            Console.WriteLine("Nombre               : " + articulo.Nombre);
+            Console.WriteLine("Costo de producción  : " + articulo.CostoProduccion);
 
-            Console.WriteLine("Detalle        :");
-
-            foreach (DetalleListaPrecio detalle in lista.Detalles)
+            if (articulo.Observacion != "")
             {
-                Console.WriteLine("Artículo       : " + detalle.Articulo.Nombre);
-
-                Console.WriteLine("Precio de venta: " + detalle.PrecioVenta);
-
-                if (detalle.Articulo.Observacion != "")
-                {
-                    Console.WriteLine("Observación    : " + detalle.Articulo.Observacion);
-                }
+                Console.WriteLine("Observación          : " + articulo.Observacion);
             }
 
             Console.WriteLine();
         }
 
 
-        // ==================================================
-        // EJ20 - Ajustar precios
-        // ==================================================
+        // Mostrar listas de precio
 
-        empresa.AjustarPrecios();
-
-
-        // ==================================================
-        // EJ20 - Mostrar listas DESPUÉS del ajuste
-        // ==================================================
-
-        Console.WriteLine("=== LISTAS DESPUÉS DEL AJUSTE ===");
+        Console.WriteLine("=== LISTAS DE PRECIO ===");
 
         foreach (ListaPrecio lista in empresa.ListasDePrecio)
         {
@@ -215,7 +176,6 @@ public class Program
             foreach (DetalleListaPrecio detalle in lista.Detalles)
             {
                 Console.WriteLine("Artículo       : " + detalle.Articulo.Nombre);
-
                 Console.WriteLine("Precio de venta: " + detalle.PrecioVenta);
 
                 if (detalle.Articulo.Observacion != "")
@@ -223,7 +183,6 @@ public class Program
                     Console.WriteLine("Observación    : " + detalle.Articulo.Observacion);
                 }
             }
-
             Console.WriteLine();
         }
     }

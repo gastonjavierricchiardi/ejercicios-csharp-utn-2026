@@ -1,4 +1,4 @@
-// EJ19
+// EJ20, EJ19
 public class Articulo
 {
     // 1. CAMPOS / ATRIBUTOS

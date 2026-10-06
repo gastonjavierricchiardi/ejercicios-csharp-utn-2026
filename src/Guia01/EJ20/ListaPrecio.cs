@@ -1,4 +1,4 @@
-// EJ19
+// EJ20, EJ19
 using System.Collections.Generic;
 public class ListaPrecio
 {
@@ -7,6 +7,7 @@ public class ListaPrecio
     /*por ahora lo representamos con string
     revisar DateTime que lo vimos en la tutoría con el profe Andrés*/
     private string fechaTopeVigencia;
+
     private TipoListaPrecio tipo;
     private List<DetalleListaPrecio> detalles;
     // 2. CONSTRUCTOR

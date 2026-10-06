@@ -1,4 +1,4 @@
-// EJ19
+// EJ20, EJ19
 using System.Collections.Generic;
 public class Empresa
 {
