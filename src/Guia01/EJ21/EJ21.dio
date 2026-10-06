@@ -1,0 +1,16 @@
+<mxfile host="65bd71144e">
+    <diagram id="Fl3k_X0D4d7GwTryRzGc" name="Página-1">
+        <mxGraphModel dx="576" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#121212)" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="lxV4nSmdlZCJ8TE4gDBr-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Datos personales:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;dni&lt;/div&gt;&lt;div&gt;sueldoBrito&lt;/div&gt;&lt;div&gt;nombreEmpleo&lt;/div&gt;&lt;div&gt;antiguedad&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="90" width="120" x="150" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="lxV4nSmdlZCJ8TE4gDBr-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Servicio WEB&lt;div&gt;Ministerio del interior&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;valida DNI&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="30" width="60" x="390" y="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

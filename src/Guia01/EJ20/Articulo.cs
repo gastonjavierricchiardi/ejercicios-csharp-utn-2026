@@ -59,6 +59,7 @@ public class Articulo
     public string Nombre { get { return nombre; } }
     public double CostoProduccion { get { return costoProduccion; } }
     public string Observacion { get { return observacion; } }
+
     // 4. MÉTODOS
     private void ValidarDatos(
         string nombre,

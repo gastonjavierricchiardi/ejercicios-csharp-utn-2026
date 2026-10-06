@@ -6,7 +6,7 @@ public class Empresa
     private List<Articulo> articulos;
     private List<ListaPrecio> listasDePrecio;
 
-    // 2. CONSTRUCTOR, no crea los articulos ni las listas: Recibe objetos ya construido
+    // 2. CONSTRUCTOR, no crea los artículos ni las listas: Recibe objetos ya construido
     public Empresa()
     {
         articulos = new List<Articulo>();
