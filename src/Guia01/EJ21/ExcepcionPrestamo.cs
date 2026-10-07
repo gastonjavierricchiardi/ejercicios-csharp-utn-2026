@@ -1,16 +1,12 @@
-
-public class ExcepcionPrestamo
+// EJ21
+using System;
+public class ExcepcionPrestamo : Exception
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
-
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    public ExcepcionPrestamo(string mensaje)
+    : base(mensaje) { }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
-
     // 4. MÉTODOS
-    // Comportamiento del objeto.
 }

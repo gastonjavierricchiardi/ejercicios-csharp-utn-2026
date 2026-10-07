@@ -1,16 +1,32 @@
-
+// EJ21
 public class Prestamo
 {
     // 1. CAMPOS / ATRIBUTOS
-    // Estado interno del objeto.
-    // Normalmente private.
+
+    private double monto;
+    private double interes;
 
     // 2. CONSTRUCTOR
-    // Recibe los datos necesarios al crear el objeto.
+    public Prestamo(
+        double monto,
+        double interes
+        )
+    {
+        this.monto = monto;
+        this.interes = interes;
+    }
 
     // 3. PROPIEDADES / GETTERS Y SETTERS
-    // Formas de exponer o modificar el estado.
+    public double Interes
+    {
+        get { return interes; }
+        //        set { interes = value; }
+    }
+    public double Monto
+    {
+        get { return monto; }
+        //        set { monto = value; }
+    }
 
     // 4. MÉTODOS
-    // Comportamiento del objeto.
 }
