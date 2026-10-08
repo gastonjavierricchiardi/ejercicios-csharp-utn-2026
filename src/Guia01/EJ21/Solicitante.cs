@@ -34,11 +34,5 @@ public class Solicitante
         get { return dni; }
         // set { dni = value; }
     }
-
-
-
-
-
     // 4. MÉTODOS
-    // Comportamiento del objeto.
 }

@@ -402,7 +402,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_EJ19.txt
+) > dump_EJ21.txt
 
 ```
 
