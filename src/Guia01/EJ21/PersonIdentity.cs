@@ -1,5 +1,4 @@
-/*
-EJ21
+/*EJ21
 
 PersonIdentity representa el servicio externo indicado
 por el enunciado.

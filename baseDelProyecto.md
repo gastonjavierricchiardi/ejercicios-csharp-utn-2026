@@ -112,6 +112,20 @@ Y ojo con lo que acabamos de estudiar: **`args` es un parámetro**, no un atribu
 1. La estructura didáctica más correcta sería:
 
 ```csharp
+/*
+Reducido:
+1. Los que más te sirven para Programación II:
+| `ctor`      | **Constructor de la clase actual**    |
+| `prop`      | Propiedad automática `{ get; set; }`  |
+| `propfull`  | Propiedad completa + atributo privado |
+| `propg`     | Propiedad con `get` privado           |
+| `foreach`   | `foreach (...)`                       |
+| `try`       | `try/catch`                           |
+| `tryf`      | `try/finally`                         |
+| `cw`        | `Console.WriteLine(...)`              |
+| `enum`      | enumeración                           |
+*/
+using System;
 public class Clase
 {
     // 1. CAMPOS / ATRIBUTOS
@@ -402,7 +416,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_EJ21.txt
+) > dump_EJ22.txt
 
 ```
 

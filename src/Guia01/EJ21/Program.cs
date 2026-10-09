@@ -1,4 +1,4 @@
-﻿// EJ21
+﻿// EJ21 --> gastonj@hotmail.com
 using System;
 
 public class Program
@@ -14,12 +14,7 @@ public class Program
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 1
-        // Salario entre 30.000 y 40.000
-        // ==========================================
-
+        // CASO 1 --> Salario entre 30.000 y 40.000        
         Person person1 = new Person(
             "Juan",
             "Perez",
@@ -41,37 +36,18 @@ public class Program
         {
             Prestamo prestamo1 = kokumoBank.EvaluarPrestamo(solicitante1, personIdentity1);
 
-            Console.WriteLine(
-                "DNI      : "
-                + solicitante1.Dni
-            );
-
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo1.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo1.Interes
-                + "%"
-            );
+            Console.WriteLine("DNI      : " + solicitante1.Dni);
+            Console.WriteLine("Préstamo : $" + prestamo1.Monto);
+            Console.WriteLine("Interés  : " + prestamo1.Interes + "%");
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "Error: "
-                + ex.Message
-            );
+            Console.WriteLine("Error: " + ex.Message);
         }
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 2
-        // Salario mayor a 40.000 y hasta 60.000
-        // ==========================================
+        // CASO 2 --> Salario mayor a 40.000 y hasta 60.000
 
         Person person2 = new Person(
             "Maria",
@@ -98,37 +74,18 @@ public class Program
                     personIdentity2
                 );
 
-            Console.WriteLine(
-                "DNI      : "
-                + solicitante2.Dni
-            );
-
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo2.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo2.Interes
-                + "%"
-            );
+            Console.WriteLine("DNI      : " + solicitante2.Dni);
+            Console.WriteLine("Préstamo : $" + prestamo2.Monto);
+            Console.WriteLine("Interés  : " + prestamo2.Interes + "%");
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "Error: "
-                + ex.Message
-            );
+            Console.WriteLine("Error: " + ex.Message);
         }
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 3
-        // Salario mayor a 60.000 y hasta 80.000
-        // ==========================================
+        // CASO 3 --> Salario mayor a 60.000 y hasta 80.000
 
         Person person3 = new Person(
             "Pedro",
@@ -155,37 +112,18 @@ public class Program
                     personIdentity3
                 );
 
-            Console.WriteLine(
-                "DNI      : "
-                + solicitante3.Dni
-            );
-
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo3.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo3.Interes
-                + "%"
-            );
+            Console.WriteLine("DNI      : " + solicitante3.Dni);
+            Console.WriteLine("Préstamo : $" + prestamo3.Monto);
+            Console.WriteLine("Interés  : " + prestamo3.Interes + "%");
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "Error: "
-                + ex.Message
-            );
+            Console.WriteLine("Error: " + ex.Message);
         }
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 4
-        // Salario menor a 30.000
-        // ==========================================
+        // CASO 4 --> Salario menor a 30.000
 
         Person person4 = new Person(
             "Laura",
@@ -212,37 +150,18 @@ public class Program
                     personIdentity4
                 );
 
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo4.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo4.Interes
-                + "%"
-            );
+            Console.WriteLine("Préstamo : $" + prestamo4.Monto);
+            Console.WriteLine("Interés  : " + prestamo4.Interes + "%");
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "DNI   : "
-                + solicitante4.Dni
-            );
-
-            Console.WriteLine(
-                "Error : "
-                + ex.Message
-            );
+            Console.WriteLine("DNI   : " + solicitante4.Dni);
+            Console.WriteLine("Error : " + ex.Message);
         }
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 5
-        // Salario mayor a 80.000
-        // ==========================================
+        // CASO 5 --> Salario mayor a 80.000
 
         Person person5 = new Person(
             "Carlos",
@@ -269,37 +188,18 @@ public class Program
                     personIdentity5
                 );
 
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo5.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo5.Interes
-                + "%"
-            );
+            Console.WriteLine("Préstamo : $" + prestamo5.Monto);
+            Console.WriteLine("Interés  : " + prestamo5.Interes + "%");
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "DNI   : "
-                + solicitante5.Dni
-            );
-
-            Console.WriteLine(
-                "Error : "
-                + ex.Message
-            );
+            Console.WriteLine("DNI   : " + solicitante5.Dni);
+            Console.WriteLine("Error : " + ex.Message);
         }
 
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 6
-        // Datos de identidad incorrectos
-        // ==========================================
+        // CASO 6 --> Datos de identidad incorrectos
 
         Person person6 = new Person(
             "Ana",
@@ -326,36 +226,17 @@ public class Program
                     personIdentity6
                 );
 
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo6.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo6.Interes
-                + "%"
-            );
+            Console.WriteLine("Préstamo : $" + prestamo6.Monto);
+            Console.WriteLine("Interés  : " + prestamo6.Interes + "%");
         }
         catch (Exception ex)
         {
-            Console.WriteLine(
-                "DNI   : "
-                + solicitante6.Dni
-            );
-
-            Console.WriteLine(
-                "Error : "
-                + ex.Message
-            );
+            Console.WriteLine("DNI   : " + solicitante6.Dni);
+            Console.WriteLine("Error : " + ex.Message);
         }
         Console.WriteLine();
 
-
-        // ==========================================
-        // CASO 7
-        // Persona menor de 21 años
-        // ==========================================
+        // CASO 7 --> Persona menor de 21 años
 
         Person person7 = new Person(
             "Sofia",
@@ -382,29 +263,14 @@ public class Program
                     personIdentity7
                 );
 
-            Console.WriteLine(
-                "Préstamo : $"
-                + prestamo7.Monto
-            );
-
-            Console.WriteLine(
-                "Interés  : "
-                + prestamo7.Interes
-                + "%"
+            Console.WriteLine("Préstamo : $" + prestamo7.Monto);
+            Console.WriteLine("Interés  : " + prestamo7.Interes + "%"
             );
         }
         catch (ExcepcionPrestamo ex)
         {
-            Console.WriteLine(
-                "DNI   : "
-                + solicitante7.Dni
-            );
-
-            Console.WriteLine(
-                "Error : "
-                + ex.Message
-            );
+            Console.WriteLine("DNI   : " + solicitante7.Dni);
+            Console.WriteLine("Error : " + ex.Message);
         }
-
     }
 }
