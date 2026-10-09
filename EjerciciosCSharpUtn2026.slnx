@@ -9,6 +9,10 @@
   <Folder Name="/src/03-PruebaPreParcial_v2/">
     <Project Path="src/03-PruebaPreParcial_v2/03PruebaParcial.csproj" />
   </Folder>
+  <Folder Name="/src/EJPatrones/" />
+  <Folder Name="/src/EJPatrones/EJ22_Adapter/">
+    <Project Path="src/EJPatrones/EJ22_Adapter/EJ22Adapter.csproj" />
+  </Folder>
   <Folder Name="/src/Guia01/" />
   <Folder Name="/src/Guia01/EJ01/">
     <Project Path="src/Guia01/EJ01/01EJ01.csproj" />
