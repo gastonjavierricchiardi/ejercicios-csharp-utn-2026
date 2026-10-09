@@ -1,6 +1,6 @@
 // EJ22
 using System;
-public class Document
+public class Document : IDocument
 {
     // 1. CAMPOS / ATRIBUTOS
     private int id;
