@@ -4,7 +4,7 @@ public interface IDocument
 {
     int Id { get; }
     DateTime IssueDate { get; }
-    string Bosy { get; }
+    string Body { get; }
     string Responsible { get; }
 }
 /*
