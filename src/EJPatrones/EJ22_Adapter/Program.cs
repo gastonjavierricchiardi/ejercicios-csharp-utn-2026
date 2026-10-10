@@ -48,13 +48,17 @@ public class Program
         );
 
         // NORMALIZAMOS DOCUMENTOS
+        /*Versión sin adapter (original)
         NormalizadorDocumentos normalizador = new NormalizadorDocumentos();
-
         List<Document> documentos = new List<Document>();
-
         documentos.Add(normalizador.Normalizar(escrito));
         documentos.Add(normalizador.Normalizar(documento));
         documentos.Add(normalizador.Normalizar(ley));
+        */
+        List<IDocument> documentos = new List<IDocument>();
+        documentos.Add(new EscritoAdapter(escrito));
+        documentos.Add(new DocumentoAdapter(documento));
+        documentos.Add(new LeyAdapter(ley));
 
         // Analizar Docuemtos
         AnalizadorDocumentos analizador = new AnalizadorDocumentos();

@@ -476,3 +476,9 @@ Your branch is behind 'origin/main' by X commits
 ahí ya sabés que **los cambios están en GitHub y esta máquina todavía no los descargó**. El `git pull --ff-only origin main` es el que finalmente los baja.
 
 ---
+
+# Breve búsqueda desde consola para archios
+
+```
+find . -type f -iname "*.png" | sort -V
+```

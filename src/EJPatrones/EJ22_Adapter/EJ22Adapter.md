@@ -28,3 +28,19 @@ Ley ──────── LeyAdapter ───────┘       │
 ```
 
 Conservamos las tres clases originales y sus properties completas. `Document` también podrá implementar `IDocument`. La clase `NormalizadorDocumentos` se retirará cuando terminemos la migración y validemos las pruebas.
+
+---
+
+# EJ22 - Revisión final
+
+|       Clase / interfaz | Responsabilidad                                             |
+| ---------------------: | :---------------------------------------------------------- |
+|            `IDocument` | Contrato común que permite consultar los cuatro datos       |
+|              `Escrito` | Represente el documento original del primer organismo       |
+|            `Documento` | Representa el documento original del segundo organismo      |
+|                  `Ley` | Representa el documento original del tercer organismo       |
+|       `EscritoAdapter` | Adapta `Escrito` a `IDocument`.                             |
+|     `DocumentoAdapter` | Adapta `Documento` a `IDocument`.                           |
+|           `LeyAdapter` | Adapta `Ley` a `IDocument`.                                 |
+| `AnalizadorDocumentos` | Valida documentos sin conocer sus clases originales         |
+|              `Program` | Crea los objetos, sus **adaptadores** y ejecuta el análisis |

@@ -7,9 +7,9 @@ public class AnalizadorDocumentos
     // 2. CONSTRUCTOR
     // 3. PROPIEDADES / GETTERS Y SETTERS
     // 4. MÉTODOS
-    public void Analizar(List<Document> documentos)
+    public void Analizar(List<IDocument> documentos)
     {
-        foreach (Document documento in documentos)
+        foreach (IDocument documento in documentos)
         {
             // Verificamos el identificador
             bool idValido = documento.Id > 0;

@@ -193,10 +193,19 @@ Crear un conjunto acotado de artículos, algunos con errores y mostrar el result
 
 21. El banco Kokumo Bank inaugura una nueva sucursal en el reino de Caballito.
     Como parte de la estrategia para captar clientes, decide lanzar un nuevo plan de préstamos personales.
-    De las personas se necesita conocer el dni, el sueldo bruto y la antigüedad del empleo actual.
-    Cuando el sistema recibe dichos datos, inmediatamente después realiza una consulta al servicio web del Ministerio del Interior para validar el dni; a los efectos se debe instanciar un objeto `PersonIdentity` e invocar a la función `getInfo()` pasándole el dni.
-    El servicio devolverá un objeto `Person`, con los siguientes atributos: `name` (String), `lastname` (String), `birthDate` (Date).
-    Si la persona no llega a los 21 años, debe mostrarse un mensaje que indique que no es posible extender el préstamo por no reunir la edad mínima; caso contrario, el criterio de préstamo es el siguiente: - Salario entre $30.000 y $40.000: $80.000 con un 30% de interés. - Salario hasta los $60.000: $120.000 con un 35% de interés. - Salario hasta los $80.000: $140.000 con un 39% de interés. - No se extiende créditos para salarios mayores a $80.000.
+
+De las personas se necesita conocer el dni, el sueldo bruto y la antigüedad del empleo actual.
+
+Cuando el sistema recibe dichos datos, inmediatamente después realiza una consulta al servicio web del Ministerio del Interior para validar el dni; a los efectos se debe instanciar un objeto `PersonIdentity` e invocar a la función `getInfo()` pasándole el dni.
+
+El servicio devolverá un objeto `Person`, con los siguientes atributos: `name` (String), `lastname` (String), `birthDate` (Date).
+
+Si la persona no llega a los 21 años, debe mostrarse un mensaje que indique que no es posible extender el préstamo por no reunir la edad mínima; caso contrario, el criterio de préstamo es el siguiente:
+
+- Salario entre $30.000 y $40.000: $80.000 con un 30% de interés.
+- Salario hasta los $60.000: $120.000 con un 35% de interés.
+- Salario hasta los $80.000: $140.000 con un 39% de interés.
+- No se extiende créditos para salarios mayores a $80.000.
 
 Asumir la existencia de la clase `PersonIdentity`; eventualmente, para permitir la compilación del código, implementarla.
 
@@ -208,14 +217,14 @@ Desarrollar una solución que permita normalizar los objetos y analizar los sigu
 
 La solución debe poder contar con una función que reciba por parámetro una lista de `Document` con los atributos a priori mencionados y mostrar por pantalla `"aprobado"` en caso de estar aprobado y `"rechazado"` en caso contrario; el criterio de aprobación es que estén todos los datos completos y que el cuerpo contenga al menos 100 caracteres y la fecha no sea mayor a la de hoy.
 
-    Considerar que el sistema tiene las siguientes clases y atributos:
+Considerar que el sistema tiene las siguientes clases y atributos:
 
-    | Atributo / Clase | Escrito     | Documento     | Ley          |
-    | ---------------- | ----------- | ------------- | ------------ |
-    | **ID**           | `legajo`    | `expediente`  | `folio`      |
-    | **Fecha**        | `erogación` | `lanzamiento` | `emisión`    |
-    | **Cuerpo**       | `cuerpo`    | `contenido`   | `desarrollo` |
-    | **Responsable**  | `autor`     | `nombre`      | `firmante`   |
+| Atributo / Clase | Escrito     | Documento     | Ley          |
+| ---------------- | ----------- | ------------- | ------------ |
+| **ID**           | `legajo`    | `expediente`  | `folio`      |
+| **Fecha**        | `erogación` | `lanzamiento` | `emisión`    |
+| **Cuerpo**       | `cuerpo`    | `contenido`   | `desarrollo` |
+| **Responsable**  | `autor`     | `nombre`      | `firmante`   |
 
 Desarrollar una solución que permita adecuar estos documentos al formato de `Document`, incluyendo diagramas, etc.
 
@@ -243,12 +252,12 @@ Mediante la instancia de la clase `FalderP`, es posible recuperar los datos si s
 
 La idea es poder implementar una clase que contenga la función `FetchSurveillanceData()` encargada de recuperar los datos de los distintos dispositivos para, luego, transformarlos en un formato homogéneo de modo tal que sea posible pasárselo a la función `PrintInfo()`, buscando de esta manera imprimir la siguiente información por cada objeto:
 
-    ```text
-    Dispositivo: <id dispositivo>
-    Tipo: <Humano, No humano>
-    Tamaño: <Grande, mediano, pequeño>
-    Observaciones: <los valores de kind o de gender, dependiendo el dispositivo>
-    ```
+```text
+Dispositivo: <id dispositivo>
+Tipo: <Humano, No humano>
+Tamaño: <Grande, mediano, pequeño>
+Observaciones: <los valores de kind o de gender, dependiendo el dispositivo>
+```
 
 24. Una empresa decide monitorear el ingreso y egreso de su personal, razón por la que ha instalado molinetes en sus distintos puntos de acceso.
 
@@ -347,27 +356,27 @@ Cada vez que se sube de nivel, se desbloquean todas las habilidades cuyo nivel r
 
 #### Árbol de Habilidades (Estructura)
 
-    ```text
-    [Novato] (Nivel 0, Puntos: 0, DEFENSA)
-       │
-       ├─── [Camino del alumno] (Nivel 1, Puntos: 1, DEFENSA)
-       │       ├─── [Llantos de Arzan] (Nivel 2, Puntos: 1, DEFENSA)
-       │       │       └─── [Desazón de Amado] (Nivel 4, Puntos: 1, DEFENSA)
-       │       │               ├─── [Herida de Barbier] (Nivel 5, Puntos: 3, ATAQUE)
-       │       │               └─── [La fuga de Yago] (Nivel 6, Puntos: 4, ATAQUE)
-       │       ├─── [Grito de Fanelli] (Nivel 2, Puntos: 1, DEFENSA)
-       │       │       └─── [Gota de Mansi] (Nivel 5, Puntos: 2, DEFENSA)
-       │       └─── [Desesperación de Forcinto] (Nivel 3, Puntos: 1, ATAQUE)
-       │               ├─── [Desgano de Pignatta] (Nivel 3, Puntos: 2, ATAQUE)
-       │               │       └─── [Silencio de Monti] (Nivel 7, Puntos: 4, DEFENSA)
-       │               └─── [Ausencia de Ramasco] (Nivel 2, Puntos: 1, DEFENSA)
-       │                       └─── [Locura de Cannabarro] (Nivel 4, Puntos: 2, ATAQUE)
-       │
-       └─── [Camino del profe] (Nivel 2, Puntos: 1, ATAQUE)
-               ├─── [Ira de Mosconi] (Nivel 5, Puntos: 5, ATAQUE)
-               ├─── [Paz de Posse] (Nivel 6, Puntos: 5, DEFENSA)
-               └─── [Enois de Karma] (Nivel 7, Puntos: 10, ATAQUE)
-    ```
+```text
+[Novato] (Nivel 0, Puntos: 0, DEFENSA)
+│
+├─── [Camino del alumno] (Nivel 1, Puntos: 1, DEFENSA)
+│       ├─── [Llantos de Arzan] (Nivel 2, Puntos: 1, DEFENSA)
+│       │       └─── [Desazón de Amado] (Nivel 4, Puntos: 1, DEFENSA)
+│       │               ├─── [Herida de Barbier] (Nivel 5, Puntos: 3, ATAQUE)
+│       │               └─── [La fuga de Yago] (Nivel 6, Puntos: 4, ATAQUE)
+│       ├─── [Grito de Fanelli] (Nivel 2, Puntos: 1, DEFENSA)
+│       │       └─── [Gota de Mansi] (Nivel 5, Puntos: 2, DEFENSA)
+│       └─── [Desesperación de Forcinto] (Nivel 3, Puntos: 1, ATAQUE)
+│               ├─── [Desgano de Pignatta] (Nivel 3, Puntos: 2, ATAQUE)
+│               │       └─── [Silencio de Monti] (Nivel 7, Puntos: 4, DEFENSA)
+│               └─── [Ausencia de Ramasco] (Nivel 2, Puntos: 1, DEFENSA)
+│                       └─── [Locura de Cannabarro] (Nivel 4, Puntos: 2, ATAQUE)
+│
+└─── [Camino del profe] (Nivel 2, Puntos: 1, ATAQUE)
+├─── [Ira de Mosconi] (Nivel 5, Puntos: 5, ATAQUE)
+├─── [Paz de Posse] (Nivel 6, Puntos: 5, DEFENSA)
+└─── [Enois de Karma] (Nivel 7, Puntos: 10, ATAQUE)
+```
 
 34. Considerar un banco que posea una jerarquía constituida por tres niveles: empleado, supervisor y gerente.
 
