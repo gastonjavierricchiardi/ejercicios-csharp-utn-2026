@@ -23,6 +23,6 @@ public class FlyingGr0n3
         {
             return new List<Gr0n3Object>();
         }
-        throw new Exception("Dispositivo inexistente" + id);
+        throw new Exception("Dispositivo inexistente: " + id);
     }
 }
