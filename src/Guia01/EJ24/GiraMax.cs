@@ -1,4 +1,4 @@
-﻿// EJ2
+﻿// EJ24
 public class GiraMax
 {
     // 1. CAMPOS / ATRIBUTOS
