@@ -77,17 +77,17 @@
   <Folder Name="/src/Guia01/EJ22/">
     <Project Path="src/Guia01/EJ22/01EJ22.csproj" />
   </Folder>
-  <Folder Name="/src/Guia01/EJ23/">
-    <Project Path="src/Guia01/EJ23/01EJ23.csproj" />
+  <Folder Name="/src/Guia01/EJ23_Adapter/">
+    <Project Path="src/Guia01/EJ23_Adapter/01EJ23.csproj" />
   </Folder>
-  <Folder Name="/src/Guia01/EJ24/">
-    <Project Path="src/Guia01/EJ24/01EJ24.csproj" />
+  <Folder Name="/src/Guia01/EJ24_Adapter/">
+    <Project Path="src/Guia01/EJ24_Adapter/01EJ24.csproj" />
   </Folder>
-  <Folder Name="/src/Guia01/EJ25/">
-    <Project Path="src/Guia01/EJ25/01EJ25.csproj" />
+  <Folder Name="/src/Guia01/EJ25_Adapter/">
+    <Project Path="src/Guia01/EJ25_Adapter/01EJ25.csproj" />
   </Folder>
-  <Folder Name="/src/Guia01/EJ26/">
-    <Project Path="src/Guia01/EJ26/01EJ26.csproj" />
+  <Folder Name="/src/Guia01/EJ26_Composite/">
+    <Project Path="src/Guia01/EJ26_Composite/01EJ26.csproj" />
   </Folder>
   <Folder Name="/src/Guia01/EJ27/">
     <Project Path="src/Guia01/EJ27/01EJ27.csproj" />
