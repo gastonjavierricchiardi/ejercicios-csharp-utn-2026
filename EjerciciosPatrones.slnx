@@ -1,17 +1,17 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/EJPatrones/" />
-  <Folder Name="/src/EJPatrones/Guia01/" />
-  <Folder Name="/src/EJPatrones/Guia01/EJ01-Singleton-Configuracion/">
-    <Project Path="src/EJPatrones/Guia01/EJ01-Singleton-Configuracion/EJ01SingletonConfiguracion.csproj" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones01/" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones01/EJ01-Singleton-Configuracion/">
+    <Project Path="src/EJPatrones/GuiaPatrones01/EJ01-Singleton-Configuracion/EJ01SingletonConfiguracion.csproj" />
   </Folder>
-  <Folder Name="/src/EJPatrones/Guia01/EJ02-FactoryMethod-AvisosTurnos/">
-    <Project Path="src/EJPatrones/Guia01/EJ02-FactoryMethod-AvisosTurnos/EJ02FactoryMethodAvisosTurnos.csproj" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones01/EJ02-FactoryMethod-AvisosTurnos/">
+    <Project Path="src/EJPatrones/GuiaPatrones01/EJ02-FactoryMethod-AvisosTurnos/EJ02FactoryMethodAvisosTurnos.csproj" />
   </Folder>
-  <Folder Name="/src/EJPatrones/Guia01/EJ03-AbstractFactory-CombosLiving/">
-    <Project Path="src/EJPatrones/Guia01/EJ03-AbstractFactory-CombosLiving/EJ03AbstractFactoryCombosLiving.csproj" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones01/EJ03-AbstractFactory-CombosLiving/">
+    <Project Path="src/EJPatrones/GuiaPatrones01/EJ03-AbstractFactory-CombosLiving/EJ03AbstractFactoryCombosLiving.csproj" />
   </Folder>
-  <Folder Name="/src/EJPatrones/Guia01/EJ04-Builder-Pizzas/">
-    <Project Path="src/EJPatrones/Guia01/EJ04-Builder-Pizzas/EJ04BuilderPizzas.csproj" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones01/EJ04-Builder-Pizzas/">
+    <Project Path="src/EJPatrones/GuiaPatrones01/EJ04-Builder-Pizzas/EJ04BuilderPizzas.csproj" />
   </Folder>
 </Solution>
