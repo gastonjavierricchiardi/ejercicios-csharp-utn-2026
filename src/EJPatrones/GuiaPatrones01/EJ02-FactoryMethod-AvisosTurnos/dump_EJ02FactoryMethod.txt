@@ -1,0 +1,93 @@
+﻿PWD: C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos
+Fecha: 2026-10-25T17:24:28.7570508-03:00
+
+ARCHIVOS INCLUIDOS:
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\Appointment.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\EmailCreator.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\EmailNotification.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\INotification.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\NotificationCenter.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\Program.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\SmsCreator.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\SmsNotification.cs
+
+========================================
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\Appointment.cs =====
+1: public class Appointment
+2: {
+3:     public void Confirm(NotificationCenter notificationCenter)
+4:     {
+5:         notificationCenter.Notify(GetConfirmationMessage());
+6:     }
+7: 
+8:      public void Confirm(INotification notification)
+9:     {
+10:         notification.Send(GetConfirmationMessage());
+11:     }
+12: 
+13:     private string GetConfirmationMessage()
+14:     {
+15:         return "Turno confirmado!";
+16:     }
+17: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\EmailCreator.cs =====
+1: public class EmailCreator : NotificationCenter
+2: {
+3:     public override INotification CreateNotification()
+4:     {
+5:         return new EmailNotification();
+6:     }
+7: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\EmailNotification.cs =====
+1: public class EmailNotification : INotification
+2: {
+3:     public void Send(string message)
+4:     {
+5:         Console.WriteLine($"Enviando mensaje por Email: {message}");
+6:     }
+7: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\INotification.cs =====
+1: public interface INotification
+2: {
+3:     public void Send(string message);
+4: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\NotificationCenter.cs =====
+1: public abstract class NotificationCenter
+2: {
+3:     public abstract INotification CreateNotification();
+4: 
+5:     public void Notify(string message)
+6:     {
+7:         CreateNotification().Send(message);
+8:     }
+9: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\Program.cs =====
+1: var appointment = new Appointment();
+2: 
+3: appointment.Confirm(new SmsCreator().CreateNotification());
+4: appointment.Confirm(new EmailCreator());
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\SmsCreator.cs =====
+1: public class SmsCreator : NotificationCenter
+2: {
+3:     public override INotification CreateNotification()
+4:     {
+5:         return new SmsNotification();
+6:     }
+7: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\EJPatrones\GuiaPatrones01\EJ02-FactoryMethod-AvisosTurnos\SmsNotification.cs =====
+1: public class SmsNotification : INotification
+2: {
+3:     public void Send(string message)
+4:     {
+5:         Console.WriteLine($"Enviando mensaje por SMS: {message}");
+6:     }
+7: }
+
