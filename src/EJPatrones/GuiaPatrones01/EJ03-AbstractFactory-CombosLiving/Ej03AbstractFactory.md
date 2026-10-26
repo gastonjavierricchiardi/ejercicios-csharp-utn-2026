@@ -13,4 +13,63 @@ Mesa moderna de vidrio
 Mesa clásica de roble
 ```
 
-> **Para pensar:** ¿qué tendrías que cambiar si el combo sumara un tercer mueble, por ejemplo un sillón? Compararlo con la analogía del cóctel del material.
+> **Para pensar:**
+
+1. ¿qué tendrías que cambiar si el combo sumara un tercer mueble, por ejemplo un sillón?
+
+2. Compararlo con la analogía del cóctel del material.
+
+---
+
+# Respuesta preguntas:
+
+1. Si el combo incorpora un **tercer producto** (`Sillon`) habría que modificar la estructura del patrón, porque ya no alcanza con solo crear silla y mesa.
+
+**Habría que agregar**:
+
+a. Un nuevo producto abstracto
+
+```csharp
+public interface ISillon
+{
+    void Mostrar();
+}
+```
+
+b. Los productos concretos de cada línea
+
+EJ:
+
+- `SillonModerno`
+- `SillonClasico`
+
+c. La fábrica abstracta
+
+```Csharp
+ISillon CrearSillon();
+```
+
+d. Todas las fábricas concretas
+
+Cada fabrica concreta tendría que implementar su nuevo método.
+
+- `FabricaModerna` --> devuelve `SillonModerno`
+- `FabricaClasica` --> devuelve `SillonClasico`
+
+e. y por último el cliente.
+
+```CSharp
+ISillon sillon = fabrica.CrearSillon();
+sillon.Mostrar();
+
+```
+
+---
+
+2. Compararlo con la analogía del cóctel del material.
+
+**Comparación con la analogía del cóctel**:
+
+_AbstractFactory_ permite permite crear una familia formada por una bebida alcohólica y un agregado, como gin con tónica o Campari con jugo de naranja.
+
+Agregar un sillón al combo equivale a agregar un tercer componente obligatorio a cada cóctel. Esto requiere ampliar la fábrica abstracta y todas las fabricas concretas para que puedan crear ese nuevo producto. Por lo tanto facilita agregar nuevas familias de productos, pero incorporar un nuevo tipo de producto a todas las familias require modificar las fábricas existentes.

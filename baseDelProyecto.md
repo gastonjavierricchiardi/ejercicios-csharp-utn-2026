@@ -43,7 +43,6 @@ public class Clase
     // Comportamiento del objeto.
 }
 
-
 ```
 
 Mientras que `Program.cs` queda para el punto de entrada:
@@ -282,11 +281,13 @@ Si querés, después te muestro **los 10 atajos más útiles para hacer un parci
 
 ---
 
-# Windows
+# Pasajes de código de \*.cs a txt unificados
 
-## POWERSHELL
+## Windows
 
-### Mejorado sin basura CS
+### POWERSHELL
+
+#### Mejorado sin basura CS
 
 ```
 cd\
@@ -332,9 +333,9 @@ $archivos = Get-ChildItem -Path . -Recurse -File -Filter *.cs |
 
 ###############################
 
-## CMD
+### CMD
 
-### Mejorado sin Basura CS
+#### Mejorado sin Basura CS
 
 **cd c:\Users\gasto\OneDrive\DropBox\vcs\proyecto-ts\src\00EJercicios**
 **cd c:\Users\gasto\Dropbox\vcs\proyecto-ts\src\00EJERCICIOS\00EJ02**
@@ -361,15 +362,9 @@ $archivos = Get-ChildItem -Path . -Recurse -File -Filter *.cs |
 
 ---
 
-=====-----=====
-
 # Zorin OS:
 
-=====-----=====
-
 ## Movimiento entre carpetas
-
-### Mejorado sin basura CS
 
 cd "Dropbox/vcs/proyecto-ts/src/18EJXX/18EJ02"
 cd "proyecto-ts/src/01EJXX/01EJ17"
@@ -382,6 +377,8 @@ cd ~/vcs/proyecto-ts/src/09EJ_trenes
 cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
 
 ### Impresión de archivos entregables
+
+#### Mejorado sin basura CS
 
 ```
 (
@@ -408,7 +405,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_EJ24.txt
+) > dump_EJ03-abstractfactory.txt
 
 ```
 
@@ -469,8 +466,12 @@ ahí ya sabés que **los cambios están en GitHub y esta máquina todavía no lo
 
 ---
 
-# Breve búsqueda desde consola para archios
+# Breve búsqueda desde consola para archivos
 
 ```
 find . -type f -iname "*.png" | sort -V
 ```
+
+---
+
+eof

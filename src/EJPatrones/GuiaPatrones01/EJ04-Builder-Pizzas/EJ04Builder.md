@@ -11,4 +11,15 @@ Pizza grande, masa a la piedra: muzzarella, aceitunas
 Pizza mediana, masa fina: muzzarella, tomate, ajo
 ```
 
-> **Para pensar:** ¿quién conoce el orden de los pasos y quién el contenido de cada uno? ¿Qué se gana separándolos?
+**Para pensar:**
+
+1. ¿quién conoce el orden de los pasos y quién el contenido de cada uno?
+2. ¿Qué se gana separándolos?
+
+---
+
+# Análisis.
+
+1. tamaño
+2. masa
+3. los ingredientes
