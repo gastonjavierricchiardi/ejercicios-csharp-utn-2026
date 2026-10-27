@@ -111,6 +111,7 @@ Y ojo con lo que acabamos de estudiar: **`args` es un parámetro**, no un atribu
 1. La estructura didáctica más correcta sería:
 
 ```csharp
+using System;
 /*
 Reducido:
 1. Los que más te sirven para Programación II:
@@ -124,19 +125,6 @@ Reducido:
 | `cw`        | `Console.WriteLine(...)`              |
 | `enum`      | enumeración                           |
 */
-using System;
-public class Clase
-{
-    // 1. CAMPOS / ATRIBUTOS
-    // 2. CONSTRUCTOR
-    // 3. PROPIEDADES / GETTERS Y SETTERS
-    // 4. MÉTODOS
-}
-```
-
-1.1 Resumido
-
-```csharp
 public class Clase
 {
     // 1. CAMPOS / ATRIBUTOS
@@ -294,7 +282,7 @@ cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
 
-$salida = "dump_EJ03AbstractFactory.txt"
+$salida = "dump_EJ04Builder.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.
