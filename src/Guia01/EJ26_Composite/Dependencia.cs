@@ -39,6 +39,11 @@ public class Dependencia : UnidadCorreo
         if (destino != null)
         {
             destino.unidades.Add(nuevaSucursal);
+
+            /*
+            Prueba temporal: Mostrar donde quedó incorporada la sucursal
+            */
+            System.Console.WriteLine($"{nuevaSucursal.Nombre} incorporada en {destino.Nombre}");
             return;
         }
 
@@ -48,6 +53,10 @@ public class Dependencia : UnidadCorreo
         if (destino != null)
         {
             destino.unidades.Add(nuevaSucursal);
+
+            // Prueba temporal: confirmar prioridad 3.
+            System.Console.WriteLine($"{nuevaSucursal.Nombre} incorporada en {destino.Nombre} (prioridad 3)");
+
             return;
         }
 
@@ -125,6 +134,9 @@ public class Dependencia : UnidadCorreo
                     nuevaDependencia.unidades.Add(nuevaSucursal);
 
                     unidades[i] = nuevaDependencia;
+
+                    // Prueba temporal: confirmar la transformación.
+                    Console.WriteLine($"{sucursal.Nombre} transformada en dependencia. " + $"{nuevaSucursal.Nombre} incorporada bajo su supervisión (prioridad 1)");
 
                     return;
                 }

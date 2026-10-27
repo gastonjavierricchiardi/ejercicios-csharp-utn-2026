@@ -282,7 +282,7 @@ cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
 
-$salida = "dump_EJ04Builder.txt"
+$salida = "dump_EJ26_Composite.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.

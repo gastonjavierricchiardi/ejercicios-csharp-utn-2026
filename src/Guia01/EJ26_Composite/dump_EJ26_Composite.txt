@@ -1,0 +1,232 @@
+﻿PWD: C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite
+Fecha: 2026-10-27T13:41:12.5130258-03:00
+
+ARCHIVOS INCLUIDOS:
+ - C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Dependencia.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Program.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Sucursal.cs
+ - C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\UnidadCorreo.cs
+
+========================================
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Dependencia.cs =====
+1: // EJ26
+2: using System;
+3: using System.Collections.Generic;
+4: 
+5: public class Dependencia : UnidadCorreo
+6: {
+7:     // 1. CAMPOS / ATRIBUTOS
+8:     private List<UnidadCorreo> unidades;
+9: 
+10:     // 2. CONSTRUCTOR
+11:     public Dependencia(int id, string nombre) : base(id, nombre)
+12:     {
+13:         unidades = new List<UnidadCorreo>();
+14:     }
+15: 
+16:     // 3. PROPIEDADES / GETTERS Y SETTERS
+17: 
+18:     // 4. MÉTODOS
+19: 
+20:     public void AgregarDependencia(Dependencia dependencia)
+21:     {
+22:         unidades.Add(dependencia);
+23:     }
+24: 
+25:     public void IncorporarSucursal(Sucursal nuevaSucursal)
+26:     {
+27:         // Prioridad 1: dependencia con cuatro sucursales.
+28:         Dependencia? destino = BuscarDependencia(4, 4);
+29: 
+30:         if (destino != null)
+31:         {
+32:             destino.TransformarCuartaSucursal(nuevaSucursal);
+33:             return;
+34:         }
+35: 
+36:         // Prioridad 2: dependencia con menos de tres.
+37:         destino = BuscarDependencia(0, 2);
+38: 
+39:         if (destino != null)
+40:         {
+41:             destino.unidades.Add(nuevaSucursal);
+42:             return;
+43:         }
+44: 
+45:         // Prioridad 3: dependencia con tres sucursales.
+46:         destino = BuscarDependencia(3, 3);
+47: 
+48:         if (destino != null)
+49:         {
+50:             destino.unidades.Add(nuevaSucursal);
+51:             return;
+52:         }
+53: 
+54:         // No existe ninguna dependencia subordinada.
+55:         throw new InvalidOperationException("No existen dependencias para incorporar la sucursal.");
+56:     }
+57: 
+58:     private int ContarSucursales()
+59:     {
+60:         int cantidad = 0;
+61: 
+62:         foreach (UnidadCorreo unidad in unidades)
+63:         {
+64:             if (unidad is Sucursal)
+65:             {
+66:                 cantidad++;
+67:             }
+68:         }
+69: 
+70:         return cantidad;
+71:     }
+72: 
+73:     private Dependencia? BuscarDependencia(
+74:         int cantidadMinima,
+75:         int cantidadMaxima
+76:     )
+77:     {
+78:         foreach (UnidadCorreo unidad in unidades)
+79:         {
+80:             if (unidad is Dependencia dependencia)
+81:             {
+82:                 int cantidad = dependencia.ContarSucursales();
+83: 
+84:                 if (cantidad >= cantidadMinima && cantidad <= cantidadMaxima)
+85:                 {
+86:                     return dependencia;
+87:                 }
+88: 
+89:                 Dependencia? encontrada =
+90:                     dependencia.BuscarDependencia(
+91:                         cantidadMinima,
+92:                         cantidadMaxima
+93:                     );
+94: 
+95:                 if (encontrada != null)
+96:                 {
+97:                     return encontrada;
+98:                 }
+99:             }
+100:         }
+101: 
+102:         return null;
+103:     }
+104: 
+105:     private void TransformarCuartaSucursal(
+106:         Sucursal nuevaSucursal
+107:     )
+108:     {
+109:         int cantidad = 0;
+110: 
+111:         for (int i = 0; i < unidades.Count; i++)
+112:         {
+113:             if (unidades[i] is Sucursal sucursal)
+114:             {
+115:                 cantidad++;
+116: 
+117:                 if (cantidad == 4)
+118:                 {
+119:                     Dependencia nuevaDependencia =
+120:                         new Dependencia(
+121:                             sucursal.Id,
+122:                             sucursal.Nombre
+123:                         );
+124: 
+125:                     nuevaDependencia.unidades.Add(nuevaSucursal);
+126: 
+127:                     unidades[i] = nuevaDependencia;
+128: 
+129:                     return;
+130:                 }
+131:             }
+132:         }
+133:     }
+134: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Program.cs =====
+1: //EJ26
+2: using System;
+3: public class Program
+4: {
+5:     public static void Main()
+6:     //static void Main(string[] args) // si tiene que recibir datos por consola
+7:     {
+8:         // Crear objetos y probar el ejercicio
+9:     }
+10: }
+11: 
+12: 
+13: 
+14: /*
+15: Reducido:
+16: 1. Los que más te sirven para Programación II:
+17: | `ctor`      | **Constructor de la clase actual**    |
+18: | `propfull`  | Propiedad completa + atributo privado |
+19: using System;
+20: public class Clase
+21: {
+22:     // 1. CAMPOS / ATRIBUTOS
+23:     // Estado interno del objeto.
+24:     // Normalmente private.
+25: 
+26:     // 2. CONSTRUCTOR
+27:     // Recibe los datos necesarios al crear el objeto.
+28: 
+29:     // 3. PROPIEDADES / GETTERS Y SETTERS
+30:     // Formas de exponer o modificar el estado.
+31: 
+32:     // 4. MÉTODOS
+33:     // Comportamiento del objeto.
+34: }*/
+35: 
+36: 
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\Sucursal.cs =====
+1: //EJ26
+2: public class Sucursal : UnidadCorreo
+3: {
+4:     // 1. CAMPOS / ATRIBUTOS
+5:     // 2. CONSTRUCTOR
+6:     public Sucursal(int id, string nombre) : base(id, nombre) { }
+7: 
+8:     // 3. PROPIEDADES / GETTERS Y SETTERS
+9:     // 4. MÉTODOS
+10: }
+
+===== C:\vcs\ejercicios-csharp-utn-2026\src\Guia01\EJ26_Composite\UnidadCorreo.cs =====
+1: // EJ26
+2: 
+3: public abstract class UnidadCorreo
+4: {
+5:     // 1. CAMPOS / ATRIBUTOS
+6:     private int id;
+7:     private string nombre;
+8: 
+9:     // 2. CONSTRUCTOR
+10:     protected UnidadCorreo(
+11:         int id,
+12:         string nombre
+13:     )
+14:     {
+15:         this.id = id;
+16:         this.nombre = nombre;
+17:     }
+18: 
+19:     // 3. PROPIEDADES / GETTERS Y SETTERS
+20:     public string Nombre
+21:     {
+22:         get { return nombre; }
+23:         //set { nombre = value; }
+24:     }
+25:     public int Id
+26:     {
+27:         get { return id; }
+28:         //set { id = value; }
+29:     }
+30:     // 4. MÉTODOS
+31: }
+32: 
+33: 
+
