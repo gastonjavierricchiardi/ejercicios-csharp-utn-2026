@@ -444,19 +444,19 @@ IMPORTANTE:
 - No me des todos los comandos de una.
 - Preguntame una sola cosa por vez.
 - Esperá mi respuesta antes de avanzar.
-- Si necesitás verificar algo, dame un solo comando PowerShell.
+- Si necesitás verificar algo, dame un solo comando PowerShell o bash.
 - Yo ejecuto el comando y te pego la salida.
 - Recién después analizás esa salida y seguimos.
 - No crear carpetas nuevas dentro de la carpeta destino salvo que yo lo pida.
 - Cuando finalmente tengas todos los datos validados, primero indicame claramente en qué carpeta exacta debo estar parado para ejecutar el bloque final.
-- Después dame un único bloque PowerShell con:
+- Después dame un único bloque PowerShell o Bash según corresponda con:
   1. creación del proyecto;
   2. agregado del .csproj a la solución;
   3. ejecución del proyecto.
 - Los comandos del bloque final deben estar calculados para ejecutarse exactamente desde la carpeta que me indiques.
 
 La primera pregunta que tenés que hacerme es:
-"¿En qué carpeta estás parado ahora? Pegame el prompt completo de PowerShell."
+"¿En qué sistema operativo estas trabajando y en que carpeta estás parado ahora?"
 ```
 
 ```txt

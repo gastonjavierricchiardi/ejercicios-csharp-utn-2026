@@ -14,4 +14,30 @@
   <Folder Name="/src/EJPatrones/GuiaPatrones01/EJ04-Builder-Pizzas/">
     <Project Path="src/EJPatrones/GuiaPatrones01/EJ04-Builder-Pizzas/EJ04BuilderPizzas.csproj" />
   </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ01-Adapter-TermometroImportado/">
+    <Project Path="src/EJPatrones/GuiaPatrones02/EJ01-Adapter-TermometroImportado/EJ01AdapterTermometroImportado.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CaféConAgregados/">
+    <Project Path="src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CaféConAgregados/EJ02DecoratorCafeConAgregados.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ03-Composite-MenuAplicacion/">
+    <Project Path="src/EJPatrones/GuiaPatrones02/EJ03-Composite-MenuAplicacion/EJ03CompositeMenuAplicacion.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ04-Facade-HomeTheater/">
+    <Project Path="src/EJPatrones/GuiaPatrones02/EJ04-Facade-HomeTheater/EJ04FacadeHomeTheater.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones03/" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones03/EJ01-Strategy-CostoEnvio/">
+    <Project Path="src/EJPatrones/GuiaPatrones03/EJ01-Strategy-CostoEnvio/EJ01StrategyCostoEnvio.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones03/EJ02-Observer-NovedadesCatedra/">
+    <Project Path="src/EJPatrones/GuiaPatrones03/EJ02-Observer-NovedadesCatedra/EJ02ObserverNovedadesCatedra.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones03/EJ03-ChainOfResponsibility-AprobacionGastos/">
+    <Project Path="src/EJPatrones/GuiaPatrones03/EJ03-ChainOfResponsibility-AprobacionGastos/EJ03ChainOfResponsibilityAprobacionGastos.csproj" />
+  </Folder>
+  <Folder Name="/src/EJPatrones/GuiaPatrones03/EJ04-TemplateMethod-MaquinaBebidas/">
+    <Project Path="src/EJPatrones/GuiaPatrones03/EJ04-TemplateMethod-MaquinaBebidas/EJ04TemplateMethodMaquinaBebidas.csproj" />
+  </Folder>
 </Solution>

@@ -61,7 +61,7 @@ public class Program
 
 ---
 
-Sí. Acá conviene **ajustarnos al apunte**.
+**ajustado al apunte**.
 
 1. Las dos formas son válidas, pero tienen distinta firma:
 
@@ -393,7 +393,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_EJ03-abstractfactory.txt
+) > dump_EJ01-Adapter.txt
 
 ```
 

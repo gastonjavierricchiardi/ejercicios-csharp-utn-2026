@@ -8,11 +8,11 @@
 
 Los patrones de comportamiento resuelven cómo se reparten las responsabilidades y cómo se comunican los objetos entre sí. Esta guía tiene un ejercicio por patrón.
 
-* Resolver cada ejercicio en una aplicación de consola C# (`dotnet new console`).
-* Los enunciados no dicen qué clases crear: decidir las clases, interfaces y relaciones es parte del ejercicio. Antes de programar, dibujar el diagrama de clases.
-* Programar contra interfaces o clases abstractas; el `Main` solo arma objetos y muestra resultados.
-* Una clase por archivo, con nombres en inglés como en el material de lectura (pág. 81-84).
-* Comparar lo que muestra tu programa con la salida esperada y responder las preguntas de "Para pensar".
+- Resolver cada ejercicio en una aplicación de consola C# (`dotnet new console`).
+- Los enunciados no dicen qué clases crear: decidir las clases, interfaces y relaciones es parte del ejercicio. Antes de programar, dibujar el diagrama de clases.
+- Programar contra interfaces o clases abstractas; el `Main` solo arma objetos y muestra resultados.
+- Una clase por archivo, con nombres en inglés como en el material de lectura (pág. 81-84).
+- Comparar lo que muestra tu programa con la salida esperada y responder las preguntas de "Para pensar".
 
 ---
 
@@ -20,7 +20,7 @@ Los patrones de comportamiento resuelven cómo se reparten las responsabilidades
 
 ### Ejercicio 1 - Strategy: costo de envío
 
-Una tienda online ofrece tres formas de envío: estándar (\$1000 por kg), express (\$1800 por kg) y retiro en local (sin cargo). En el checkout, el cliente puede cambiar de opción todas las veces que quiera antes de pagar.
+Una tienda online ofrece tres formas de envío: estándar ($1000 por kg), express ($1800 por kg) y retiro en local (sin cargo). En el checkout, el cliente puede cambiar de opción todas las veces que quiera antes de pagar.
 
 El área comercial avisó que cada mes habrá promociones de envío con reglas nuevas. El pedido tiene que calcular su costo de envío sin `if` ni `switch` según el tipo de envío, y sumar una forma de envío no debe obligar a modificar el pedido.
 
@@ -56,11 +56,11 @@ Ana recibió por email: Ya están las notas del parcial
 
 ### Ejercicio 3 - Chain of Responsibility: aprobación de gastos
 
-En una empresa, cada gasto lo aprueba el primer nivel con autoridad suficiente: el supervisor hasta \$50.000, el gerente hasta \$200.000 y el director sin límite. Quien carga un gasto siempre se lo presenta al supervisor y no sabe quién lo va a terminar aprobando.
+En una empresa, cada gasto lo aprueba el primer nivel con autoridad suficiente: el supervisor hasta $50.000, el gerente hasta $200.000 y el director sin límite. Quien carga un gasto siempre se lo presenta al supervisor y no sabe quién lo va a terminar aprobando.
 
 La empresa planea sumar un nivel "jefe de área" entre el supervisor y el gerente. Ese cambio debe resolverse agregando el nivel nuevo y armando la secuencia de otra forma, sin modificar los niveles existentes.
 
-**Para verificar:** presentar al supervisor gastos de \$30.000, \$120.000 y \$500.000.
+**Para verificar:** presentar al supervisor gastos de $30.000, $120.000 y $500.000.
 
 ```text
 $30000 aprobado por Supervisor
