@@ -14,3 +14,11 @@ Se compró un termómetro importado. Su librería expone un método con otro nom
 **Para pensar:**
 
 ¿por qué conviene que la pieza nueva componga al termómetro importado en lugar de heredar de él?
+
+Conviene utilizar composición porque el Adapter solamente necesita acceder al método `ReadFahrenhet()` del termómetro importado para obtener la temperatura y convertirla en Celsius.
+
+De esta manera, no modificamos la librería externa ni dependemos de ju jerarquía de herencia.
+
+Además, `ImportedThermometerAdapter` implementa `ITemperatureSensor`, permitiendo que el sistema trate al termómetro importado igual que a cualquier sensor local, sin modificar el código de `TemperatureMonitor`
+
+**Concepto clave**: utilizamos composición para reutilizar el comportamiento del termómetro y una interfaz para integrarlo al sistema mediante polimorfismo.

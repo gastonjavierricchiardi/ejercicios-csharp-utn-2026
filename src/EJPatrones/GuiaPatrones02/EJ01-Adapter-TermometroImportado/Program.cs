@@ -5,7 +5,7 @@ public class Program
 {
     public static void Main()
     {
-        ITemperatureSensor localSensor = new LocalSensor("Sensor local", 25.3);
+        ITemperatureSensor localSensor = new LocalSensor("Sensor local", 25.0);
 
         ImportedThermometer importedThermometer = new ImportedThermometer(98.6);
 

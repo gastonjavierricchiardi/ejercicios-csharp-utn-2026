@@ -97,7 +97,7 @@ porque también funciona y quedó como convención inicial del proyecto. Pero es
 ```csharp
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main() // static void Main(string[] args) { }
     {
         // Crear objetos y probar el ejercicio
     }

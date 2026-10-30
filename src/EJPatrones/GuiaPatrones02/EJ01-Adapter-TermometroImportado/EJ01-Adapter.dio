@@ -1,0 +1,109 @@
+<mxfile host="65bd71144e">
+    <diagram id="S6L_xD9EwzSxO74Nn_dB" name="CS">
+        <mxGraphModel dx="944" dy="1714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,#121212)" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="Gz745_KqpmK261vYzbr0-1" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ITemperatureSensor&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="128" width="240" x="240" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-3" parent="Gz745_KqpmK261vYzbr0-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&amp;nbsp;" vertex="1">
+                    <mxGeometry height="20" width="240" y="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-6" parent="Gz745_KqpmK261vYzbr0-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+                    <mxGeometry height="8" width="240" y="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-2" parent="Gz745_KqpmK261vYzbr0-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetName(): string" vertex="1">
+                    <mxGeometry height="20" width="240" y="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-3" parent="Gz745_KqpmK261vYzbr0-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ SetName(name string): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="88" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-8" parent="Gz745_KqpmK261vYzbr0-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetTemperatureCelcius(): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="108" as="geometry"/>
+                </mxCell>
+                <mxCell id="qCBl2wNTiIdSz9Ykv-bb-2" edge="1" parent="1" source="Gz745_KqpmK261vYzbr0-9" style="edgeStyle=none;html=1;dashed=1;endArrow=block;endFill=0;" target="Gz745_KqpmK261vYzbr0-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-9" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&lt;b&gt;LocalSensor&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="138" width="240" x="240" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-5" parent="Gz745_KqpmK261vYzbr0-9" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- name: string" vertex="1">
+                    <mxGeometry height="20" width="240" y="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-11" parent="Gz745_KqpmK261vYzbr0-9" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- temperatureCelsius: double" vertex="1">
+                    <mxGeometry height="20" width="240" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-14" parent="Gz745_KqpmK261vYzbr0-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+                    <mxGeometry height="8" width="240" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-5" parent="Gz745_KqpmK261vYzbr0-9" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetName(): string" vertex="1">
+                    <mxGeometry height="20" width="240" y="78" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-6" parent="Gz745_KqpmK261vYzbr0-9" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ SetName(name string): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="98" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-17" parent="Gz745_KqpmK261vYzbr0-9" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetTemperatureCelcius(): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="118" as="geometry"/>
+                </mxCell>
+                <mxCell id="qCBl2wNTiIdSz9Ykv-bb-3" edge="1" parent="1" source="Gz745_KqpmK261vYzbr0-18" style="edgeStyle=none;html=1;endArrow=block;endFill=0;dashed=1;" target="Gz745_KqpmK261vYzbr0-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="qCBl2wNTiIdSz9Ykv-bb-4" edge="1" parent="1" source="Gz745_KqpmK261vYzbr0-18" style="edgeStyle=none;html=1;endArrow=open;endFill=0;" target="Gz745_KqpmK261vYzbr0-22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-18" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&lt;b&gt;ImportedThermometerAdapter&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="138" width="240" x="560" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-6" parent="Gz745_KqpmK261vYzbr0-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- name: string" vertex="1">
+                    <mxGeometry height="20" width="240" y="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-19" parent="Gz745_KqpmK261vYzbr0-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- termometer: ImportedThermometer" vertex="1">
+                    <mxGeometry height="20" width="240" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-20" parent="Gz745_KqpmK261vYzbr0-18" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+                    <mxGeometry height="8" width="240" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-7" parent="Gz745_KqpmK261vYzbr0-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetName(): string" vertex="1">
+                    <mxGeometry height="20" width="240" y="78" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-8" parent="Gz745_KqpmK261vYzbr0-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ SetName(name string): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="98" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-21" parent="Gz745_KqpmK261vYzbr0-18" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ GetTemperatureCelcius(): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="118" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-22" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&lt;b&gt;ImportedThermometer&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="78" width="240" x="560" y="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-23" parent="Gz745_KqpmK261vYzbr0-22" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- temperatureFahrenheit: double" vertex="1">
+                    <mxGeometry height="20" width="240" y="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-24" parent="Gz745_KqpmK261vYzbr0-22" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+                    <mxGeometry height="8" width="240" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gz745_KqpmK261vYzbr0-25" parent="Gz745_KqpmK261vYzbr0-22" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ ReadFahrenheit(): double" vertex="1">
+                    <mxGeometry height="20" width="240" y="58" as="geometry"/>
+                </mxCell>
+                <mxCell id="qCBl2wNTiIdSz9Ykv-bb-1" edge="1" parent="1" source="P2ohusZmm_7eS3gmKg-j-1" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="Gz745_KqpmK261vYzbr0-1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-1" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&lt;b&gt;TemperatureMonitor&lt;/b&gt;" vertex="1">
+                    <mxGeometry height="98" width="280" x="220" y="-40" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-2" parent="P2ohusZmm_7eS3gmKg-j-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- sensors: List&amp;lt;ITemperatureSensor&amp;gt;" vertex="1">
+                    <mxGeometry height="20" width="280" y="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-3" parent="P2ohusZmm_7eS3gmKg-j-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+                    <mxGeometry height="8" width="280" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="KnK3wOw8a259tDhfPIRi-1" parent="P2ohusZmm_7eS3gmKg-j-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ AddSensor(sensor ITemperatureSensor): void" vertex="1">
+                    <mxGeometry height="20" width="280" y="58" as="geometry"/>
+                </mxCell>
+                <mxCell id="P2ohusZmm_7eS3gmKg-j-4" parent="P2ohusZmm_7eS3gmKg-j-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ ShowTemperatures(): void" vertex="1">
+                    <mxGeometry height="20" width="280" y="78" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
