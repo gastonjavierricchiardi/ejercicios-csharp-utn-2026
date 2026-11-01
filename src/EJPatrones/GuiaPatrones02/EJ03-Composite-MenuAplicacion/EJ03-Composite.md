@@ -19,3 +19,11 @@ Archivo
 ```
 
 > **Para pensar:** si las opciones simples tuvieran que ofrecer "agregar hijo", ¿qué deberían hacer? Relacionarlo con ISP, como señala el material.
+
+Si obligáramos a las opciones simples a implementar AddItem(), tendrían que declarar un método que no necesitan y que no pueden utilizar correctamente, porque no contienen hijos.
+
+Podrían dejarlo sin funcionamiento o lanzar una excepción, pero eso entraría en conflicto con el principio de segregación de interfaces (ISP).
+
+Por eso, en nuestra solución, IMenuItem solamente declara Show(), mientras que AddItem() pertenece exclusivamente a SubMenu.
+
+De esta manera, cada clase implementa únicamente las operaciones que realmente necesita.

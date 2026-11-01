@@ -393,7 +393,7 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         nl -ba "$f"
         printf "\n"
       done
-) > dump_EJ02-Decorator.txt
+) > dump_EJ04-Facade.txt
 
 ```
 

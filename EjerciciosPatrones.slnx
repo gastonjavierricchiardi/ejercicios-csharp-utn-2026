@@ -18,8 +18,8 @@
   <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ01-Adapter-TermometroImportado/">
     <Project Path="src/EJPatrones/GuiaPatrones02/EJ01-Adapter-TermometroImportado/EJ01AdapterTermometroImportado.csproj" />
   </Folder>
-  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CaféConAgregados/">
-    <Project Path="src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CaféConAgregados/EJ02DecoratorCafeConAgregados.csproj" />
+  <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CafeConAgregados/">
+    <Project Path="src/EJPatrones/GuiaPatrones02/EJ02-Decorator-CafeConAgregados/EJ02DecoratorCafeConAgregados.csproj" />
   </Folder>
   <Folder Name="/src/EJPatrones/GuiaPatrones02/EJ03-Composite-MenuAplicacion/">
     <Project Path="src/EJPatrones/GuiaPatrones02/EJ03-Composite-MenuAplicacion/EJ03CompositeMenuAplicacion.csproj" />

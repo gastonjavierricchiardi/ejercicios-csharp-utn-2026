@@ -13,4 +13,8 @@ Sonido encendido, volumen 15
 -- Disfrutá la película ---
 ```
 
-> **Para pensar:** ¿qué pasa con tu solución si mañana se agrega un aparato nuevo, por ejemplo una consola? ¿Cuándo empieza a tener demasiadas responsabilidades?
+> **Para pensar:**
+> ¿qué pasa con tu solución si mañana se agrega un aparato nuevo, por ejemplo una consola?
+> ¿Cuándo empieza a tener demasiadas responsabilidades?
+
+---
