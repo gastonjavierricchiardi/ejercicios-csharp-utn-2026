@@ -12,4 +12,8 @@ Luis recibió en la app: Se suspenden las clases del viernes
 Ana recibió por email: Ya están las notas del parcial
 ```
 
-> **Para pensar:** ¿qué tendrías que tocar para sumar WhatsApp? ¿Qué pasaría si un suscriptor se diera de baja justo mientras recibe una novedad?
+**Para pensar:**
+
+1. ¿qué tendrías que tocar para sumar WhatsApp?
+
+2. ¿Qué pasaría si un suscriptor se diera de baja justo mientras recibe una novedad?

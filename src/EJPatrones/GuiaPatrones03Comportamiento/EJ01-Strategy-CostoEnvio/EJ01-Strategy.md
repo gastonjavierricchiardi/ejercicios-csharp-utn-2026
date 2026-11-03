@@ -12,4 +12,21 @@ Express: $5400
 Retiro en local: $0
 ```
 
-> **Para pensar:** ¿qué principio SOLID se rompería si el cálculo estuviera dentro del pedido con un `switch`? ¿Cómo sumarías una promo de "envío gratis desde 5 kg"?
+**Para pensar:**
+
+1. ¿qué principio SOLID se rompería si el cálculo estuviera dentro del pedido con un `switch`?
+
+> Principalmente OCP — Open/Closed Principle.
+> Si Order tuviera un switch para decidir cómo calcular cada envío, tendríamos que modificar esa clase cada vez que apareciera una modalidad nueva.
+> Con Strategy, incorporamos nuevas clases que implementan IShippingStrategy sin modificar Order.
+
+2. ¿Cómo sumarías una promo de "envío gratis desde 5 kg"?
+
+> Crear una clase FreeShippingPromotion que implemente IShippingStrategy.
+
+Su comportamiento sería:
+
+- Pedido de 5 kg o más → costo $0.
+- Pedido de menos de 5 kg → aplica la tarifa correspondiente.
+
+---
