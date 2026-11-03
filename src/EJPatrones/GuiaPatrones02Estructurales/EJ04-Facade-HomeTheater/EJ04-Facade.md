@@ -18,3 +18,17 @@ Sonido encendido, volumen 15
 > ¿Cuándo empieza a tener demasiadas responsabilidades?
 
 ---
+
+> ¿qué pasa con tu solución si mañana se agrega un aparato nuevo, por ejemplo una consola?
+
+1. Si agregamos una nueva consola, deberíamos agregar `ConsoleDevice` a `HomeTheatreFacade` y modificar las secuencias que necesiten utilizarla.
+
+Los clientes seguirían llamando a `WatchMovie()` y `EndMovie()` sin conocer los aparatos involucrados.
+
+> ¿Cuándo empieza a tener demasiadas responsabilidades?
+
+2. Cuando la fachada deja de limitarse a **coordinar aparatos** y comienza e encargarse de tareas que pertenecen a otras clases.
+
+Por ejemplo, si además de iniciar películas tuviera que administrar videojuegos, perfiles de usuarios y configuraciones complejas.
+
+Agregar un aparato, no implica automáticamente violar SOLID. Lo importante es mantener las respondabilidades bien determinadas.
