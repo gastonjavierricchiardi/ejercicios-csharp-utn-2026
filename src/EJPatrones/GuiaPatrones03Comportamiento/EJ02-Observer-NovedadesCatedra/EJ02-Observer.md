@@ -16,4 +16,22 @@ Ana recibió por email: Ya están las notas del parcial
 
 1. ¿qué tendrías que tocar para sumar WhatsApp?
 
+Crearía una nueva clase `WhatsAppSubscriber` que implemente `IObserver` y defina su propia versión de `Update(string news)`.
+
+No sería necesario modificar `NewsChannel` por que el canal trabaja con la interfaz y no con los medios concretos.
+
+Eso permite extender las formas de notificación respetando el principio **OCP** (abierto/cerrado)
+
 2. ¿Qué pasaría si un suscriptor se diera de baja justo mientras recibe una novedad?
+
+Nuestra implementación contempla este caso mediante esta instrucción:
+
+> `List<IObserver> recipients = new List<IObserver>(observers);`
+
+Al copiar la colección antes de recorrerla
+
+- Evitamos modificar la lista que utiliza el `foreach`.
+- Los suscriptores incluidos al comenzar la publicación siguen siendo destinatarios de esa novedad.
+- La baja se refleja en las publicaciones siguientes.
+
+Es la decisión de implementación que mantiene estable el conjunto de destinatarios durante cada publicación.w
