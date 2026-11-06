@@ -1,2 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// EJ03-CHAIN OF RESPONSIBILITY
+public class Program
+{
+    public static void Main()//static void Main(string[] args) // si tiene que recibir datos por consola
+    {
+
+
+
+
+
+
+
+
+
+    }
+}
