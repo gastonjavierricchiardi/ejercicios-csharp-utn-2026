@@ -13,3 +13,9 @@ $500000 aprobado por Director
 ```
 
 > **Para pensar:** ¿qué pasa si ningún nivel puede atender un gasto? Proponer una forma de avisarlo.
+
+Si ningún nivel tiene autoridad suficiente para aprobar el gasto, este se deriva sucesivamente hasta llegar al último responsable de la cadena.
+
+Si ese responsable tampoco puede aprobarlo y no existe un siguiente nivel, el sistema informa que el gasto no pudo ser aprobado.
+
+En nuestra implementación, esta situación se resuelve mediante el método `Forward()` de la clase abstracta `Approver`, que verifica si existe un siguiente responsable y, en caso contrario, muestra un mensaje por consola.

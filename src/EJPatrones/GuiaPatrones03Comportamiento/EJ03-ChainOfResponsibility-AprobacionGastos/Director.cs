@@ -8,4 +8,9 @@ public class Director : Approver
     // 3. PROPIEDADES / GETTERS Y SETTERS
 
     // 4. MÉTODOS
+    public override void Approve(decimal amount)
+    {
+        //throw new NotImplementedException();
+        System.Console.WriteLine($"${amount} aprobado por Director");
+    }
 }

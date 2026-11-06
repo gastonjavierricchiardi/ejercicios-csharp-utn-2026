@@ -14,7 +14,7 @@ public class Manager : Approver
         //throw new NotImplementedException();
         if (amount <= 200000m)
         {
-            System.Console.WriteLine($"${amount} aprobado por gerente");
+            System.Console.WriteLine($"${amount} aprobado por Gerente");
         }
         else
         {

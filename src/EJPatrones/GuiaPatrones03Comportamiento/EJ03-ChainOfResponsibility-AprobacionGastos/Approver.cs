@@ -24,7 +24,7 @@ public abstract class Approver
         }
         else
         {
-            System.Console.WriteLine($"${amount} no pudo ser aprovado");
+            System.Console.WriteLine($"${amount} no pudo ser aprobado");
         }
     }
 }
