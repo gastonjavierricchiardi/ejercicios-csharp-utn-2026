@@ -282,7 +282,7 @@ cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
 
-$salida = "dump_EJ-Chain.txt"
+$salida = "dump_EJ-04-TemplatedMethod.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.
@@ -394,6 +394,34 @@ cd ~/vcs/proyecto-ts/src/Practica\ de\ enunciados/03enunciados
         printf "\n"
       done
 ) > dump_EJ04-Facade.txt
+
+```
+
+---
+
+# Apartado para copiar y armar archivos.
+
+```csharp
+
+public class Program
+{
+    public static void Main() // static void Main(string[] args) { }
+    {
+        // Crear objetos y probar el ejercicio
+    }
+}
+
+using System;
+
+public class Clase
+{
+    // 1. CAMPOS / ATRIBUTOS
+    // 2. CONSTRUCTOR
+    // 3. PROPIEDADES / GETTERS Y SETTERS
+    // 4. MÉTODOS
+}
+
+
 
 ```
 

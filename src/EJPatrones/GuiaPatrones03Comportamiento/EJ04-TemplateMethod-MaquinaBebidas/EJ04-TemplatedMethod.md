@@ -20,4 +20,28 @@ Sirviendo en la taza
 Agregando azúcar y leche
 ```
 
-> **Para pensar:** ¿cómo garantiza tu solución que el orden no cambie? Comparar con Strategy: ¿cuál usa herencia y cuál composición?
+> **Para pensar:**
+
+1. ¿cómo garantiza tu solución que el orden no cambie?
+
+> Comparar con Strategy:
+
+2. ¿cuál usa herencia y cuál composición?
+
+---
+
+### 1. ¿Cómo garantiza la solución que el orden no cambie?
+
+La clase abstracta `Bebida` define el método `PrepararBebida()`, que establece el orden de los cuatro pasos de preparación.
+
+Como este método no es `virtual`, las clases hijas no pueden sobrescribirlo para modificar la secuencia.
+
+Las clases `Te` y `Cafe` solamente implementan los métodos abstractos `PrepararInfusion()` y `AgregarExtras()`, conservando el orden definido en la clase base.
+
+### 2. Comparación con Strategy: ¿cuál usa herencia y cuál composición?
+
+**Template Method utiliza herencia.** Las clases `Te` y `Cafe` heredan de `Bebida` y redefinen determinados pasos mediante `override`, reutilizando el comportamiento común.
+
+**Strategy utiliza composición.** Un objeto mantiene una referencia a una estrategia y delega en ella un comportamiento que puede cambiar.
+
+La diferencia principal es que **Template Method permite variar pasos de un algoritmo sin cambiar su estructura**, mientras que **Strategy permite intercambiar algoritmos mediante objetos diferentes**.
