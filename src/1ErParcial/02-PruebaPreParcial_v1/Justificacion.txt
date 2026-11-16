@@ -1,6 +1,5 @@
 Datos del alumno:
-Gastón Ricchiardi
-DNI: 26470141
+Gastón
 gastonj@hotmail.com
 
 -----
