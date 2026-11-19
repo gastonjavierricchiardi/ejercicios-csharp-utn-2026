@@ -9,13 +9,16 @@ public class Program
         Combo comboPlatinum = new Combo(new FabricaPlatinum());
         Combo comboStarter = new Combo(new FabricaStarter());
 
-        System.Console.WriteLine("=== COMBO GOLD ===");
-        System.Console.WriteLine($"Precio total: ${comboGold.CalcularPrecioTotal()}");
+        Console.WriteLine("=== COMBO GOLD ===");
+        Console.WriteLine(comboGold.ListarProductos());
+        Console.WriteLine($"Precio total: ${comboGold.CalcularPrecioTotal()}");
 
-        System.Console.WriteLine("=== COMBO PLATINUM ===");
-        System.Console.WriteLine($"Precio total: ${comboPlatinum.CalcularPrecioTotal()}");
+        Console.WriteLine("\n=== COMBO PLATINUM ===");
+        Console.WriteLine(comboPlatinum.ListarProductos());
+        Console.WriteLine($"Precio total: ${comboPlatinum.CalcularPrecioTotal()}");
 
-        System.Console.WriteLine("=== COMBO STARTER ===");
-        System.Console.WriteLine($"Precio total: $ {comboStarter.CalcularPrecioTotal()}");
+        Console.WriteLine("\n=== COMBO STARTER ===");
+        Console.WriteLine(comboStarter.ListarProductos());
+        Console.WriteLine($"Precio total: ${comboStarter.CalcularPrecioTotal()}");
     }
 }

@@ -1,32 +1,36 @@
 ﻿// EJ-TiendaOnLine (Abstract Factory)
+using System.Collections.Generic;
 
 public class FabricaPlatinum : IFabricaCombo
 {
-    // 1. CAMPOS / ATRIBUTOS
-    // 2. CONSTRUCTOR
-    // 3. PROPIEDADES / GETTERS Y SETTERS
-    // 4. MÉTODOS
-    public Headset CrearHeandset()
+    public Headset CrearHeadset()
     {
-        //throw new NotImplementedException();
         return new HeadsetPlatinum();
-    }
-
-    public Kit CrearKit()
-    {
-        //throw new NotImplementedException();
-        return new KitPlatinum();
     }
 
     public Webcam CrearWebcam()
     {
-        //throw new NotImplementedException();
         return new WebcamPlatinum();
+    }
+
+    public Kit CrearKit()
+    {
+        return new KitPlatinum();
     }
 
     public string ObtenerVersion()
     {
-        //throw new NotImplementedException();
         return "Platinum";
+    }
+
+    public List<Producto> ObtenerProductos()
+    {
+        List<Producto> productos = new List<Producto>();
+
+        productos.Add(CrearHeadset());
+        productos.Add(CrearWebcam());
+        productos.Add(CrearKit());
+
+        return productos;
     }
 }

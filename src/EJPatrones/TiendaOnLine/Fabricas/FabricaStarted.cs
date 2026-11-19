@@ -1,32 +1,36 @@
 ﻿// EJ-TiendaOnLine (Abstract Factory)
+using System.Collections.Generic;
 
 public class FabricaStarter : IFabricaCombo
 {
-    // 1. CAMPOS / ATRIBUTOS
-    // 2. CONSTRUCTOR
-    // 3. PROPIEDADES / GETTERS Y SETTERS
-    // 4. MÉTODOS
-    public Headset CrearHeandset()
+    public Headset CrearHeadset()
     {
-        //throw new NotImplementedException();
-        return new HeadsetStarted();
-    }
-
-    public Kit CrearKit()
-    {
-        //throw new NotImplementedException();
-        return new KitStarter();
+        return new HeadsetStarter();
     }
 
     public Webcam CrearWebcam()
     {
-        //throw new NotImplementedException();
         return new WebcamStarter();
+    }
+
+    public Kit CrearKit()
+    {
+        return new KitStarter();
     }
 
     public string ObtenerVersion()
     {
-        //throw new NotImplementedException();
         return "Starter";
+    }
+
+    public List<Producto> ObtenerProductos()
+    {
+        List<Producto> productos = new List<Producto>();
+
+        productos.Add(CrearHeadset());
+        productos.Add(CrearWebcam());
+        productos.Add(CrearKit());
+
+        return productos;
     }
 }

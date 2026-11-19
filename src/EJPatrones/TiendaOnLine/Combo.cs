@@ -16,13 +16,14 @@ public class Combo
     }
     // 3. PROPIEDADES / GETTERS Y SETTERS
     // 4. MÉTODOS
+
     private void ObtenerProductos(IFabricaCombo fabrica)
     {
-        productos.Add(fabrica.CrearHeandset());
-        productos.Add(fabrica.CrearWebcam());
-        productos.Add(fabrica.CrearKit());
+        foreach (Producto producto in fabrica.ObtenerProductos())
+        {
+            productos.Add(producto);
+        }
     }
-
     public decimal CalcularPrecioTotal()
     {
         decimal total = 0;

@@ -1,32 +1,36 @@
 ﻿// EJ-TiendaOnLine (Abstract Factory)
+using System.Collections.Generic;
 
 public class FabricaGold : IFabricaCombo
 {
-    // 1. CAMPOS / ATRIBUTOS
-    // 2. CONSTRUCTOR
-    // 3. PROPIEDADES / GETTERS Y SETTERS
-    // 4. MÉTODOS
-    public Headset CrearHeandset()
+    public Headset CrearHeadset()
     {
-        //throw new NotImplementedException();
         return new HeadsetGold();
     }
 
     public Webcam CrearWebcam()
     {
-        //throw new NotImplementedException();
         return new WebcamGold();
     }
 
     public Kit CrearKit()
     {
-        //throw new NotImplementedException();
         return new KitGold();
     }
 
     public string ObtenerVersion()
     {
-        //throw new NotImplementedException();
         return "Gold";
+    }
+
+    public List<Producto> ObtenerProductos()
+    {
+        List<Producto> productos = new List<Producto>();
+
+        productos.Add(CrearHeadset());
+        productos.Add(CrearWebcam());
+        productos.Add(CrearKit());
+
+        return productos;
     }
 }
