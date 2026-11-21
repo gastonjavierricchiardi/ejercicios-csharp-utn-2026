@@ -1,15 +1,15 @@
 <Solution>
   <Folder Name="/src/" />
   <Folder Name="/src/EJPatrones/">
-    <Project Path="src/EJPatrones/CentroMedico/CentroMedico.csproj" />
-    <Project Path="src/EJPatrones/Gimnasio/Gimnasio.csproj" />
+    <Project Path="src/EJPatrones/CentroMedico_Composite/CentroMedico.csproj" />
+    <Project Path="src/EJPatrones/Gimnasio_Strategy/Gimnasio.csproj" />
     <Project Path="src/EJPatrones/GPS/GPS.csproj" />
     <Project Path="src/EJPatrones/Horas/Horas.csproj" />
     <Project Path="src/EJPatrones/Laberinto/Laberinto.csproj" />
     <Project Path="src/EJPatrones/MascotaVirtual/MascotaVirtual.csproj" />
     <Project Path="src/EJPatrones/Reservas/Reservas.csproj" />
     <Project Path="src/EJPatrones/Robots/Robots.csproj" />
-    <Project Path="src/EJPatrones/TiendaOnLine/TiendaOnLine.csproj" />
+    <Project Path="src/EJPatrones/TiendaOnLine_Abstractfactory/TiendaOnLine.csproj" />
   </Folder>
   <Folder Name="/src/EJPatrones/GuiaPatrones01Creacionales/" />
   <Folder Name="/src/EJPatrones/GuiaPatrones01Creacionales/EJ01-Singleton-Configuracion/">
