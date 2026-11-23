@@ -3,7 +3,7 @@
   <Folder Name="/src/EJPatrones/">
     <Project Path="src/EJPatrones/CentroMedico_Composite/CentroMedico.csproj" />
     <Project Path="src/EJPatrones/Gimnasio_Strategy/Gimnasio.csproj" />
-    <Project Path="src/EJPatrones/GPS/GPS.csproj" />
+    <Project Path="src/EJPatrones/GPS_Adapter/GPS.csproj" />
     <Project Path="src/EJPatrones/Horas/Horas.csproj" />
     <Project Path="src/EJPatrones/Laberinto/Laberinto.csproj" />
     <Project Path="src/EJPatrones/MascotaVirtual/MascotaVirtual.csproj" />
