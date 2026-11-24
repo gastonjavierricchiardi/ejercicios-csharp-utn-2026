@@ -282,7 +282,7 @@ cd\
 cd .\vcs\ejercicios-csharp-utn-2026\src\
 
 
-$salida = "dump_GPS.txt"
+$salida = "dump_HORAS.txt"
 
 # Solo archivos .cs reales del proyecto.
 # Excluye carpetas generadas por .NET: bin y obj.
