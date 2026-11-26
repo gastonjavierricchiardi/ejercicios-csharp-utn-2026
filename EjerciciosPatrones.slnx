@@ -6,9 +6,9 @@
     <Project Path="src/EJPatrones/GPS_Adapter/GPS.csproj" />
     <Project Path="src/EJPatrones/Horas_Observer/Horas.csproj" />
     <Project Path="src/EJPatrones/Laberinto_Builder/Laberinto.csproj" />
-    <Project Path="src/EJPatrones/MascotaVirtual/MascotaVirtual.csproj" />
-    <Project Path="src/EJPatrones/Reservas/Reservas.csproj" />
-    <Project Path="src/EJPatrones/Robots/Robots.csproj" />
+    <Project Path="src/EJPatrones/MascotaVirtual_State/MascotaVirtual.csproj" />
+    <Project Path="src/EJPatrones/Reservas_Strategy/Reservas.csproj" />
+    <Project Path="src/EJPatrones/Robots_Strategy_Adapter/Robots.csproj" />
     <Project Path="src/EJPatrones/TiendaOnLine_Abstractfactory/TiendaOnLine.csproj" />
   </Folder>
   <Folder Name="/src/EJPatrones/GuiaPatrones01Creacionales/" />
